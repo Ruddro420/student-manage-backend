@@ -9,10 +9,7 @@ const Header = () => {
                 className="container flex items-center justify-between h-full px-6 mx-auto text-purple-600 dark:text-purple-300">
 
                 <button
-                    className="p-1 mr-5 -ml-1 rounded-md md:hidden focus:outline-none focus:shadow-outline-purple"
-
-                    aria-label="Menu"
-                >
+                    className="p-1 mr-5 -ml-1 rounded-md md:hidden focus:outline-none focus:shadow-outline-purple" aria-label="Menu">
                     <svg
                         className="w-6 h-6"
                         aria-hidden="true"

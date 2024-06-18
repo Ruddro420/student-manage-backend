@@ -1,22 +1,25 @@
+import { Link } from "react-router-dom";
+import { useState } from "react"; // Import useState hook
 
 const Sidebar = () => {
+    const [activeTab, setActiveTab] = useState(0); // State to manage active tab index
+
     return (
-        <aside className="z-20 hidden w-64 overflow-y-auto bg-white dark:bg-gray-800 md:block flex-shrink-0 ">
+        <aside className="z-20 hidden w-64 overflow-y-auto bg-white dark:bg-gray-800 md:block flex-shrink-0">
             <div className="py-4 text-gray-500 dark:text-gray-400">
-                <a
+                <Link
                     className="ml-6 text-lg font-bold text-gray-800 dark:text-gray-200"
-                    href="#">
+                    to="/dashboard"
+                >
                     ইন্সপায়ার্ড আইটি
-                </a>
+                </Link>
                 <ul className="mt-6">
-                    <li className="relative px-6 py-3">
-                        <span
-                            className="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
-                            aria-hidden="true"
-                        ></span>
-                        <a
-                            className="inline-flex items-center w-full text-sm font-semibold text-gray-800 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100"
-                            href="index.html"
+                    <li className="relative px-2 py-3">
+
+                        <Link
+                            className={`inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 dark:hover:text-gray-200 dark:text-gray-100 p-3 ${activeTab === 0 ? 'bg-purple-600 text-white p-3 rounded' : ''}`}
+                            onClick={() => setActiveTab(0)}
+                            to="/dashboard"
                         >
                             <svg
                                 className="w-5 h-5"
@@ -33,14 +36,13 @@ const Sidebar = () => {
                                 ></path>
                             </svg>
                             <span className="ml-4">আমার কোর্স</span>
-                        </a>
+                        </Link>
                     </li>
-                </ul>
-                <ul>
-                    <li className="relative px-6 py-3">
-                        <a
-                            className="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="forms.html"
+                    <li className="relative px-2 py-3">
+                        <Link
+                            className={`inline-flex items-center w-full text-sm font-semibold transition-colors duration-150  dark:hover:text-gray-200 p-3 ${activeTab === 1 ? 'bg-purple-600 text-white p-3 rounded' : ''}`}
+                            onClick={() => setActiveTab(1)}
+                            to="/dashboard/recording"
                         >
                             <svg
                                 className="w-5 h-5"
@@ -57,13 +59,13 @@ const Sidebar = () => {
                                 ></path>
                             </svg>
                             <span className="ml-4">ক্লাস রেকর্ডিং</span>
-                        </a>
+                        </Link>
                     </li>
-                    <li className="relative px-6 py-3">
-                        <a
-                            className="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="cards.html"
-                        >
+                    <li className="relative px-2 py-3">
+                        <Link
+                            className={`inline-flex items-center w-full text-sm font-semibold transition-colors duration-150  dark:hover:text-gray-200 p-3 ${activeTab === 2 ? 'bg-purple-600 text-white p-3 rounded' : ''}`}
+                            to="/dashboard/resources"
+                            onClick={() => setActiveTab(2)}>
                             <svg
                                 className="w-5 h-5"
                                 aria-hidden="true"
@@ -79,13 +81,13 @@ const Sidebar = () => {
                                 ></path>
                             </svg>
                             <span className="ml-4">রিসোর্স</span>
-                        </a>
+                        </Link>
                     </li>
-                    <li className="relative px-6 py-3">
-                        <a
-                            className="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="charts.html"
-                        >
+                    <li className="relative px-2 py-3">
+                        <Link
+                            className={`inline-flex items-center w-full text-sm font-semibold transition-colors duration-150  dark:hover:text-gray-200 p-3 ${activeTab === 3 ? 'bg-purple-600 text-white p-3 rounded' : ''}`}
+                            to="/dashboard/performances"
+                            onClick={() => setActiveTab(3)}>
                             <svg
                                 className="w-5 h-5"
                                 aria-hidden="true"
@@ -102,17 +104,10 @@ const Sidebar = () => {
                                 <path d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"></path>
                             </svg>
                             <span className="ml-4">পারফর্মেন্স</span>
-                        </a>
+                        </Link>
                     </li>
                 </ul>
-               {/*  <div className="px-6 my-6">
-                    <button
-                        className="flex items-center justify-between w-full px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
-                    >
-                        Create account
-                        <span className="ml-2" aria-hidden="true">+</span>
-                    </button>
-                </div> */}
+                {/* Additional menu items can be added similarly */}
             </div>
         </aside>
     );

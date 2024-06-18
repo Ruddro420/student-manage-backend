@@ -9,3 +9,9 @@ body{
 aside{
     border-right: 1px solid #dcdcdc;
 }
+.tab-color{
+    background-color: #1D2939;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}

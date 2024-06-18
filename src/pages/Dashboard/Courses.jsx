@@ -36,7 +36,7 @@ const Courses = () => {
                         <div className="flex gap-2 ">
                             <span className="inline-flex items-center gap-1 rounded-full bg-blue-500 px-2 py-1 text-xs font-semibold text-white mr-3"> ব্যাচ ২ </span>
                             <span className="inline-flex items-center gap-1 rounded-full bg-blue-500 px-2 py-1 text-xs font-semibold text-white"> অনগোয়িং </span>
-                        </div><br />
+                        </div>
                         <div className="mt-5">
                             <h3 className="text-xl font-medium text-gray-900 mt-5">ওয়েব ডিজাইন (Web Design & Development)</h3>
                         </div>
