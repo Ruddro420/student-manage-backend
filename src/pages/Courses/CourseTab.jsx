@@ -13,7 +13,7 @@ const CourseTab = () => {
 
     // Get module data
     useEffect(() => {
-        axios.get('../../../data/module.json')
+        axios.get('../../../module.json')
             .then(function (response) {
                 setData(response.data);
                 setLoading(false); // Set loading to false when data is fetched
