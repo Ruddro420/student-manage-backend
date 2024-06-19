@@ -1,3 +1,4 @@
+import ResourceTable from "../../components/Table/ResourceTable";
 
 const Resources = () => {
     return (
@@ -24,7 +25,8 @@ const Resources = () => {
                 <span>View more &RightArrow;</span>
             </a> */}
 
-          
+            <ResourceTable />
+
 
         </div>
     );

@@ -11,7 +11,7 @@ const TabComponent = () => {
                     <li>
                         <a
                             onClick={() => setActiveTab(0)}
-                            className={`inline-flex cursor-pointer items-center gap-2 rounded-lg px-3 py-2 hover:shadow ${activeTab === 0 ? 'tab-color shadow' : ''}`}
+                            className={`inline-flex cursor-pointer items-center gap-2 rounded border px-3 py-2 hover:shadow ${activeTab === 0 ? 'tab-color shadow' : ''}`}
                         >
                             লাইভ ক্লাস
                         </a>
@@ -19,7 +19,7 @@ const TabComponent = () => {
                     <li>
                         <a
                             onClick={() => setActiveTab(1)}
-                            className={`inline-flex cursor-pointer items-center gap-2 rounded-lg px-3 py-2  hover:shadow ${activeTab === 1 ? 'tab-color shadow' : ''}`}
+                            className={`inline-flex cursor-pointer items-center gap-2 rounded border px-3 py-2  hover:shadow ${activeTab === 1 ? 'tab-color shadow' : ''}`}
                         >
                             সাপোর্ট ক্লাস
                         </a>
@@ -27,7 +27,7 @@ const TabComponent = () => {
                     <li>
                         <a
                             onClick={() => setActiveTab(2)}
-                            className={`inline-flex cursor-pointer items-center gap-2 rounded-lg px-3 py-2  hover:shadow ${activeTab === 2 ? 'tab-color shadow' : ''}`}
+                            className={`inline-flex cursor-pointer items-center gap-2 rounded border px-3 py-2  hover:shadow ${activeTab === 2 ? 'tab-color shadow' : ''}`}
                         >
                             বোনাস ক্লাস
                         </a>
