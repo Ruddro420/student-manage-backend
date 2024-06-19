@@ -4,33 +4,34 @@ import Module from './Module';
 import axios from 'axios';
 import AllAssignments from './AllAssignments';
 import ResourceTable from "../../components/Table/ResourceTable";
-import Loader from "../../components/Loader/Loader"; // Import the Loader component
+import Loader from "../../components/Loader/Loader"; 
+import data from '../../../data/module.json'
 
 const CourseTab = () => {
     const [activeTab, setActiveTab] = useState(0);
-    const [data, setData] = useState([]);
-    const [loading, setLoading] = useState(true);
+    /* const [data, setData] = useState([]);
+    const [loading, setLoading] = useState(true); */
 
     // Get module data
-    useEffect(() => {
-        axios.get('../../../module.json')
+    /* useEffect(() => {
+        axios.get('../../../data/module.json')
             .then(function (response) {
                 setData(response.data);
-                setLoading(false); // Set loading to false when data is fetched
+                setLoading(false); 
             })
             .catch(function (error) {
                 console.log(error);
-                setLoading(false); // Set loading to false even if there's an error
+                setLoading(false); 
             });
-    }, []);
+    }, []); */
 
     return (
         <div>
-            {loading && (
+            {/* {loading && (
                 <div className="loader-container">
-                    <Loader /> {/* Show loader above the header */}
+                    <Loader /> 
                 </div>
-            )}
+            )} */}
             <div className="overflow-hidden rounded-xl p-1 mb-3">
                 <ul className="flex items-center gap-2 text-sm font-medium">
                     <li>
