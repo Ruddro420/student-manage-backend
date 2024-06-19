@@ -4,24 +4,33 @@ import Module from './Module';
 import axios from 'axios';
 import AllAssignments from './AllAssignments';
 import ResourceTable from "../../components/Table/ResourceTable";
+import Loader from "../../components/Loader/Loader"; // Import the Loader component
 
 const CourseTab = () => {
     const [activeTab, setActiveTab] = useState(0);
-    const [data, setData] = useState([])
-    // get module data
+    const [data, setData] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    // Get module data
     useEffect(() => {
         axios.get('../../../data/module.json')
             .then(function (response) {
                 setData(response.data);
+                setLoading(false); // Set loading to false when data is fetched
             })
             .catch(function (error) {
                 console.log(error);
-            })
-
-    }, [])
+                setLoading(false); // Set loading to false even if there's an error
+            });
+    }, []);
 
     return (
         <div>
+            {loading && (
+                <div className="loader-container">
+                    <Loader /> {/* Show loader above the header */}
+                </div>
+            )}
             <div className="overflow-hidden rounded-xl p-1 mb-3">
                 <ul className="flex items-center gap-2 text-sm font-medium">
                     <li>
@@ -35,7 +44,6 @@ const CourseTab = () => {
                         <a
                             onClick={() => setActiveTab(1)}
                             className={`inline-flex cursor-pointer items-center gap-2 rounded px-3 py-2 hover:shadow border ${activeTab === 1 ? 'tab-color shadow' : ''}`}>
-
                             এসাইনমেন্ট
                         </a>
                     </li>
@@ -49,7 +57,7 @@ const CourseTab = () => {
                     <li>
                         <a
                             onClick={() => setActiveTab(3)}
-                            className={`inline-flex cursor-pointer items-center gap-2 rounded border px-3 py-2  hover:shadow ${activeTab === 3 ? 'tab-color shadow' : ''}`}>
+                            className={`inline-flex cursor-pointer items-center gap-2 rounded border px-3 py-2 hover:shadow ${activeTab === 3 ? 'tab-color shadow' : ''}`}>
                             রিসোর্স
                         </a>
                     </li>
@@ -57,7 +65,7 @@ const CourseTab = () => {
             </div>
             <div className="py-3">
                 <div className={`${activeTab === 0 ? 'block' : 'hidden'} transition-opacity duration-600`}>
-                    <Module />
+                    <Module data={data} />
                 </div>
                 <div className={`${activeTab === 1 ? 'block' : 'hidden'} transition-opacity duration-600`}>
                     <AllAssignments data={data} />

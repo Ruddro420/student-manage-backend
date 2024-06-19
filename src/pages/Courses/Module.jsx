@@ -1,27 +1,12 @@
+/* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
-import axios from "axios";
+import { useState } from "react";
 import Modal from "../../components/Modal/Modal";
-import Loader from "../../components/Loader/Loader";
 
-const Module = () => {
-    const [data, setData] = useState([]);
+const Module = ({ data }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [modalData, setModalData] = useState();
-    const [loading, setLoading] = useState(true); // Loader state
-
-    // Get module data
-    useEffect(() => {
-        axios.get('../../../data/module.json')
-            .then(function (response) {
-                setData(response.data);
-                setLoading(false); // Set loading to false when data is fetched
-            })
-            .catch(function (error) {
-                console.log(error);
-                setLoading(false); // Set loading to false even if there's an error
-            });
-    }, []);
+     // Loader state
 
     // Modal function
     const modalHandler = (id) => {
@@ -31,11 +16,7 @@ const Module = () => {
 
     return (
         <div className="grid gap-10 mb-8 md:grid-cols-2">
-            {loading ? (
-                <div className="flex items-center justify-center w-full h-full">
-                    <Loader /> {/* Show loader while data is being fetched */}
-                </div>
-            ) : (
+            {(
                 data.map(item => (
                     <div key={item.id}>
                         <div className="w-full mx-auto max-w-md overflow-hidden rounded-lg bg-white shadow border-2 border-[#E5E7EB] border-transparent hover:border-[#12B76A] transition duration-300">
