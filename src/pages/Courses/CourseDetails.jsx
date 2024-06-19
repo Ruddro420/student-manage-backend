@@ -2,7 +2,7 @@ import CourseTab from "./CourseTab";
 
 const CourseDetails = () => {
     return (
-        <div className="container px-6 mx-auto grid">
+        <div className=" px-6 mx-auto grid">
             <h2 className="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
                 ওয়েব ডিজাইন (Web Design & Development)
             </h2>
@@ -15,7 +15,7 @@ const CourseDetails = () => {
                 </div>
                 <div className="flex items-center" style={{ width: "40%" }}>
                     <div className="bg-gray-200 rounded-full h-2.5 dark:bg-gray-700" style={{ width: "55%" }}>
-                        <div className="bg-[#1D2939] h-2.5 rounded-full" style={{ width: "20%" }}></div>
+                        <div className="bg-[#1D2939] h-2.5 rounded-full" style={{ width: "2%" }}></div>
                     </div>
                     <div style={{ marginLeft: "10px" }}>
                         ৩ / ৪ সপ্তাহ শেষ
