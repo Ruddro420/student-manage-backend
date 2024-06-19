@@ -9,6 +9,7 @@ import Recording from "../pages/Recording/Recording";
 import Resources from "../pages/Resources/Resources";
 import Performance from "../pages/Performance/Performance";
 import CourseDetails from "../pages/Courses/CourseDetails";
+import ClassSummary from "../pages/Courses/ClassSummary";
 
 export const router = createBrowserRouter([
     {
@@ -42,6 +43,10 @@ export const router = createBrowserRouter([
             {
                 path: "/dashboard/course-details",
                 element: <CourseDetails />,
+            },
+            {
+                path: "/dashboard/class-summary/:id",
+                element: <ClassSummary />,
             },
         ],
     },

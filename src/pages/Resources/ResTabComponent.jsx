@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import LiveClass from './LiveClass';
+import ResourceTable from '../../components/Table/ResourceTable';
 import NoDataFound from '../../components/NoDataFound/NoDataFound';
 
-const TabComponent = () => {
+const ResTabComponent = () => {
     const [activeTab, setActiveTab] = useState(0);
 
     return (
@@ -14,7 +14,7 @@ const TabComponent = () => {
                             onClick={() => setActiveTab(0)}
                             className={`inline-flex cursor-pointer items-center gap-2 rounded border px-3 py-2 hover:shadow ${activeTab === 0 ? 'tab-color shadow' : ''}`}
                         >
-                            লাইভ ক্লাস
+                            সব
                         </a>
                     </li>
                     <li>
@@ -22,26 +22,16 @@ const TabComponent = () => {
                             onClick={() => setActiveTab(1)}
                             className={`inline-flex cursor-pointer items-center gap-2 rounded border px-3 py-2  hover:shadow ${activeTab === 1 ? 'tab-color shadow' : ''}`}
                         >
-                            সাপোর্ট ক্লাস
+                            বোনাস
                         </a>
                     </li>
-                    <li>
-                        <a
-                            onClick={() => setActiveTab(2)}
-                            className={`inline-flex cursor-pointer items-center gap-2 rounded border px-3 py-2  hover:shadow ${activeTab === 2 ? 'tab-color shadow' : ''}`}
-                        >
-                            বোনাস ক্লাস
-                        </a>
-                    </li>
-
                 </ul>
             </div>
             <div className="py-3">
-                <div className={`${activeTab === 0 ? 'block' : 'hidden'} transition-opacity duration-600`}><LiveClass /></div>
-                <div className={`${activeTab === 1 ? 'block' : 'hidden'} transition-opacity duration-600`}>
-                    <NoDataFound />
+                <div className={`${activeTab === 0 ? 'block' : 'hidden'} transition-opacity duration-600`}>
+                    <ResourceTable />
                 </div>
-                <div className={`${activeTab === 2 ? 'block' : 'hidden'} transition-opacity duration-600`}>
+                <div className={`${activeTab === 1 ? 'block' : 'hidden'} transition-opacity duration-600`}>
                     <NoDataFound />
                 </div>
             </div>
@@ -49,4 +39,4 @@ const TabComponent = () => {
     );
 };
 
-export default TabComponent;
+export default ResTabComponent;

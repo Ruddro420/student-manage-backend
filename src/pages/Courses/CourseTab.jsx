@@ -1,13 +1,28 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import LiveClass from '../Recording/LiveClass';
 import Module from './Module';
+import axios from 'axios';
+import AllAssignments from './AllAssignments';
+import ResourceTable from "../../components/Table/ResourceTable";
 
 const CourseTab = () => {
     const [activeTab, setActiveTab] = useState(0);
+    const [data, setData] = useState([])
+    // get module data
+    useEffect(() => {
+        axios.get('../../../public/data/module.json')
+            .then(function (response) {
+                setData(response.data);
+            })
+            .catch(function (error) {
+                console.log(error);
+            })
+
+    }, [])
 
     return (
         <div>
-            <div className="overflow-hidden rounded-xl p-1">
+            <div className="overflow-hidden rounded-xl p-1 mb-3">
                 <ul className="flex items-center gap-2 text-sm font-medium">
                     <li>
                         <a
@@ -41,10 +56,18 @@ const CourseTab = () => {
                 </ul>
             </div>
             <div className="py-3">
-                <div className={`${activeTab === 0 ? 'block' : 'hidden'} transition-opacity duration-600`}><Module /></div>
-                <div className={`${activeTab === 1 ? 'block' : 'hidden'} transition-opacity duration-600`}>Assingment</div>
-                <div className={`${activeTab === 2 ? 'block' : 'hidden'} transition-opacity duration-600`}><LiveClass /></div>
-                <div className={`${activeTab === 3 ? 'block' : 'hidden'} transition-opacity duration-600`}>Resources</div>
+                <div className={`${activeTab === 0 ? 'block' : 'hidden'} transition-opacity duration-600`}>
+                    <Module />
+                </div>
+                <div className={`${activeTab === 1 ? 'block' : 'hidden'} transition-opacity duration-600`}>
+                    <AllAssignments data={data} />
+                </div>
+                <div className={`${activeTab === 2 ? 'block' : 'hidden'} transition-opacity duration-600`}>
+                    <LiveClass data={data} />
+                </div>
+                <div className={`${activeTab === 3 ? 'block' : 'hidden'} transition-opacity duration-600`}>
+                    <ResourceTable data={data} />
+                </div>
             </div>
         </div>
     );
