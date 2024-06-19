@@ -7,7 +7,7 @@ const LiveClass = () => {
     const [data, setData] = useState([])
     // get module data
     useEffect(() => {
-        axios.get('../../../public/data/module.json')
+        axios.get('../../../data/module.json')
             .then(function (response) {
                 setData(response.data);
             })

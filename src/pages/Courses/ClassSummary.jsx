@@ -8,7 +8,7 @@ const ClassSummary = () => {
     const [data, setData] = useState([])
     // get module data
     useEffect(() => {
-        axios.get('../../../public/data/module.json')
+        axios.get('../../../data/module.json')
             .then(function (response) {
                 const findData = response.data.find(item => item.id == id.id)
                 setData(findData);
@@ -38,7 +38,7 @@ const ClassSummary = () => {
                 <h3 className="text-2xl text-gray-900 font-extrabold text-left ml-3 mt-5">স্টাডি প্ল্যান</h3>
             </div>
             {/* Course Summary Tab */}
-            <CourseSummaryTab data={data}/>
+            <CourseSummaryTab data={data} />
         </>
     );
 };
