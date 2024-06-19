@@ -2,11 +2,12 @@
 import axios from "axios";
 import { Play } from "lucide-react";
 import { useEffect, useState } from "react";
+import data from '../../../data/module.json'
 
 const LiveClass = () => {
-    const [data, setData] = useState([])
+    //const [data, setData] = useState([])
     // get module data
-    useEffect(() => {
+    /* useEffect(() => {
         axios.get('../../../data/module.json')
             .then(function (response) {
                 setData(response.data);
@@ -15,7 +16,7 @@ const LiveClass = () => {
                 console.log(error);
             })
 
-    }, [])
+    }, []) */
     return (
         <>
         {data?.map(module => (

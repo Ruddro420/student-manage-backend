@@ -2,22 +2,25 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import CourseSummaryTab from "./CourseSummaryTab";
+import getdata from '../../../data/module.json'
 
 const ClassSummary = () => {
     const id = useParams();
     const [data, setData] = useState([])
     // get module data
     useEffect(() => {
-        axios.get('../../../data/module.json')
+        const findData = getdata.find(item => item.id == id.id)
+                setData(findData);
+       /*  axios.get('../../../data/module.json')
             .then(function (response) {
                 const findData = response.data.find(item => item.id == id.id)
                 setData(findData);
             })
             .catch(function (error) {
                 console.log(error);
-            })
+            }) */
     }, [id])
-    console.log(data);
+    //console.log(data);
     return (
         <>
             <div className="w-full overflow-hidden bg-white shadow border-2 border-[#E5E7EB] border-transparent">

@@ -2,11 +2,12 @@
 import axios from "axios";
 import { Eye } from "lucide-react";
 import { useEffect, useState } from "react";
+import data from '../../../data/module.json'
 
 const ResourceTable = () => {
-    const [data, setData] = useState([])
+    //const [data, setData] = useState([])
     // get module data
-    useEffect(() => {
+   /*  useEffect(() => {
         axios.get('../../../data/module.json')
             .then(function (response) {
                 setData(response.data);
@@ -14,7 +15,7 @@ const ResourceTable = () => {
             .catch(function (error) {
                 console.log(error);
             })
-    }, [])
+    }, []) */
     return (
         <>
             {data?.map(module => (
