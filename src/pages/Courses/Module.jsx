@@ -6,7 +6,7 @@ import Modal from "../../components/Modal/Modal";
 const Module = ({ data }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [modalData, setModalData] = useState();
-     // Loader state
+    // Loader state
 
     // Modal function
     const modalHandler = (id) => {
@@ -15,21 +15,21 @@ const Module = ({ data }) => {
     };
 
     return (
-        <div className="grid gap-10 mb-8 md:grid-cols-2">
+        <div className="grid gap-10 mb-8 md:grid-cols-3">
             {(
                 data.map(item => (
                     <div key={item.id}>
-                        <div className="w-full mx-auto max-w-md overflow-hidden rounded-lg bg-white shadow border-2 border-[#E5E7EB] border-transparent hover:border-[#12B76A] transition duration-300">
+                        <div className="w-full max-w-md overflow-hidden rounded-lg bg-white shadow border-2 border-[#E5E7EB] border-transparent hover:border-[#12B76A] transition duration-300">
                             <div className="p-4">
-                                <div className="flex justify-between items-center">
+                                <div className="flex justify-between items-start">
                                     <div className="bg-[#12B76A] text-white px-3 py-1 text-center inline-block rounded-lg mb-3">
                                         <h3 className="text-xl">মডিউল</h3>
                                         <h2 className="text-xl font-extrabold">{item.count}</h2>
                                     </div>
                                     <div>
                                         <div className="bg-[#9333EA] text-white px-3 py-1 text-center inline-block rounded-lg mb-3">
-                                            <h3 className="text-xl">{item.days}</h3>
-                                            <h2 className="text-xl font-extrabold">{item.status}</h2>
+                                            {/*    <h3 className="text-xl">{item.days}</h3> */}
+                                            <h2 className="text-xl">{item.status}</h2>
                                         </div>
                                     </div>
                                 </div>

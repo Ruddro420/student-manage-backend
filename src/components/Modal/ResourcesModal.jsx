@@ -1,9 +1,8 @@
 /* eslint-disable react/prop-types */
 
-import { ClipboardCheckIcon, Link, MousePointer } from "lucide-react";
+import { Link, MousePointer } from "lucide-react";
 
 const ResourcesModal = ({ isOpen, setIsOpen, modalData }) => {
-    console.log(modalData);
     return (
         <div className="relative z-10">
 
@@ -39,7 +38,7 @@ const ResourcesModal = ({ isOpen, setIsOpen, modalData }) => {
                                     <div className="mt-8">
                                         <h4 className="text-[#12B76A] mb-3">{modalData.title}</h4>
                                         <p>আপনার রিসোর্স সমূহ আপনি সবুজ রঙয়ের বাটনে ক্লিক করে ডাউনলোড করতে পারবেন !</p>
-                                    </div> 
+                                    </div>
                                     <div className="mt-5">
                                         <label className="block text-sm">
                                             <div className="flex justify-between">

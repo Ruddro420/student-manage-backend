@@ -1,8 +1,9 @@
 /* eslint-disable react/prop-types */
 
-import { Play } from "lucide-react";
+import {  Play } from "lucide-react";
+import { Link } from "react-router-dom";
 
-const ClassSummaryRecording = ({data}) => {
+const ClassSummaryRecording = ({ data }) => {
     return (
         <>
             <div>
@@ -29,10 +30,14 @@ const ClassSummaryRecording = ({data}) => {
                                         <td className="px-4 py-3 text-sm">
                                             {item.date}
                                         </td>
-                                        <td className="px-4 py-3 text-sm flex items-center bg-[#F3F4F6] cursor-pointer">
-                                            <span className="mr-1">দেখুন</span>
-                                            <Play />
-                                        </td>
+                                        <Link to={`/dashboard/class-recording/${item.id}`}>
+                                            <td className="px-4 py-3 text-sm flex items-center bg-[#F3F4F6] cursor-pointer w-1/3 rounded m-2 hover:bg-slate-400">
+                                                <div className="flex items-center">
+                                                    <span className="mr-1">দেখুন</span>
+                                                    <Play />
+                                                </div>
+                                            </td>
+                                        </Link>
                                     </tr>
                                 ))}
                             </tbody>

@@ -1,4 +1,4 @@
-import { ArrowRightFromLine } from "lucide-react";
+import {  ArrowRightFromLine } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Courses = () => {
@@ -9,7 +9,7 @@ const Courses = () => {
             </h2>
 
             <div className="grid gap-10 mb-8 md:grid-cols-2">
-                <div className="mx-auto max-w-md overflow-hidden rounded-lg bg-white shadow m-5">
+                <div className="max-w-md overflow-hidden rounded-lg bg-white shadow">
                     <img
                         src="https://images.unsplash.com/photo-1552581234-26160f608093?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80"
                         className="aspect-video w-full object-cover"
@@ -24,8 +24,8 @@ const Courses = () => {
                             <h3 className="text-xl font-medium text-gray-900 mt-5">ওয়েব ডিজাইন (Web Design & Development)</h3>
                         </div>
                         <div>
-                            <Link to='/dashboard/course-details' className="w-full flex items-center justify-center bg-black text-white py-2 rounded-md mt-4">
-                                এগিয়ে যাই <ArrowRightFromLine className="ml-2" />
+                            <Link to='/dashboard/course-details' className="hover:bg-slate-500 w-full flex items-center justify-center bg-black text-white py-2 rounded-md mt-4">
+                                এগিয়ে যাই <ArrowRightFromLine className="ml-3"/>
                             </Link>
                         </div>
                     </div>

@@ -61,7 +61,6 @@ const ResourceTable = () => {
                                                     </div>
                                                 </td>
                                             </button>
-
                                         </tr>
                                     ))}
                                 </tbody>

@@ -1,0 +1,39 @@
+#performance .circle-big {
+    position: relative;
+    display: inline-block;
+    width: 120px;
+    height: 120px;
+}
+
+#performance .circle-big .text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#performance .circle-big .small {
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+#performance svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+#performance svg circle {
+    fill: none;
+}
+
+#performance .bg {
+    stroke: #e6e6e6;
+}
+
+#performance .progress {
+    transition: stroke-dashoffset 0.5s;
+}
