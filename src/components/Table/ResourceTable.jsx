@@ -1,21 +1,28 @@
 /* eslint-disable react/prop-types */
-import axios from "axios";
 import { Eye } from "lucide-react";
-import { useEffect, useState } from "react";
 import data from '../../../data/module.json'
+import ResourcesModal from "../Modal/ResourcesModal";
+import { useState } from "react";
 
 const ResourceTable = () => {
+    const [isOpen, setIsOpen] = useState(false);
+    const [modalData, setModalData] = useState();
     //const [data, setData] = useState([])
     // get module data
-   /*  useEffect(() => {
-        axios.get('../../../data/module.json')
-            .then(function (response) {
-                setData(response.data);
-            })
-            .catch(function (error) {
-                console.log(error);
-            })
-    }, []) */
+    /*  useEffect(() => {
+         axios.get('../../../data/module.json')
+             .then(function (response) {
+                 setData(response.data);
+             })
+             .catch(function (error) {
+                 console.log(error);
+             })
+     }, []) */
+    // Modal function
+    const modalHandler = (id) => {
+        setIsOpen(true);
+        setModalData(id);
+    };
     return (
         <>
             {data?.map(module => (
@@ -46,10 +53,15 @@ const ResourceTable = () => {
                                             <td className="px-4 py-3 text-sm">
                                                 {item.date}
                                             </td>
-                                            <td className="px-4 py-3 text-sm flex items-center bg-[#F3F4F6] cursor-pointer">
-                                                <span className="mr-1">দেখুন</span>
-                                                <Eye />
-                                            </td>
+                                            <button className="px-4 py-3 text-sm flex items-center bg-[#F3F4F6] cursor-pointer w-1/3 rounded m-2 hover:bg-slate-400" onClick={() => modalHandler(item)}>
+                                                <td >
+                                                    <div className="flex items-center">
+                                                        <span className="mr-1">চেক করুন</span>
+                                                        <Eye />
+                                                    </div>
+                                                </td>
+                                            </button>
+
                                         </tr>
                                     ))}
                                 </tbody>
@@ -58,6 +70,7 @@ const ResourceTable = () => {
                     </div>
                 </div>
             ))}
+            <ResourcesModal isOpen={isOpen} setIsOpen={setIsOpen} modalData={modalData}/>
         </>
     );
 };

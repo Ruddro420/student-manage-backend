@@ -2,7 +2,6 @@
 
 const Modal = ({ isOpen, setIsOpen, modalData }) => {
 
-    console.log(modalData);
     return (
         <div className="relative z-10">
 
