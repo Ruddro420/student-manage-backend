@@ -1,244 +1,243 @@
 [
-    {
-      "id": "1",
-      "title": "মডিউল ১",
-      "count": "১",
-      "status": "অনগোয়িং",
-      "days": "শনি,সোম,বুধ",
-      "heading": "শুরুর আগের শুরু",
-      "study_plan_link": "/dashboard/course-details",
-      "class_feedback_link": "/dashboard/course-details",
-      "description": "This module introduces the basics and sets the foundation for future lessons.",
-      "class": [
-        {
-          "id": 1,
-          "title": "ব্যাসিক লিড জেনারেশন",
-          "link": "https://youtu.be/TMNESP-F9E0?si=Zu-V0x9MQSWB7qYQ",
-          "date":"6/19/2024"
-        },
-        {
-          "id": 2,
-          "title": "ব্যাসিক ডাটা এন্ট্রি",
-          "link": "https://youtu.be/6SkQ-srIJVM?si=etctHlN6pqox0NXk",
-          "date":"6/19/2024"
-        }
-      ],
-      "assignments": [
-        {
-          "id": 1,
-          "title": "বি ২ বি লিড কালেক্ট করতে হবে",
-          "description": "সঠিক ভাবে লিড কালেক্ট করে গুগল শিটে এড করে শুধু লিংক জমা দিতে হবে",
-          "deadline": "6/19/2024"
-        },
-        {
-          "id": 2,
-          "title": "ব্যাসিক ডাটা এন্ট্রি",
-          "description": "https://youtu.be/6SkQ-srIJVM?si=etctHlN6pqox0NXk",
-          "deadline": "6/19/2024"
-        }
-      ],
-      "resources": [
-        {
-          "id": 1,
-          "title": "টুলস নেম - নাইমি",
-          "link": "https://youtu.be/midterm-answers",
-          "date":"6/19/2024"
-        }
-      ]
-    },
-    {
-      "id": "2",
-      "title": "মডিউল ২",
-      "count": "২",
-      "status": "অনগোয়িং",
-      "days": "রবি,মঙ্গল,বৃহস্পতি",
-      "heading": "মধ্যবর্তী পরীক্ষা",
-      "study_plan_link": "/dashboard/course-details",
-      "class_feedback_link": "/dashboard/course-details",
-      "description": "This module covers the intermediate topics and prepares students for mid-term assessments.",
-      "class": [
-        {
-          "id": 3,
-          "title": "মধ্যবর্তী প্রস্তুতি",
-          "link": "https://youtu.be/midterm-preparation",
-          "date":"6/19/2024"
-        },
-        {
-          "id": 4,
-          "title": "মধ্যবর্তী পরীক্ষা",
-          "link": "https://youtu.be/midterm-exam",
-          "date":"6/19/2024"
-        }
-      ],
-      "assignments": [
-        {
-          "id": 3,
-          "title": "মধ্যবর্তী পরীক্ষার প্রশ্নপত্র তৈরি",
-          "description": "মধ্যবর্তী পরীক্ষার জন্য প্রশ্নপত্র তৈরি করুন এবং জমা দিন",
-          "deadline": "6/19/2024"
-        },
-        {
-          "id": 4,
-          "title": "মধ্যবর্তী পরীক্ষার উত্তরপত্র",
-          "description": "https://youtu.be/midterm-answers",
-          "deadline": "6/19/2024"
-        }
-      ],
-      "resources": [
-        {
-          "id": 1,
-          "title": "টুলস নেম - নাইমি",
-          "link": "https://youtu.be/midterm-answers",
-          "date":"6/19/2024"
-        }
-      ]
-    },
-    {
-      "id": "3",
-      "title": "মডিউল ৩",
-      "count": "৩",
-      "status": "অনগোয়িং",
-      "days": "শনি,মঙ্গল,শুক্র",
-      "heading": "প্রায় সমাপ্তি",
-      "study_plan_link": "/dashboard/course-details",
-      "class_feedback_link": "/dashboard/course-details",
-      "description": "This module focuses on advanced topics and gets students ready for final evaluations.",
-      "class": [
-        {
-          "id": 5,
-          "title": "উন্নত লিড জেনারেশন",
-          "link": "https://youtu.be/advanced-lead-generation",
-          "date":"6/19/2024"
-        },
-        {
-          "id": 6,
-          "title": "উন্নত ডাটা এন্ট্রি",
-          "link": "https://youtu.be/advanced-data-entry",
-          "date":"6/19/2024"
-        }
-      ],
-      "assignments": [
-        {
-          "id": 5,
-          "title": "বি ২ বি উন্নত লিড কালেক্ট করতে হবে",
-          "description": "উন্নত লিড কালেক্ট করে গুগল শিটে এড করে শুধু লিংক জমা দিতে হবে",
-          "deadline": "6/19/2024"
-        },
-        {
-          "id": 6,
-          "title": "উন্নত ডাটা এন্ট্রি",
-          "description": "https://youtu.be/advanced-data-entry",
-          "deadline": "6/19/2024"
-        }
-      ],
-      "resources": [
-        {
-          "id": 1,
-          "title": "টুলস নেম - নাইমি",
-          "link": "https://youtu.be/midterm-answers",
-          "date":"6/19/2024"
-        }
-      ]
-    },
-    {
-      "id": "4",
-      "title": "মডিউল ৪",
-      "count": "৪",
-      "status": "অনগোয়িং",
-      "days": "সোম,বৃহস্পতি,শুক্র",
-      "heading": "ফাইনাল প্রস্তুতি",
-      "study_plan_link": "/dashboard/course-details",
-      "class_feedback_link": "/dashboard/course-details",
-      "description": "This module helps students with final preparation, ensuring all topics are well understood.",
-      "class": [
-        {
-          "id": 7,
-          "title": "ফাইনাল পরীক্ষার প্রস্তুতি",
-          "link": "https://youtu.be/final-exam-preparation",
-          "date":"6/19/2024"
-        },
-        {
-          "id": 8,
-          "title": "ফাইনাল মক পরীক্ষা",
-          "link": "https://youtu.be/final-mock-exam",
-          "date":"6/19/2024"
-        }
-      ],
-      "assignments": [
-        {
-          "id": 7,
-          "title": "ফাইনাল পরীক্ষার প্রশ্নপত্র তৈরি",
-          "description": "ফাইনাল পরীক্ষার জন্য প্রশ্নপত্র তৈরি করুন এবং জমা দিন",
-          "deadline": "6/19/2024"
-        },
-        {
-          "id": 8,
-          "title": "ফাইনাল পরীক্ষার উত্তরপত্র",
-          "description": "https://youtu.be/final-exam-answers",
-          "deadline": "6/19/2024"
-        }
-      ],
-      "resources": [
-        {
-          "id": 1,
-          "title": "টুলস নেম - নাইমি",
-          "link": "https://youtu.be/midterm-answers",
-          "date":"6/19/2024"
-        }
-      ]
-    },
-    {
-      "id": "5",
-      "title": "মডিউল ৫",
-      "count": "৫",
-      "status": "অনগোয়িং",
-      "days": "শনি,রবি,মঙ্গল",
-      "heading": "সংশোধন ও পুনরাবৃত্তি",
-      "study_plan_link": "/dashboard/course-details",
-      "class_feedback_link": "/dashboard/course-details",
-      "description": "This module focuses on revision and consolidation of all topics covered.",
-      "class": [
-        {
-          "id": 9,
-          "title": "ফাইনাল সংশোধন",
-          "link": "https://youtu.be/final-revision",
-          "date":"6/19/2024"
-        },
-        {
-          "id": 10,
-          "title": "ফাইনাল পুনরাবৃত্তি",
-          "link": "https://youtu.be/final-consolidation",
-          "date":"6/19/2024"
-        }
-      ],
-      "assignments": [
-        {
-          "id": 9,
-          "title": "ফাইনাল সংশোধন পরীক্ষা",
-          "description": "ফাইনাল সংশোধন পরীক্ষা নিন এবং জমা দিন",
-          "deadline": "6/19/2024"
-        },
-        {
-          "id": 10,
-          "title": "ফাইনাল পুনরাবৃত্তি পরীক্ষা",
-          "description": "https://youtu.be/final-consolidation-exam",
-          "deadline": "6/19/2024"
-        }
-      ],
-      "resources": [
-        {
-          "id": 1,
-          "title": "টুলস নেম - নাইমি",
-          "link": "https://youtu.be/midterm-answers",
-          "date":"6/19/2024"
-        },
-        {
-          "id": 2,
-          "title": "টুলস নেম - নাইমি",
-          "link": "https://youtu.be/midterm-answers",
-          "date":"6/19/2024"
-        }
-      ]
-    }
-  ]
-  
+  {
+    "id": "1",
+    "title": "মডিউল ১",
+    "count": "১",
+    "status": "অনগোয়িং",
+    "days": "শনি,সোম,বুধ",
+    "heading": "শুরুর আগের শুরু",
+    "study_plan_link": "/dashboard/course-details",
+    "class_feedback_link": "/dashboard/course-details",
+    "description": "This module introduces the basics and sets the foundation for future lessons.",
+    "class": [
+      {
+        "id": 1,
+        "title": "ব্যাসিক লিড জেনারেশন",
+        "link": "https://youtu.be/TMNESP-F9E0?si=Zu-V0x9MQSWB7qYQ",
+        "date":"6/19/2024"
+      },
+      {
+        "id": 2,
+        "title": "ব্যাসিক ডাটা এন্ট্রি",
+        "link": "https://youtu.be/6SkQ-srIJVM?si=etctHlN6pqox0NXk",
+        "date":"6/19/2024"
+      }
+    ],
+    "assignments": [
+      {
+        "id": 1,
+        "title": "বি ২ বি লিড কালেক্ট করতে হবে",
+        "description": "Develop a PHP script named grade_calculator.php that computes the average of three test scores and determines the corresponding letter grade.Create a form where the user can input three test scores. Calculate the average and display it along with the corresponding grade (A, B, C, D, F).Or, declare 3 variable test scores and calculate the average and display it along with the corresponding grade (A, B, C, D, F)",
+        "deadline": "6/19/2024"
+      },
+      {
+        "id": 2,
+        "title": "ব্যাসিক ডাটা এন্ট্রি",
+        "description": "https://youtu.be/6SkQ-srIJVM?si=etctHlN6pqox0NXk",
+        "deadline": "6/19/2024"
+      }
+    ],
+    "resources": [
+      {
+        "id": 1,
+        "title": "টুলস নেম - নাইমি",
+        "link": "https://youtu.be/midterm-answers",
+        "date":"6/19/2024"
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "title": "মডিউল ২",
+    "count": "২",
+    "status": "অনগোয়িং",
+    "days": "রবি,মঙ্গল,বৃহস্পতি",
+    "heading": "মধ্যবর্তী পরীক্ষা",
+    "study_plan_link": "/dashboard/course-details",
+    "class_feedback_link": "/dashboard/course-details",
+    "description": "This module covers the intermediate topics and prepares students for mid-term assessments.",
+    "class": [
+      {
+        "id": 3,
+        "title": "মধ্যবর্তী প্রস্তুতি",
+        "link": "https://youtu.be/midterm-preparation",
+        "date":"6/19/2024"
+      },
+      {
+        "id": 4,
+        "title": "মধ্যবর্তী পরীক্ষা",
+        "link": "https://youtu.be/midterm-exam",
+        "date":"6/19/2024"
+      }
+    ],
+    "assignments": [
+      {
+        "id": 3,
+        "title": "মধ্যবর্তী পরীক্ষার প্রশ্নপত্র তৈরি",
+        "description": "মধ্যবর্তী পরীক্ষার জন্য প্রশ্নপত্র তৈরি করুন এবং জমা দিন",
+        "deadline": "6/19/2024"
+      },
+      {
+        "id": 4,
+        "title": "মধ্যবর্তী পরীক্ষার উত্তরপত্র",
+        "description": "https://youtu.be/midterm-answers",
+        "deadline": "6/19/2024"
+      }
+    ],
+    "resources": [
+      {
+        "id": 1,
+        "title": "টুলস নেম - নাইমি",
+        "link": "https://youtu.be/midterm-answers",
+        "date":"6/19/2024"
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "title": "মডিউল ৩",
+    "count": "৩",
+    "status": "অনগোয়িং",
+    "days": "শনি,মঙ্গল,শুক্র",
+    "heading": "প্রায় সমাপ্তি",
+    "study_plan_link": "/dashboard/course-details",
+    "class_feedback_link": "/dashboard/course-details",
+    "description": "This module focuses on advanced topics and gets students ready for final evaluations.",
+    "class": [
+      {
+        "id": 5,
+        "title": "উন্নত লিড জেনারেশন",
+        "link": "https://youtu.be/advanced-lead-generation",
+        "date":"6/19/2024"
+      },
+      {
+        "id": 6,
+        "title": "উন্নত ডাটা এন্ট্রি",
+        "link": "https://youtu.be/advanced-data-entry",
+        "date":"6/19/2024"
+      }
+    ],
+    "assignments": [
+      {
+        "id": 5,
+        "title": "বি ২ বি উন্নত লিড কালেক্ট করতে হবে",
+        "description": "উন্নত লিড কালেক্ট করে গুগল শিটে এড করে শুধু লিংক জমা দিতে হবে",
+        "deadline": "6/19/2024"
+      },
+      {
+        "id": 6,
+        "title": "উন্নত ডাটা এন্ট্রি",
+        "description": "https://youtu.be/advanced-data-entry",
+        "deadline": "6/19/2024"
+      }
+    ],
+    "resources": [
+      {
+        "id": 1,
+        "title": "টুলস নেম - নাইমি",
+        "link": "https://youtu.be/midterm-answers",
+        "date":"6/19/2024"
+      }
+    ]
+  },
+  {
+    "id": "4",
+    "title": "মডিউল ৪",
+    "count": "৪",
+    "status": "অনগোয়িং",
+    "days": "সোম,বৃহস্পতি,শুক্র",
+    "heading": "ফাইনাল প্রস্তুতি",
+    "study_plan_link": "/dashboard/course-details",
+    "class_feedback_link": "/dashboard/course-details",
+    "description": "This module helps students with final preparation, ensuring all topics are well understood.",
+    "class": [
+      {
+        "id": 7,
+        "title": "ফাইনাল পরীক্ষার প্রস্তুতি",
+        "link": "https://youtu.be/final-exam-preparation",
+        "date":"6/19/2024"
+      },
+      {
+        "id": 8,
+        "title": "ফাইনাল মক পরীক্ষা",
+        "link": "https://youtu.be/final-mock-exam",
+        "date":"6/19/2024"
+      }
+    ],
+    "assignments": [
+      {
+        "id": 7,
+        "title": "ফাইনাল পরীক্ষার প্রশ্নপত্র তৈরি",
+        "description": "ফাইনাল পরীক্ষার জন্য প্রশ্নপত্র তৈরি করুন এবং জমা দিন",
+        "deadline": "6/19/2024"
+      },
+      {
+        "id": 8,
+        "title": "ফাইনাল পরীক্ষার উত্তরপত্র",
+        "description": "https://youtu.be/final-exam-answers",
+        "deadline": "6/19/2024"
+      }
+    ],
+    "resources": [
+      {
+        "id": 1,
+        "title": "টুলস নেম - নাইমি",
+        "link": "https://youtu.be/midterm-answers",
+        "date":"6/19/2024"
+      }
+    ]
+  },
+  {
+    "id": "5",
+    "title": "মডিউল ৫",
+    "count": "৫",
+    "status": "অনগোয়িং",
+    "days": "শনি,রবি,মঙ্গল",
+    "heading": "সংশোধন ও পুনরাবৃত্তি",
+    "study_plan_link": "/dashboard/course-details",
+    "class_feedback_link": "/dashboard/course-details",
+    "description": "This module focuses on revision and consolidation of all topics covered.",
+    "class": [
+      {
+        "id": 9,
+        "title": "ফাইনাল সংশোধন",
+        "link": "https://youtu.be/final-revision",
+        "date":"6/19/2024"
+      },
+      {
+        "id": 10,
+        "title": "ফাইনাল পুনরাবৃত্তি",
+        "link": "https://youtu.be/final-consolidation",
+        "date":"6/19/2024"
+      }
+    ],
+    "assignments": [
+      {
+        "id": 9,
+        "title": "ফাইনাল সংশোধন পরীক্ষা",
+        "description": "ফাইনাল সংশোধন পরীক্ষা নিন এবং জমা দিন",
+        "deadline": "6/19/2024"
+      },
+      {
+        "id": 10,
+        "title": "ফাইনাল পুনরাবৃত্তি পরীক্ষা",
+        "description": "https://youtu.be/final-consolidation-exam",
+        "deadline": "6/19/2024"
+      }
+    ],
+    "resources": [
+      {
+        "id": 1,
+        "title": "টুলস নেম - নাইমি",
+        "link": "https://youtu.be/midterm-answers",
+        "date":"6/19/2024"
+      },
+      {
+        "id": 2,
+        "title": "টুলস নেম - নাইমি",
+        "link": "https://youtu.be/midterm-answers",
+        "date":"6/19/2024"
+      }
+    ]
+  }
+]

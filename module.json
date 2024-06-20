@@ -27,7 +27,7 @@
         {
           "id": 1,
           "title": "বি ২ বি লিড কালেক্ট করতে হবে",
-          "description": "সঠিক ভাবে লিড কালেক্ট করে গুগল শিটে এড করে শুধু লিংক জমা দিতে হবে",
+          "description": "Develop a PHP script named grade_calculator.php that computes the average of three test scores and determines the corresponding letter grade.Create a form where the user can input three test scores. Calculate the average and display it along with the corresponding grade (A, B, C, D, F).Or, declare 3 variable test scores and calculate the average and display it along with the corresponding grade (A, B, C, D, F)",
           "deadline": "6/19/2024"
         },
         {

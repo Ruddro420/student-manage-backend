@@ -1,10 +1,8 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import LiveClass from '../Recording/LiveClass';
 import Module from './Module';
-import axios from 'axios';
 import AllAssignments from './AllAssignments';
-import ResourceTable from "../../components/Table/ResourceTable";
-import Loader from "../../components/Loader/Loader"; 
+import ResourceTable from "../../components/Table/ResourceTable"; 
 import data from '../../../data/module.json'
 
 const CourseTab = () => {

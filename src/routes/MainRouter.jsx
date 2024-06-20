@@ -10,6 +10,7 @@ import Resources from "../pages/Resources/Resources";
 import Performance from "../pages/Performance/Performance";
 import CourseDetails from "../pages/Courses/CourseDetails";
 import ClassSummary from "../pages/Courses/ClassSummary";
+import Assingment from "../pages/Assingment/Assingment";
 
 export const router = createBrowserRouter([
     {
@@ -47,6 +48,10 @@ export const router = createBrowserRouter([
             {
                 path: "/dashboard/class-summary/:id",
                 element: <ClassSummary />,
+            },
+            {
+                path: "/dashboard/assingment/:id",
+                element: <Assingment />,
             },
         ],
     },
