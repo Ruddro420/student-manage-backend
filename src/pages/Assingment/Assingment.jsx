@@ -17,8 +17,6 @@ const Assingment = () => {
         setGetData(foundAssignment);
     }, [id]);
 
-    console.log(getData.title);
-
     // Render loading state if getData is null
     /*  if (!getData) {
          return <div>Loading...</div>;
@@ -58,7 +56,7 @@ const Assingment = () => {
                                         <Link />
                                     </div>
                                     <input
-                                        className="block w-full text-sm border-purple-400 dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                                        className="block w-full text-sm border-purple-400 dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input text-black"
                                         placeholder="https://docs.google.com/document/d/1NkNqjoKOd6WltifryyJNbYDM3yI1eTzGmQxLG5DDnZM"
                                         type="url"
                                     />

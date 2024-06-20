@@ -11,6 +11,7 @@ import Performance from "../pages/Performance/Performance";
 import CourseDetails from "../pages/Courses/CourseDetails";
 import ClassSummary from "../pages/Courses/ClassSummary";
 import Assingment from "../pages/Assingment/Assingment";
+import VideoPlayer from "../pages/Recording/VideoPlayer";
 
 export const router = createBrowserRouter([
     {
@@ -52,6 +53,10 @@ export const router = createBrowserRouter([
             {
                 path: "/dashboard/assingment/:id",
                 element: <Assingment />,
+            },
+            {
+                path: "/dashboard/class-recording/:id",
+                element: <VideoPlayer />,
             },
         ],
     },

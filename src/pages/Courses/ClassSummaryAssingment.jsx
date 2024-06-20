@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
 import { Eye } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const ClassSummaryAssingment = ({ data }) => {
-    console.log(data);
     return (
         <>
             <div>
@@ -19,20 +19,25 @@ const ClassSummaryAssingment = ({ data }) => {
                             <tbody className="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
                                 {data?.map(item => (
                                     <tr key={item.id} className="text-gray-700 dark:text-gray-400">
-                                        <td className="px-4 py-3">
+                                        <td className="px-4 py-3 w-1/3">
                                             <div className="flex items-center text-sm">
                                                 <div>
                                                     <p className="font-semibold">{item.title}</p>
                                                 </div>
                                             </div>
                                         </td>
-                                        <td className="px-4 py-3 text-sm">
+                                        <td className="px-4 py-3 text-sm w-1/3">
                                             {item.deadline}
                                         </td>
-                                        <td className="px-4 py-3 text-sm flex items-center bg-[#F3F4F6] cursor-pointer">
-                                            <span className="mr-1">দেখুন</span>
-                                            <Eye />
-                                        </td>
+                                        <Link to={`/dashboard/assingment/${item.id}`}>
+                                            <td className="px-4 py-3 text-sm flex items-center justify-between bg-[#F3F4F6] cursor-pointer w-1/3 rounded m-2 hover:bg-slate-400">
+                                                <div className="flex items-center">
+                                                    <span className="mr-1">দেখুন</span>
+                                                    <Eye />
+                                                </div>
+
+                                            </td>
+                                        </Link>
                                     </tr>
                                 ))}
                             </tbody>

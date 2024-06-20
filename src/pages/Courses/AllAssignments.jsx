@@ -33,14 +33,14 @@ const AllAssignments = ({ data }) => {
                                             <td className="px-4 py-3 text-sm w-1/3">
                                                 {assignment.deadline}
                                             </td>
-                                            <td className="px-4 py-3 text-sm flex items-center bg-[#F3F4F6] cursor-pointer w-1/3 rounded m-2 hover:bg-slate-400">
-                                                <Link to={`/dashboard/assingment/${assignment.id}`}>
+                                            <Link to={`/dashboard/assingment/${assignment.id}`}>
+                                                <td className="px-4 py-3 text-sm flex items-center justify-between bg-[#F3F4F6] cursor-pointer w-1/3 rounded m-2 hover:bg-slate-400">
                                                     <div className="flex items-center">
-                                                    <span className="mr-1">দেখুন</span>
-                                                    <Eye />
+                                                        <span className="mr-1">দেখুন</span>
+                                                        <Eye />
                                                     </div>
-                                                </Link>
-                                            </td>
+                                                </td>
+                                            </Link>
                                         </tr>
                                     ))}
                                 </tbody>
