@@ -25,11 +25,7 @@ const CourseTab = () => {
 
     return (
         <div>
-            {/* {loading && (
-                <div className="loader-container">
-                    <Loader /> 
-                </div>
-            )} */}
+            
             <div className="overflow-hidden rounded-xl p-1 mb-3">
                 <ul className="flex items-center gap-2 text-sm font-medium">
                     <li>
