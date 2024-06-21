@@ -58,7 +58,7 @@ const CourseTab = () => {
                     </li>
                 </ul>
             </div>
-            <div className="py-3 max-w-md overflow-hidden">
+            <div className="py-3">
                 <div className={`${activeTab === 0 ? 'block' : 'hidden'} transition-opacity duration-600`}>
                     <Module data={data} />
                 </div>
