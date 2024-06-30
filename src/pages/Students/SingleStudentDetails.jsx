@@ -1,7 +1,17 @@
 import { Eye } from "lucide-react";
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import ScoreModal from "../../components/Modal/ScoreModal";
 
 const SingleStudentDetails = () => {
+    const [isOpen, setIsOpen] = useState(false);
+    const [modalData, setModalData] = useState();
+    // Loader state
+
+    // Modal function
+    const modalHandler = (id) => {
+        setIsOpen(true);
+        setModalData(id);
+    };
     return (
         <div className="container px-6 mx-auto grid">
             <h2 className="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
@@ -34,19 +44,20 @@ const SingleStudentDetails = () => {
                                     <td className="px-4 py-3 text-sm">
                                         ১০
                                     </td>
-                                    <Link className="px-4 py-3 text-sm flex items-center bg-[#F3F4F6] cursor-pointer w-1/3 rounded m-2 hover:bg-slate-400" to='/dashboard/single-student-details/'>
-                                        <td >
+                                    <button onClick={() => modalHandler(1)} className="px-4 py-3 text-sm flex items-center bg-[#F3F4F6] cursor-pointer w-1/3 rounded m-2 hover:bg-slate-400">
+                                        <td>
                                             <div className="flex items-center">
-                                                <span className="mr-1">চেক করুন</span>
+                                                <span className="mr-1">দেখুন</span>
                                                 <Eye />
                                             </div>
                                         </td>
-                                    </Link>
+                                    </button>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
+                <ScoreModal isOpen={isOpen} setIsOpen={setIsOpen} modalData={modalData} />
             </div>
         </div>
 
