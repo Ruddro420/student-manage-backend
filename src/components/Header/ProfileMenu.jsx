@@ -1,8 +1,19 @@
 import  { useState } from 'react';
+import useAuth from '../../hooks/useAuth';
 
 const ProfileMenu = () => {
   const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false);
+  const {logOut} = useAuth()
 
+  const handleLogout = () => {
+    logOut()
+    .then(()=> {
+      
+    })
+    .catch((error) => {
+      console.log(error);
+    })
+  }
   return (
     <li className="relative">
       <div className="relative">
@@ -64,9 +75,9 @@ const ProfileMenu = () => {
               </a>
             </li>
             <li className="flex">
-              <a
+              <div onClick={handleLogout}
                 className="inline-flex items-center w-full px-2 py-1 text-sm font-semibold transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200"
-                href="#"
+             
               >
                 <svg
                   className="w-4 h-4 mr-3"
@@ -81,7 +92,7 @@ const ProfileMenu = () => {
                   <path d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"></path>
                 </svg>
                 <span>Log out</span>
-              </a>
+              </div>
             </li>
           </ul>
         )}

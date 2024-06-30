@@ -11,6 +11,7 @@ import CourseDetails from "../pages/Courses/CourseDetails";
 import ClassSummary from "../pages/Courses/ClassSummary";
 import Assingment from "../pages/Assingment/Assingment";
 import VideoPlayer from "../pages/Recording/VideoPlayer";
+import PrivateRoute from "./PrivateRoute";
 
 export const router = createBrowserRouter([
     {
@@ -19,7 +20,7 @@ export const router = createBrowserRouter([
     },
     {
         path: "/dashboard",
-        element: <MainLayout />,
+        element: <PrivateRoute><MainLayout /></PrivateRoute>,
         children: [
             {
                 path: "/dashboard",
