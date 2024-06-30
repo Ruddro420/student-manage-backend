@@ -1,10 +1,12 @@
 /* eslint-disable react/prop-types */
 import { Eye } from "lucide-react";
 import { Link } from "react-router-dom";
+import AddAssingment from "../Module/AddAssingment";
 
 const AllAssignments = ({ data }) => {
     return (
         <>
+            <AddAssingment />
             {data.map(module => (
                 <div key={module.id} className="module-container">
                     <div className="p-3 border rounded-lg mb-2 mt-5 bg-[#1D2939] text-white">

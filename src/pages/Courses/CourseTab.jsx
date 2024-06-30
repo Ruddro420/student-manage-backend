@@ -4,6 +4,7 @@ import Module from './Module';
 import AllAssignments from './AllAssignments';
 import ResourceTable from "../../components/Table/ResourceTable"; 
 import data from '../../../data/module.json'
+import Students from '../Students/Students';
 
 const CourseTab = () => {
     const [activeTab, setActiveTab] = useState(0);
@@ -56,6 +57,13 @@ const CourseTab = () => {
                             রিসোর্স
                         </a>
                     </li>
+                    <li>
+                        <a
+                            onClick={() => setActiveTab(4)}
+                            className={`inline-flex cursor-pointer items-center gap-2 rounded border px-3 py-2 hover:shadow ${activeTab === 4 ? 'tab-color shadow' : ''}`}>
+                            স্টুডেন্টস
+                        </a>
+                    </li>
                 </ul>
             </div>
             <div className="py-3">
@@ -70,6 +78,9 @@ const CourseTab = () => {
                 </div>
                 <div className={`${activeTab === 3 ? 'block' : 'hidden'} transition-opacity duration-600`}>
                     <ResourceTable data={data} />
+                </div>
+                <div className={`${activeTab === 4 ? 'block' : 'hidden'} transition-opacity duration-600`}>
+                    <Students data={data} />
                 </div>
             </div>
         </div>
