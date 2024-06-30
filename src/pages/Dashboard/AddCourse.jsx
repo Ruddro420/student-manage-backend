@@ -1,7 +1,7 @@
 
 const AddCourse = () => {
     return (
-        <div className="mb-10">
+        <div className="mb-10 bg-white p-5 shadow-sm rounded">
             <h1 className="mb-4 text-xl font-semibold text-gray-700 dark:text-gray-200">
                 Add Course
             </h1>
@@ -33,8 +33,7 @@ const AddCourse = () => {
                 </label>
             </div>
             <button
-                className="block px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
-                to="/dashboard" >
+                className="block px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-[#12B76A] border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">
                Add Course
             </button>
         </div>
