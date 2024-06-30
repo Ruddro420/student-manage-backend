@@ -23,21 +23,29 @@ const Students = () => {
                                     <td className="px-4 py-3">
                                         <div className="flex items-center text-sm">
                                             <div>
-                                                <p className="font-semibold">Ali</p>
+                                                <p className="font-semibold">Ali Fiad Ruddro</p>
                                             </div>
                                         </div>
                                     </td>
                                     <td className="px-4 py-3 text-sm">
                                         01755232541
                                     </td>
-                                    <Link className="px-4 py-3 text-sm flex items-center bg-[#F3F4F6] cursor-pointer w-1/3 rounded m-2 hover:bg-slate-400" to='/dashboard/single-student-details/'>
-                                        <td >
+
+                                    <td className=" w-1/3">
+                                        <div className="flex gap-5">
+                                            <Link className="px-4 py-3 text-sm flex items-center cursor-pointer rounded m-2 hover:bg-slate-400" to='/dashboard/single-student-details/'>
+                                                <div className="flex items-center">
+                                                    <span className="mr-1">চেক করুন</span>
+                                                    <Eye />
+                                                </div>
+                                            </Link>
                                             <div className="flex items-center">
-                                                <span className="mr-1">চেক করুন</span>
+                                                <span className="mr-1">এপ্রুভ করুন</span>
                                                 <Eye />
                                             </div>
-                                        </td>
-                                    </Link>
+                                        </div>
+                                    </td>
+
                                 </tr>
                             </tbody>
                         </table>
