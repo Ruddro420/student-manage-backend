@@ -15,7 +15,7 @@ const Courses = () => {
       setCoures(res.data);
       setLoading(false);
     });
-  });
+  }, [axiosSecure]);
   return (
     <div className="container px-6 mx-auto grid">
       <h2 className="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
@@ -46,7 +46,7 @@ const Courses = () => {
                 </div>
                 <div>
                   <Link
-                    to="/dashboard/course-details"
+                    to={`/dashboard/course-details/${course.id}`}
                     className="hover:bg-slate-500 w-full flex items-center justify-center bg-black text-white py-2 rounded-md mt-4"
                   >
                     এগিয়ে যাই <ArrowRightFromLine className="ml-3" />

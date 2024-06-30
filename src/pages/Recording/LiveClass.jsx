@@ -2,6 +2,7 @@
 import { Play } from "lucide-react";
 import data from '../../../data/module.json'
 import { Link } from "react-router-dom";
+import AddRecording from "../Module/AddRecording";
 
 const LiveClass = () => {
     //const [data, setData] = useState([])
@@ -18,6 +19,7 @@ const LiveClass = () => {
     }, []) */
     return (
         <>
+            <AddRecording />
             {data?.map(module => (
                 <div key={module.id}>
                     <div className="p-3 border rounded-lg mb-2 mt-5 bg-[#1D2939] text-white">

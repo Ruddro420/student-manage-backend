@@ -3,6 +3,7 @@ import { Eye } from "lucide-react";
 import data from '../../../data/module.json'
 import ResourcesModal from "../Modal/ResourcesModal";
 import { useState } from "react";
+import AddResource from "../../pages/Module/AddResource";
 
 const ResourceTable = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -25,6 +26,7 @@ const ResourceTable = () => {
     };
     return (
         <>
+            <AddResource />
             {data?.map(module => (
                 <div key={module.id}>
                     <div className="p-3 border rounded-lg mb-2 mt-5 bg-[#1D2939] text-white">
@@ -69,7 +71,7 @@ const ResourceTable = () => {
                     </div>
                 </div>
             ))}
-            <ResourcesModal isOpen={isOpen} setIsOpen={setIsOpen} modalData={modalData}/>
+            <ResourcesModal isOpen={isOpen} setIsOpen={setIsOpen} modalData={modalData} />
         </>
     );
 };

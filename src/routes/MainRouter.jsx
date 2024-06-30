@@ -12,6 +12,7 @@ import ClassSummary from "../pages/Courses/ClassSummary";
 import Assingment from "../pages/Assingment/Assingment";
 import VideoPlayer from "../pages/Recording/VideoPlayer";
 import PrivateRoute from "./PrivateRoute";
+import SingleStudentDetails from "../pages/Students/SingleStudentDetails";
 
 export const router = createBrowserRouter([
     {
@@ -39,8 +40,8 @@ export const router = createBrowserRouter([
                 element: <Performance />,
             },
             {
-                path: "/dashboard/course-details",
-                element: <CourseDetails />,
+                path: "/dashboard/course-details/:id",
+                element: <CourseDetails/>,
             },
             {
                 path: "/dashboard/class-summary/:id",
@@ -53,6 +54,10 @@ export const router = createBrowserRouter([
             {
                 path: "/dashboard/class-recording/:id",
                 element: <VideoPlayer />,
+            },
+            {
+                path: "/dashboard/single-student-details/",
+                element: <SingleStudentDetails />,
             },
         ],
     },

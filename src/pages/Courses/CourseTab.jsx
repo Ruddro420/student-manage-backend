@@ -4,8 +4,10 @@ import Module from './Module';
 import AllAssignments from './AllAssignments';
 import ResourceTable from "../../components/Table/ResourceTable"; 
 import data from '../../../data/module.json'
+import Students from '../Students/Students';
 
-const CourseTab = () => {
+// eslint-disable-next-line react/prop-types
+const CourseTab = ({course}) => {
     const [activeTab, setActiveTab] = useState(0);
     /* const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true); */
@@ -26,7 +28,7 @@ const CourseTab = () => {
     return (
         <div>
             
-            <div className="rounded-xl p-1 mb-3 max-w-md overflow-hidden">
+            <div className="rounded-xl dark:text-white p-1 mb-3 max-w-md overflow-hidden">
                 <ul className="flex items-center gap-2 text-sm font-medium">
                     <li>
                         <a
@@ -56,11 +58,18 @@ const CourseTab = () => {
                             রিসোর্স
                         </a>
                     </li>
+                    <li>
+                        <a
+                            onClick={() => setActiveTab(4)}
+                            className={`inline-flex cursor-pointer items-center gap-2 rounded border px-3 py-2 hover:shadow ${activeTab === 4 ? 'tab-color shadow' : ''}`}>
+                            স্টুডেন্টস
+                        </a>
+                    </li>
                 </ul>
             </div>
             <div className="py-3">
                 <div className={`${activeTab === 0 ? 'block' : 'hidden'} transition-opacity duration-600`}>
-                    <Module data={data} />
+                    <Module data={course} />
                 </div>
                 <div className={`${activeTab === 1 ? 'block' : 'hidden'} transition-opacity duration-600`}>
                     <AllAssignments data={data} />
@@ -70,6 +79,9 @@ const CourseTab = () => {
                 </div>
                 <div className={`${activeTab === 3 ? 'block' : 'hidden'} transition-opacity duration-600`}>
                     <ResourceTable data={data} />
+                </div>
+                <div className={`${activeTab === 4 ? 'block' : 'hidden'} transition-opacity duration-600`}>
+                    <Students data={data} />
                 </div>
             </div>
         </div>
