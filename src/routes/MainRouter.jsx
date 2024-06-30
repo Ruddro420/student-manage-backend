@@ -3,7 +3,6 @@ import {
 } from "react-router-dom";
 import Courses from "../pages/Dashboard/Courses";
 import MainLayout from "../Layout/MainLayout";
-import Register from "../pages/Login/Register";
 import Login from "../pages/Login/Login";
 import Recording from "../pages/Recording/Recording";
 import Resources from "../pages/Resources/Resources";
@@ -16,10 +15,6 @@ import VideoPlayer from "../pages/Recording/VideoPlayer";
 export const router = createBrowserRouter([
     {
         path: "/",
-        element: <Register />,
-    },
-    {
-        path: "/login",
         element: <Login />,
     },
     {
