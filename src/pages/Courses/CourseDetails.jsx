@@ -12,7 +12,7 @@ const CourseDetails = () => {
     useEffect(() => {
         axiosSecure.get(`/courses/${id}`)
         .then(res =>{
-            console.log(res.data)
+            // console.log(res.data)
             setCourese(res.data)
         })
     }, [axiosSecure, id])
