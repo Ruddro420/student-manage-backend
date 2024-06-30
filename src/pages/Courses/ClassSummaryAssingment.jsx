@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { Eye } from "lucide-react";
 import { Link } from "react-router-dom";
+import { formatDate } from "../../components/Date/date";
 
 const ClassSummaryAssingment = ({ data }) => {
     return (
@@ -27,7 +28,7 @@ const ClassSummaryAssingment = ({ data }) => {
                                             </div>
                                         </td>
                                         <td className="px-4 py-3 text-sm w-1/3">
-                                            {item.deadline}
+                                            {formatDate(new Date(item.deadline))}
                                         </td>
                                         <Link to={`/dashboard/assingment/${item.id}`}>
                                             <td className="px-4 py-3 text-sm flex items-center justify-between bg-[#F3F4F6] cursor-pointer w-1/3 rounded m-2 hover:bg-slate-400">

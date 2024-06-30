@@ -2,7 +2,7 @@ import toast from "react-hot-toast";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 
 // eslint-disable-next-line react/prop-types
-const AddModule = ({courseId}) => {
+const AddModule = ({courseId,updateData}) => {
      const axiosSecure = useAxiosSecure()
 
     const handleSubmit = (e) => {
@@ -10,7 +10,7 @@ const AddModule = ({courseId}) => {
         const formdata = new FormData(e.target);
         let payload = Object.fromEntries(formdata.entries());
         payload = {...payload, courseId};
-        toast.promise(axiosSecure.post('/modules', payload), {
+        toast.promise(axiosSecure.post('/modules', payload).then(()=> updateData()), {
             loading: 'Adding module...',
             success: 'Module added successfully',
             error: 'Failed to add module'

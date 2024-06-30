@@ -2,25 +2,23 @@ import { useParams } from "react-router-dom";
 import data from '../../../data/module.json';
 import { useEffect, useState } from "react";
 import { ClipboardCheckIcon, Link } from "lucide-react";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
+import { formatDate } from "../../components/Date/date";
 
 const Assingment = () => {
-    const [getData, setGetData] = useState([]); // Set initial state to null
-    const { id } = useParams(); // Destructure the id from useParams
+    const [getData, setGetData] = useState([]);
+    const { id } = useParams();
+    const axiosSecure = useAxiosSecure()
 
     /* Get Assignment Data */
     useEffect(() => {
-        let foundAssignment = null;
-        data.some((item) => {
-            foundAssignment = item.assignments.find((assignment) => assignment.id == id);
-            return foundAssignment;
-        });
-        setGetData(foundAssignment);
-    }, [id]);
+        axiosSecure.get(`/courses/assignments/${id}`)
+            .then(res => {
+                setGetData(res.data)
+            })
+    }, [axiosSecure, id])
 
-    // Render loading state if getData is null
-    /*  if (!getData) {
-         return <div>Loading...</div>;
-     } */
+    console.log(getData);
 
     return (
         <div className="container px-6 mx-auto grid">
@@ -30,7 +28,9 @@ const Assingment = () => {
                 {/* Left Bar */}
                 <div>
                     <div className="mt-3 text-justify">
-                        {getData.description}
+                       <p> {getData.description}</p>
+                        <br /><br />
+                        <h5>{getData.link && getData.link}</h5>
                     </div>
                     <div className="mt-8">
                         <p><b>Submission Instruction : Please submit your home work link.</b></p>
@@ -49,7 +49,9 @@ const Assingment = () => {
                             <label className="block text-sm">
                                 <div className="flex justify-between">
                                     <div><span className="text-[#12B76A] dark:text-gray-400"><b>আপনার সাবমিশন</b></span></div>
-                                    <div><h4> <b>ডেডলাইনঃ</b> {getData.deadline}</h4></div>
+                                    <div>
+                                        <h4> <b>ডেডলাইনঃ</b> {formatDate(new Date(getData.deadline))}</h4>
+                                    </div>
                                 </div>
                                 <div className="flex items-center space-x-2 mt-3">
                                     <div className="bg-[#9333EA] text-white px-5 py-2 rounded">

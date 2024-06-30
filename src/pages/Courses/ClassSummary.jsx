@@ -2,25 +2,21 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import CourseSummaryTab from "./CourseSummaryTab";
-import getdata from '../../../data/module.json'
+import useAxiosSecure from "../../hooks/useAxiosSecure";
 
 const ClassSummary = () => {
     const id = useParams();
     const [data, setData] = useState([])
-    // get module data
+    const axiosSecure = useAxiosSecure()
+
     useEffect(() => {
-        const findData = getdata.find(item => item.id == id.id)
-                setData(findData);
-       /*  axios.get('../../../data/module.json')
-            .then(function (response) {
-                const findData = response.data.find(item => item.id == id.id)
-                setData(findData);
+        axiosSecure.get(`/courses/modules/${id.id}`)
+            .then(res => {
+                setData(res.data)
             })
-            .catch(function (error) {
-                console.log(error);
-            }) */
-    }, [id])
-    //console.log(data);
+    }, [axiosSecure, id])
+
+
     return (
         <>
             <div className="w-full overflow-hidden bg-white shadow border-2 border-[#E5E7EB] border-transparent">
@@ -28,10 +24,10 @@ const ClassSummary = () => {
                     <div className="flex items-center">
                         <div className="bg-[#12B76A] text-white px-3 py-1 text-center inline-block rounded-lg">
                             <h3 className="text-xl">মডিউল</h3>
-                            <h2 className="text-xl font-extrabold">{data.count}</h2>
+                            <h2 className="text-xl font-extrabold">{data.id}</h2>
                         </div>
                         <div>
-                            <h3 className="text-2xl text-gray-900 font-extrabold text-left ml-3">{data.heading}</h3>
+                            <h3 className="text-2xl text-gray-900 font-extrabold text-left ml-3">{data.title}</h3>
                         </div>
                     </div>
                 </div>
