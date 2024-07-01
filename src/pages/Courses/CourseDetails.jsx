@@ -11,10 +11,17 @@ const CourseDetails = () => {
 
     useEffect(() => {
         axiosSecure.get(`/courses/${id}`)
+<<<<<<< HEAD
             .then(res => {
                 console.log(res.data)
                 setCourese(res.data)
             })
+=======
+        .then(res =>{
+            // console.log(res.data)
+            setCourese(res.data)
+        })
+>>>>>>> 2c675a6e606627e392f3b7706f6b1b59f667f078
     }, [axiosSecure, id])
 
     const updateData = () => {

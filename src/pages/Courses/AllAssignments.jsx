@@ -4,14 +4,14 @@ import { Link } from "react-router-dom";
 import AddAssingment from "../Module/AddAssingment";
 
 const AllAssignments = ({ data }) => {
-    console.log(data);
+    const {assignments} = data
     return (
         <>
             <AddAssingment course= {data}/>
-            {data.assignments.map(module => (
-                <div key={module.id} className="module-container">
+
+                <div  className="module-container">
                     <div className="p-3 border dark:bg-gray-800 rounded-lg mb-2 mt-5 bg-[#1D2939] text-white">
-                        <h1>{module.title}</h1>
+                        <h1>{data.title}</h1>
                     </div>
                     <div className="w-full overflow-hidden rounded-lg shadow-xs">
                         <div className="w-full overflow-x-auto">
@@ -24,7 +24,7 @@ const AllAssignments = ({ data }) => {
                                     </tr>
                                 </thead>
                                 <tbody className="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
-                                    {module.assignments.map(assignment => (
+                                    {assignments.map(assignment => (
                                         <tr key={assignment.id} className="text-gray-700 dark:text-gray-400">
                                             <td className="px-4 py-3 w-1/3">
                                                 <div className="flex items-center text-sm">
@@ -51,7 +51,7 @@ const AllAssignments = ({ data }) => {
                         </div>
                     </div>
                 </div>
-            ))}
+           
         </>
     );
 };
