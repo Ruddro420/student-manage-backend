@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import CourseTab from "./CourseTab";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import { useEffect, useState } from "react";
+import Spin from "../../components/Loader/Spin";
 
 const CourseDetails = () => {
   const params = useParams();
@@ -39,7 +40,9 @@ const CourseDetails = () => {
           <CourseTab course={course} updateData={updateData} />
         </div>
       ) : (
-        <span>Loding....[Dev: Replace this with spinner]</span>
+        <span>
+          <Spin />
+        </span>
       )}
     </>
   );

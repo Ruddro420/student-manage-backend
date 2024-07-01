@@ -1,7 +1,7 @@
 
 const AddResource = () => {
     return (
-        <div className="mb-10 bg-white p-5 shadow-sm rounded">
+        <div className="mb-10 dark:bg-gray-800 bg-white p-5 shadow-sm rounded">
             <h1 className="mb-4 text-xl font-semibold text-gray-700 dark:text-gray-200">
                 Add Assingment
             </h1>

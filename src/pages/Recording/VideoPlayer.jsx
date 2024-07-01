@@ -1,16 +1,28 @@
 import { Link2, MousePointer } from "lucide-react";
 import { useEffect, useState } from "react";
-import data from '../../../data/module.json';
 import { useParams } from "react-router-dom";
 import ReactPlayer from "react-player";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
 
 const VideoPlayer = () => {
     const [getData, setGetData] = useState({});
+    const [data, setData] = useState([]);
     const [isValidUrl, setIsValidUrl] = useState(true);
     const { id } = useParams();
+    const axiosSecure = useAxiosSecure()
 
-    /* Get Assignment Data */
-    useEffect(() => {
+      /* Get Assignment Data */
+      useEffect(() => {
+        axiosSecure.get(`/courses/recordings/${id}`)
+            .then(res => {
+                setData(res.data)
+            })
+    }, [axiosSecure, id])
+
+    console.log(data);
+
+    /* Get Recording Data */
+    /* useEffect(() => {
         let foundData = null;
         data.some((item) => {
             foundData = item.class.find((item) => item.id == id);
@@ -21,12 +33,12 @@ const VideoPlayer = () => {
         if (foundData && foundData.link) {
             setIsValidUrl(isValidYouTubeUrl(foundData.link));
         }
-    }, [id]);
+    }, [data, id]);
 
     const isValidYouTubeUrl = (url) => {
         const regex = /^(https?:\/\/)?(www\.youtube\.com|youtu\.?be)\/.+$/;
         return regex.test(url);
-    };
+    }; */
 
     return (
         <div className="container px-6 mx-auto grid">

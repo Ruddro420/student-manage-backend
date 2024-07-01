@@ -16,8 +16,6 @@ const Module = ({ data, updateData }) => {
         setModalData(id);
     };
 
-    console.log(data);
-
     return (
         <>
             <AddModule courseId={data.id} updateData={updateData} />
@@ -25,7 +23,7 @@ const Module = ({ data, updateData }) => {
                 {(
                     data.modules.map((item, i) => (
                         <div key={item.id}>
-                            <div className="w-full max-w-md overflow-hidden rounded-lg bg-white shadow border-2 border-[#E5E7EB] border-transparent hover:border-[#12B76A] transition duration-300">
+                            <div className="w-full max-w-md overflow-hidden rounded-lg dark:bg-gray-800 bg-white shadow border-2 border-[#E5E7EB] border-transparent hover:border-[#12B76A] transition duration-300">
                                 <div className="p-4">
                                     <div className="flex justify-between items-start">
                                         <div className="bg-[#12B76A] text-white px-3 py-1 text-center inline-block rounded-lg mb-3">

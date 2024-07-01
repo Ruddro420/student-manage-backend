@@ -16,19 +16,26 @@ const Courses = () => {
       setLoading(false);
     });
   }, [axiosSecure]);
+
+  const updateData = () => {
+    axiosSecure.get("/courses").then((res) => {
+      setCoures(res.data);
+      setLoading(false);
+    });
+  };
   return (
     <div className="container px-6 mx-auto grid">
       <h2 className="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
         আমার কোর্সসমূহ
       </h2>
       {/* Add Course */}
-      <AddCourse />
+      <AddCourse updateData={updateData} />
       <div className="grid gap-10 mb-8 md:grid-cols-2">
         {courses.map((course) => {
           return (
             <div
               key={course.id}
-              className="max-w-md overflow-hidden rounded-lg bg-white shadow"
+              className="max-w-md overflow-hidden rounded-lg  dark:bg-gray-800 bg-white shadow"
             >
               <div className="p-4">
                 <div className="flex gap-2">
@@ -40,8 +47,8 @@ const Courses = () => {
                   </span>
                 </div>
                 <div className="mt-5">
-                  <h3 className="text-xl font-medium text-gray-900 mt-5">
-                   {course.title}
+                  <h3 className="text-xl font-medium dark:text-white text-gray-900 mt-5">
+                    {course.title}
                   </h3>
                 </div>
                 <div>

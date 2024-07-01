@@ -1,7 +1,7 @@
 import toast from "react-hot-toast";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 
-const AddCourse = () => {
+const AddCourse = ({updateData}) => {
     const axiosSecure = useAxiosSecure()
 
     
@@ -11,7 +11,7 @@ const AddCourse = () => {
         const formdata = new FormData(e.target);
         const payload = Object.fromEntries(formdata.entries());
         
-        toast.promise(axiosSecure.post('/courses', payload), {
+        toast.promise(axiosSecure.post('/courses', payload).then(()=> updateData()), {
             loading: 'Adding course...',
             success: 'Course added successfully',
             error: 'Failed to add course'
