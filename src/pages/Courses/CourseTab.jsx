@@ -7,7 +7,7 @@ import data from '../../../data/module.json'
 import Students from '../Students/Students';
 
 // eslint-disable-next-line react/prop-types
-const CourseTab = ({course}) => {
+const CourseTab = ({course,updateData}) => {
     const [activeTab, setActiveTab] = useState(0);
     /* const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true); */
@@ -69,7 +69,7 @@ const CourseTab = ({course}) => {
             </div>
             <div className="py-3">
                 <div className={`${activeTab === 0 ? 'block' : 'hidden'} transition-opacity duration-600`}>
-                    <Module data={course} />
+                    <Module data={course} updateData={updateData}/>
                 </div>
                 <div className={`${activeTab === 1 ? 'block' : 'hidden'} transition-opacity duration-600`}>
                     <AllAssignments data={course} />
