@@ -22,7 +22,7 @@ const LiveClass = () => {
             <AddRecording />
             {data?.map(module => (
                 <div key={module.id}>
-                    <div className="p-3 border rounded-lg mb-2 mt-5 bg-[#1D2939] text-white">
+                    <div className="p-3 border rounded-lg mb-2 dark:bg-gray-800 mt-5 bg-[#1D2939] text-white">
                         <h1>{module.title}</h1>
                     </div>
                     <div className="w-full overflow-hidden rounded-lg shadow-xs">

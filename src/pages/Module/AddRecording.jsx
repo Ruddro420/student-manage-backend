@@ -1,9 +1,9 @@
 
 const AddRecording = () => {
     return (
-        <div className="mb-10 bg-white p-5 shadow-sm rounded">
+        <div className="mb-10 bg-white dark:bg-gray-800 p-5 shadow-sm rounded">
             <h1 className="mb-4 text-xl font-semibold text-gray-700 dark:text-gray-200">
-                Add Assingment
+                Add Recordings
             </h1>
             <div className="grid gap-10 mb-8 md:grid-cols-5">
                 <label className="block text-sm">

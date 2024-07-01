@@ -28,7 +28,7 @@ const Courses = () => {
           return (
             <div
               key={course.id}
-              className="max-w-md overflow-hidden rounded-lg bg-white shadow"
+              className="max-w-md overflow-hidden rounded-lg  dark:bg-gray-800 bg-white shadow"
             >
               <div className="p-4">
                 <div className="flex gap-2">
@@ -40,7 +40,7 @@ const Courses = () => {
                   </span>
                 </div>
                 <div className="mt-5">
-                  <h3 className="text-xl font-medium text-gray-900 mt-5">
+                  <h3 className="text-xl font-medium dark:text-white text-gray-900 mt-5">
                    {course.title}
                   </h3>
                 </div>
