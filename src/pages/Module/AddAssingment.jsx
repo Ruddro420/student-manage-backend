@@ -35,6 +35,7 @@ const AddAssingment = ({course}) => {
                 <label className="block text-sm">
                     <span className="text-gray-700 dark:text-gray-400">Select Module</span>
                     <select
+                        required
                     name="moduleId"
                         className="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-select"
                     >
@@ -51,6 +52,7 @@ const AddAssingment = ({course}) => {
                     name="title"
                         className="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                         placeholder="Assingment name"
+                        required
                         type="text"
                     />
                 </label>
@@ -58,6 +60,7 @@ const AddAssingment = ({course}) => {
                     <span className="text-gray-700 dark:text-gray-400">Deadline</span>
                     <input
                         className="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                        required
                         type="date"
                         name="deadline"
                     />
@@ -67,6 +70,7 @@ const AddAssingment = ({course}) => {
                     <input
                         className="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                         placeholder="Important Link (optional)"
+                        required
                         type="url"
                         name="link"
                     />
@@ -77,6 +81,7 @@ const AddAssingment = ({course}) => {
                     <textarea
                         className="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-textarea"
                         placeholder="Enter assingment Details"
+                        required
                         name="description"
                     ></textarea>
                 </label>

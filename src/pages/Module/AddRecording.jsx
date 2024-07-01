@@ -34,6 +34,7 @@ const AddRecording = ({course,updateData}) => {
                 <label className="block text-sm">
                     <span className="text-gray-700 dark:text-gray-400">Select Module</span>
                     <select
+                        required
                      name="moduleId"
                         className="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-select"
                     >
@@ -45,6 +46,7 @@ const AddRecording = ({course,updateData}) => {
                 <label className="block text-sm">
                     <span className="text-gray-700 dark:text-gray-400">Class Type</span>
                     <select name='class_type'
+                        required
                         className="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-select"
                     >
                         <option value="লাইভ ক্লাস">লাইভ ক্লাস</option>
@@ -56,6 +58,7 @@ const AddRecording = ({course,updateData}) => {
                 <label className="block text-sm">
                     <span className="text-gray-700 dark:text-gray-400">Name</span>
                     <input
+                        required
                        name='title'
                         className="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                         placeholder="Topics name"
@@ -65,6 +68,7 @@ const AddRecording = ({course,updateData}) => {
                 <label className="block text-sm">
                     <span className="text-gray-700 dark:text-gray-400">Video Link</span>
                     <input
+                        required
                        name='link'
                         className="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                         placeholder="Video Link"
@@ -74,6 +78,7 @@ const AddRecording = ({course,updateData}) => {
                 <label className="block text-sm">
                     <span className="text-gray-700 dark:text-gray-400">Date</span>
                     <input
+                        required
                     name="date"
                         className="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                         type="date"

@@ -31,7 +31,7 @@ const AddResource = ({ course, updateData }) => {
   return (
     <div className="mb-10 dark:bg-gray-800 bg-white p-5 shadow-sm rounded">
       <h1 className="mb-4 text-xl font-semibold text-gray-700 dark:text-gray-200">
-        Add Resource 
+        Add Resource
       </h1>
       <form onSubmit={handleSubmit}>
         <div className="grid gap-10 mb-8 md:grid-cols-4">
@@ -40,6 +40,7 @@ const AddResource = ({ course, updateData }) => {
               Select Module
             </span>
             <select
+              required
               name="moduleId"
               className="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-select"
             >
@@ -56,8 +57,9 @@ const AddResource = ({ course, updateData }) => {
             <input
               className="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
               placeholder="Resource name"
+              required
               type="text"
-               name='title'
+              name="title"
             />
           </label>
           <label className="block text-sm">
@@ -67,16 +69,18 @@ const AddResource = ({ course, updateData }) => {
             <input
               className="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
               placeholder="Video Link"
+              required
               type="url"
-               name='link'
+              name="link"
             />
           </label>
           <label className="block text-sm">
             <span className="text-gray-700 dark:text-gray-400">Date</span>
             <input
               className="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+              required
               type="date"
-               name='date'
+              name="date"
             />
           </label>
         </div>

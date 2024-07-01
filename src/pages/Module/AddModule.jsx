@@ -30,6 +30,7 @@ const AddModule = ({courseId,updateData}) => {
                         className="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                         placeholder="Module name"
                         type="text"
+                        required
                         name="title"
                     />
                 </label>
@@ -38,6 +39,7 @@ const AddModule = ({courseId,updateData}) => {
                     <input
                         className="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                         placeholder="Study Plan"
+                        required
                         type="text"
                         name="study_plan"
                     />
