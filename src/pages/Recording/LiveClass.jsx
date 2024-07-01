@@ -1,31 +1,20 @@
-/* eslint-disable react/prop-types */
 import { Play } from "lucide-react";
-import data from '../../../data/module.json'
 import { Link } from "react-router-dom";
 import AddRecording from "../Module/AddRecording";
+import PropTypes from 'prop-types';
+import { dateFormat } from "../../lib/date";
 
-const LiveClass = () => {
-    //const [data, setData] = useState([])
-    // get module data
-    /* useEffect(() => {
-        axios.get('../../../data/module.json')
-            .then(function (response) {
-                setData(response.data);
-            })
-            .catch(function (error) {
-                console.log(error);
-            })
-
-    }, []) */
+const LiveClass = ({data}) => {
+    
     return (
         <>
-            <AddRecording />
-            {data?.map(module => (
+            <AddRecording course={data}/>
+            {data.modules.map(module => (
                 <div key={module.id}>
                     <div className="p-3 border rounded-lg mb-2 dark:bg-gray-800 mt-5 bg-[#1D2939] text-white">
                         <h1>{module.title}</h1>
                     </div>
-                    <div className="w-full overflow-hidden rounded-lg shadow-xs">
+                    {module.recordings.length > 0 ? <div className="w-full overflow-hidden rounded-lg shadow-xs">
                         <div className="w-full overflow-x-auto">
                             <table className="w-full whitespace-no-wrap">
                                 <thead>
@@ -35,8 +24,8 @@ const LiveClass = () => {
                                         <th className="px-4 py-3 w-1/4">দেখুন</th>
                                     </tr>
                                 </thead>
-                                <tbody className="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
-                                    {module.class.map(liveClass => (
+                          <tbody className="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
+                                    {module.recordings.map(liveClass => (
                                         <tr key={liveClass.id} className="text-gray-700 dark:text-gray-400">
                                             <td className="px-4 py-3 w-1/2">
                                                 <div className="flex items-center text-sm">
@@ -46,10 +35,10 @@ const LiveClass = () => {
                                                 </div>
                                             </td>
                                             <td className="px-4 py-3 text-sm w-1/4">
-                                                {liveClass.date}
+                                                {dateFormat(liveClass.date)}
                                             </td>
                                             <Link to={`/dashboard/class-recording/${liveClass.id}`}>
-                                                <td className="px-4 py-3 text-sm flex items-center bg-[#F3F4F6] cursor-pointer w-1/3 rounded m-2 hover:bg-slate-400">
+                                                <td className="px-4 py-3 text-sm flex items-center dark:bg-gray-700 bg-[#F3F4F6] cursor-pointer w-1/3 rounded m-2 hover:bg-slate-400">
                                                     <div className="flex items-center">
                                                         <span className="mr-1">দেখুন</span>
                                                         <Play />
@@ -61,13 +50,18 @@ const LiveClass = () => {
                                 </tbody>
                             </table>
                         </div>
-                    </div>
+                    </div>: <div className="dark:text-white text-center font-bold text-xl">No Videos!</div>}
                 </div>
             ))}
         </>
 
 
     );
+};
+
+
+LiveClass.propTypes = {
+    data: PropTypes.object.isRequired,
 };
 
 export default LiveClass;

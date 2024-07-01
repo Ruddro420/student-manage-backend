@@ -75,7 +75,7 @@ const CourseTab = ({course,updateData}) => {
                     <AllAssignments data={course} />
                 </div>
                 <div className={`${activeTab === 2 ? 'block' : 'hidden'} transition-opacity duration-600`}>
-                    <LiveClass data={data} />
+                    <LiveClass data={course} />
                 </div>
                 <div className={`${activeTab === 3 ? 'block' : 'hidden'} transition-opacity duration-600`}>
                     <ResourceTable data={data} />
