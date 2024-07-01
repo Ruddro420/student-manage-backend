@@ -30,7 +30,7 @@ const Courses = () => {
       </h2>
       {/* Add Course */}
       <AddCourse updateData={updateData} />
-      <div className="grid gap-10 mb-8 md:grid-cols-2">
+      <div className="grid gap-10 mb-8 md:grid-cols-3">
         {courses.map((course) => {
           return (
             <div
