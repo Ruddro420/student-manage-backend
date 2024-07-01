@@ -38,7 +38,7 @@ const Sidebar = () => {
                             <span className="ml-4">আমার কোর্স</span>
                         </Link>
                     </li>
-                    <li className="relative px-2 py-3">
+                   {/*  <li className="relative px-2 py-3">
                         <Link
                             className={`inline-flex items-center w-full text-sm font-semibold transition-colors duration-150  dark:hover:text-gray-200 p-3 ${activeTab === 1 ? 'bg-purple-600 text-white p-3 rounded' : ''}`}
                             onClick={() => setActiveTab(1)}
@@ -82,7 +82,7 @@ const Sidebar = () => {
                             </svg>
                             <span className="ml-4">রিসোর্স</span>
                         </Link>
-                    </li>
+                    </li> */}
                     <li className="relative px-2 py-3">
                         <Link
                             className={`inline-flex items-center w-full text-sm font-semibold transition-colors duration-150  dark:hover:text-gray-200 p-3 ${activeTab === 3 ? 'bg-purple-600 text-white p-3 rounded' : ''}`}

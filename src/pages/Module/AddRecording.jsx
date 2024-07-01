@@ -17,7 +17,7 @@ const AddRecording = ({course,updateData}) => {
         toast.promise(axiosSecure.post('/recordings', payload).then(()=>updateData()).then((data)=>{
             console.log(data);
         }), {
-            loading: 'Adding class...',
+            loading: 'Adding recording...',
             success: 'Live class added successfully',
             error: 'Failed to add class'
         })

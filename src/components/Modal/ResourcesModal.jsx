@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 
 import { Link, MousePointer } from "lucide-react";
+import { dateFormat } from "../../lib/date";
 
 const ResourcesModal = ({ isOpen, setIsOpen, modalData }) => {
     return (
@@ -43,7 +44,7 @@ const ResourcesModal = ({ isOpen, setIsOpen, modalData }) => {
                                         <label className="block text-sm">
                                             <div className="flex justify-between">
                                                 <div><span className="text-[#12B76A] dark:text-gray-400"><b>আপনার লিংক</b></span></div>
-                                                <div><h4> <b>টাইম</b> {modalData.date}</h4></div>
+                                                <div><h4> <b>টাইম</b> {dateFormat(modalData.date)}</h4></div>
                                             </div>
                                             <div className="flex items-center space-x-2 mt-3">
                                                 <div className="bg-[#9333EA] text-white px-5 py-2 rounded">

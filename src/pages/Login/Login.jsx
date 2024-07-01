@@ -1,24 +1,27 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
-
+import toast, { Toaster } from "react-hot-toast";
 
 const Login = () => {
-    const { signIn } = useAuth()
-    const navigate = useNavigate()
-    const onSubmit = (e) => {
-        e.preventDefault();
-        const email = e.target.email.value;
-        const password = e.target.password.value;
-        console.log(email, password)
-        signIn(email, password)
-        .then(result => {
-            console.log(result.user)
-            navigate('/dashboard')
-        })
-        .catch(error => {
-            console.log(error.message)
-        })
-    }
+  const { signIn } = useAuth();
+  const navigate = useNavigate();
+  const onSubmit = (e) => {
+    e.preventDefault();
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    // console.log(email, password)
+    signIn(email, password)
+      .then((result) => {
+        toast.success("Login Successfully");
+        setTimeout(() => {
+          navigate("/dashboard");
+        }, 1000);
+      })
+      .catch((error) => {
+        toast.error("Something Went Wrong");
+        console.log(error.message);
+      });
+  };
 
   return (
     <>
@@ -67,13 +70,19 @@ const Login = () => {
                   />
                 </label>
 
-               <button type="submit" className="block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">Login</button>
+                <button
+                  type="submit"
+                  className="block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
+                >
+                  Login
+                </button>
                 <hr className="my-8" />
               </form>
             </div>
           </div>
         </div>
       </div>
+      <Toaster />
     </>
   );
 };

@@ -1,19 +1,21 @@
-import  { useState } from 'react';
-import useAuth from '../../hooks/useAuth';
+import { useState } from "react";
+import useAuth from "../../hooks/useAuth";
+import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 const ProfileMenu = () => {
   const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false);
-  const {logOut} = useAuth()
+  const { logOut } = useAuth();
 
   const handleLogout = () => {
     logOut()
-    .then(()=> {
-      
-    })
-    .catch((error) => {
-      console.log(error);
-    })
-  }
+      .then(() => {
+        toast.success("Logout Successfully");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   return (
     <li className="relative">
       <div className="relative">
@@ -33,7 +35,7 @@ const ProfileMenu = () => {
             className="absolute right-0 w-56 p-2 mt-2 space-y-2 text-gray-600 bg-white border border-gray-100 rounded-md shadow-md dark:border-gray-700 dark:text-gray-300 dark:bg-gray-700"
             aria-label="submenu"
           >
-            <li className="flex">
+            {/* <li className="flex">
               <a
                 className="inline-flex items-center w-full px-2 py-1 text-sm font-semibold transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200"
                 href="#"
@@ -73,11 +75,11 @@ const ProfileMenu = () => {
                 </svg>
                 <span>Settings</span>
               </a>
-            </li>
+            </li> */}
             <li className="flex">
-              <div onClick={handleLogout}
-                className="inline-flex items-center w-full px-2 py-1 text-sm font-semibold transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200"
-             
+              <div
+                onClick={handleLogout}
+                className="inline-flex items-center w-full px-2 py-1 text-sm font-semibold transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200 cursor-pointer"
               >
                 <svg
                   className="w-4 h-4 mr-3"
