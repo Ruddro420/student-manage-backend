@@ -36,7 +36,7 @@ const Performance = () => {
             </svg>
           </div>
           <input
-            className="w-full pl-8 pr-2 text-sm text-gray-700 placeholder-gray-600 bg-gray-100 border-0 rounded-md dark:placeholder-gray-500 dark:focus:shadow-outline-gray dark:focus:placeholder-gray-600 dark:bg-gray-700 dark:text-gray-200 focus:placeholder-gray-500 focus:bg-white focus:border-purple-300 focus:outline-none focus:shadow-outline-purple form-input"
+            className="w-full pl-8 pr-2 text-sm text-gray-700  placeholder-gray-600 bg-gray-100 border-0 rounded-md dark:placeholder-gray-500 dark:focus:shadow-outline-gray dark:focus:placeholder-gray-600 dark:bg-gray-700 focus:text-black dark:text-white focus:placeholder-gray-500 focus:bg-white focus:border-purple-300 focus:outline-none focus:shadow-outline-purple form-input"
             type="text"
             required
             placeholder="Search student by phone"
@@ -81,13 +81,13 @@ const Performance = () => {
             <h2 className="text-2xl text-[#FE8924] font-extrabold">
               বাহ! আপনি শিয়াল মামার মত এভারেজ।
             </h2>
-            <p>
+            <p className="dark:text-white">
               নিজেকে আরেকটু আপগ্রেড করেন, আরেকটু পুশ করেন। আপনার পক্ষে সম্ভব
               বেস্ট হয়ে উঠা।
             </p>
           </div>
           <hr />
-          <div className="flex gap-8 md:gap-0 lg:gap-0 justify-between mt-5 flex-wrap">
+          <div className="flex gap-8 md:gap-0 lg:gap-0 justify-between mt-5 flex-wrap ">
             <div>
               <ProgressBar
                 percentage={steps}

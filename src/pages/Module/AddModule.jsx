@@ -46,7 +46,7 @@ const AddModule = ({courseId,updateData}) => {
                 </label>
                 </div>
                 <button type="submit"
-                className="block px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-[black] border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">
+                className="block px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 border border-transparent rounded-lg active:bg-purple-600 bg-[black] dark:bg-purple-700 dark:hover:bg-[black] hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">
                 Add Module
             </button>
             </form>

@@ -25,7 +25,7 @@ const Assingment = () => {
         <b>এসাইনমেন্টঃ</b> {getData.title}
       </h2>
       <hr />
-      <div className="grid gap-10 mb-8 md:grid-cols-2 mt-5">
+      <div className="grid gap-10 mb-8 md:grid-cols-2 mt-5 dark:text-white">
         {/* Left Bar */}
         <div>
           <div className="mt-3 text-justify">

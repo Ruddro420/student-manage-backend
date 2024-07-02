@@ -35,9 +35,6 @@ const Students = ({ data, reloadData }) => {
   return (
     <>
       <div>
-        <div className="tooltip" data-tip="hello">
-          <button className="btn">Hover me</button>
-        </div>
         <div className="p-3 border rounded-lg mb-2 mt-5 bg-[#1D2939] text-white">
           <h1>Students Details</h1>
         </div>
@@ -71,7 +68,7 @@ const Students = ({ data, reloadData }) => {
                     <td className="w-1/3">
                       <div className="flex gap-5">
                         <Link
-                          className="px-4 py-3 text-sm flex items-center cursor-pointer rounded m-2 hover:bg-slate-400"
+                          className="px-4 py-3 text-sm flex items-center cursor-pointer rounded m-2 hover:text-black hover:bg-slate-400"
                           to={`/dashboard/single-student-details/${item.id}`}
                         >
                           <div className="flex items-center">
