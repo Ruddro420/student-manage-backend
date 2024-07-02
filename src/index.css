@@ -20,6 +20,9 @@ aside{
     border: 2px solid #12B76A;
     border-radius: 3px;
 }
+.overflow-wrap{
+    overflow-wrap: break-word !important;  
+}
 /* Performance */
 /* Loader */
 .loader {

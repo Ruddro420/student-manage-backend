@@ -76,7 +76,7 @@ const ResourceTable = ({ data, updateData }) => {
             </div>
           ) : (
             <div className="dark:text-white text-center font-bold text-xl">
-              No Videos!
+              No Resources!
             </div>
           )}
         </div>

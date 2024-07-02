@@ -59,7 +59,7 @@ export const router = createBrowserRouter([
         element: <VideoPlayer />,
       },
       {
-        path: "/dashboard/single-student-details/",
+        path: "/dashboard/single-student-details/:id",
         element: <SingleStudentDetails />,
       },
     ],

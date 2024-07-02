@@ -1,10 +1,29 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from "react";
 
 const NotificationMenu = () => {
   const [isNotificationsMenuOpen, setIsNotificationsMenuOpen] = useState(false);
+  const menuRef = useRef(null);
+
+  const handleClickOutside = (event) => {
+    if (menuRef.current && !menuRef.current.contains(event.target)) {
+      setIsNotificationsMenuOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    if (isNotificationsMenuOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isNotificationsMenuOpen]);
 
   return (
-    <li className="relative">
+    <li ref={menuRef} className="relative">
       <button
         className="relative align-middle rounded-md focus:outline-none focus:shadow-outline-purple"
         aria-label="Notifications"
@@ -17,9 +36,7 @@ const NotificationMenu = () => {
           fill="currentColor"
           viewBox="0 0 20 20"
         >
-          <path
-            d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z"
-          ></path>
+          <path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z"></path>
         </svg>
         <span
           aria-hidden="true"
@@ -31,7 +48,7 @@ const NotificationMenu = () => {
         <ul
           className="absolute right-0 w-56 p-2 mt-2 space-y-2 text-gray-600 bg-white border border-gray-100 rounded-md shadow-md dark:text-gray-300 dark:border-gray-700 dark:bg-gray-700"
           style={{
-            transition: 'opacity 0.15s ease-in-out',
+            transition: "opacity 0.15s ease-in-out",
             opacity: isNotificationsMenuOpen ? 1 : 0,
           }}
         >
