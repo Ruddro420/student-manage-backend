@@ -53,7 +53,7 @@ const Module = ({ data, updateData }) => {
                       স্ট্যাডি প্লান
                     </button>
                     <Link
-                      to={`/dashboard/class-summary/${item.id}`}
+                      to={`/dashboard/class-summary/${item.id}?index=${i}`}
                       className="w-full flex items-center justify-center bg-[#FFF7E0] text-black py-2 rounded-md mt-4 font-semibold"
                     >
                       ক্লাস সামারী

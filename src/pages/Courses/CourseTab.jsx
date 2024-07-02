@@ -48,7 +48,7 @@ const CourseTab = ({course,updateData}) => {
                         <a
                             onClick={() => setActiveTab(2)}
                             className={`inline-flex cursor-pointer items-center gap-2 rounded border px-3 py-2 dark:bg-gray-800 dark:text-white hover:shadow ${activeTab === 2 ? 'tab-color shadow' : ''}`}>
-                            রেকডিং
+                            রেকর্ডিং
                         </a>
                     </li>
                     <li>
