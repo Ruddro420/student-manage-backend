@@ -96,7 +96,7 @@ const ScoreModal = ({ isOpen, setIsOpen, modalData }) => {
                                                     type="number"
                                                     placeholder="এসাইনমেন্ট এর নম্বর দিন"
                                                     name="marks"
-                                                    // defaultValue={modalData.marks}
+                                                    defaultValue={modalData.status=="confirm" && modalData.marks}
                                                 />
                                                 <input
                                                     className="blocktext-sm border-purple-400 dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input text-black"
@@ -113,6 +113,7 @@ const ScoreModal = ({ isOpen, setIsOpen, modalData }) => {
                                                     type="text"
                                                     name="feedback"
                                                     placeholder="Feedback"
+                                                    defaultValue={modalData.status=="confirm" && modalData.feedback}
                                                 />
                                                 <button
                                                     target="_blank"

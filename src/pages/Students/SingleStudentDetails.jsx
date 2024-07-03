@@ -1,8 +1,9 @@
-import { Eye } from "lucide-react";
+import { Check, Eye } from "lucide-react";
 import { useEffect, useState } from "react";
 import ScoreModal from "../../components/Modal/ScoreModal";
 import { useParams } from "react-router-dom";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
+import Spin from "../../components/Loader/Spin";
 
 const SingleStudentDetails = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,16 +19,17 @@ const SingleStudentDetails = () => {
     });
   }, [axiosSecure, id]);
 
-  console.log(getData);
+  // console.log(getData);
 
   // Modal function
   const modalHandler = (data) => {
     setIsOpen(true);
     setModalData(data);
   };
+
   return (
     <>
-   {getData && <div className="container px-6 mx-auto grid">
+   {getData ? <div className="container px-6 mx-auto grid">
       <h2 className="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
         {getData.email}
       </h2>
@@ -66,8 +68,13 @@ const SingleStudentDetails = () => {
                       <span className="mr-1">দেখুন</span>
                       <Eye />
                     </div>
+                    
                   </td>
                 </button>
+                <td>{assingment.status ==="confirm" && <div className="flex items-center">
+                      <span className="mr-1">Marked</span>
+                      <Check />
+                    </div>}</td>
               </tr>
                }) }
               </tbody>
@@ -80,7 +87,7 @@ const SingleStudentDetails = () => {
           modalData={modalData}
         />
       </div>
-    </div>}
+    </div> : <Spin/>}
     </>
   );
 };

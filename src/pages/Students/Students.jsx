@@ -15,7 +15,7 @@ const Students = ({ data, reloadData }) => {
       courseId: courseId,
     };
 
-    console.log(updateData);
+    // console.log(updateData);
 
     toast.promise(
       axiosSecure
@@ -31,7 +31,6 @@ const Students = ({ data, reloadData }) => {
       }
     );
   };
-  console.log(data);
   return (
     <>
       <div>
