@@ -78,8 +78,8 @@ const ScoreModal = ({ isOpen, setIsOpen, modalData }) => {
                                                 />
                                                 <a
                                                     target="_blank"
-                                                    href={modalData.link}
-                                                    className="bg-[#12B76A] text-white px-5 py-2 rounded flex items-center"
+                                                    href={modalData.task}
+                                                    className="bg-[#12B76A] text-white px-5 py-2 rounded flex items-center cursor-pointer"
                                                     rel="noreferrer"
                                                 >
                                                     <MousePointer className="w-5 h-5" />
