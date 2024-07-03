@@ -30,6 +30,7 @@ const AddModule = ({courseId,updateData}) => {
                         className="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                         placeholder="Module name"
                         type="text"
+                        required
                         name="title"
                     />
                 </label>
@@ -38,13 +39,14 @@ const AddModule = ({courseId,updateData}) => {
                     <input
                         className="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                         placeholder="Study Plan"
+                        required
                         type="text"
                         name="study_plan"
                     />
                 </label>
                 </div>
                 <button type="submit"
-                className="block px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-[black] border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">
+                className="block px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 border border-transparent rounded-lg active:bg-purple-600 bg-[black] dark:bg-purple-700 dark:hover:bg-[black] hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">
                 Add Module
             </button>
             </form>

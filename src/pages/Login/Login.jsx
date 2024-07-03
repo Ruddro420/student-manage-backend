@@ -11,6 +11,8 @@ const Login = () => {
     const password = e.target.password.value;
     // console.log(email, password)
     signIn(email, password)
+
+      // eslint-disable-next-line no-unused-vars
       .then((result) => {
         toast.success("Login Successfully");
         setTimeout(() => {

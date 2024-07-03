@@ -7,11 +7,11 @@ const AssingPerformance = ({ percentage, label, unit, color, text }) => {
     const circumference = 2 * Math.PI * radius;
 
     return (
-        <div id='performance' className='shadow p-5 rounded-lg border-2'>
+        <div id='performance' className='shadow text-center p-1 lg:p-5 rounded-lg border-2 dark:text-white'>
             <div className="circle-big">
                 <div className="text">
-                    <h2 className='text-3xl'>   {label}</h2>
-                    <div className="small text-black">
+                    <h2 className='text-3xl '>   {label}</h2>
+                    <div className="small text-black dark:text-white">
                         <h2 className='text-xl'>{unit}</h2>
                     </div>
                 </div>

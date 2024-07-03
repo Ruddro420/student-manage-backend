@@ -1,7 +1,6 @@
 /* eslint-disable react/prop-types */
 
 const Modal = ({ isOpen, setIsOpen, modalData }) => {
-    console.log(modalData);
 
     return (
         <div className="relative z-10">

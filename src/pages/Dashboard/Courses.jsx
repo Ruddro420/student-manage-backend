@@ -7,6 +7,7 @@ import { e2b_number, status } from "../../lib/bn";
 
 const Courses = () => {
   const [courses, setCoures] = useState([]);
+  // eslint-disable-next-line no-unused-vars
   const [loading, setLoading] = useState(true);
   const axiosSecure = useAxiosSecure();
 
@@ -54,7 +55,7 @@ const Courses = () => {
                 <div>
                   <Link
                     to={`/dashboard/course-details/${course.id}`}
-                    className="hover:bg-slate-500 w-full flex items-center justify-center bg-black text-white py-2 rounded-md mt-4"
+                    className="w-full flex items-center justify-center hover:bg-slate-500 dark:hover:bg-black dark:bg-slate-500  bg-black text-white py-2 rounded-md mt-4"
                   >
                     এগিয়ে যাই <ArrowRightFromLine className="ml-3" />
                   </Link>
