@@ -1,9 +1,29 @@
 /* eslint-disable react/prop-types */
 
 import { Link, MousePointer } from "lucide-react";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
+import toast from "react-hot-toast";
 
 const ScoreModal = ({ isOpen, setIsOpen, modalData }) => {
 
+    const axiosSecure = useAxiosSecure()
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const marks = e.target.marks.value;
+        const feedback = e.target.feedback.value;
+        const data = {
+            marks,
+            status: "confirm",
+            feedback,
+        }
+
+    toast.promise(axiosSecure.patch(`/submissions/${modalData.id}`, data).then(()=>{setIsOpen(false)}), {
+        loading: 'Marking...',
+        success: 'Marked successfully',
+        error: 'Failed to mark.'
+    })
+    }
     return (
         <div className="relative z-10">
 
@@ -53,7 +73,7 @@ const ScoreModal = ({ isOpen, setIsOpen, modalData }) => {
                                                 <input
                                                     className="block w-full text-sm border-purple-400 dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input text-black"
                                                     type="url"
-                                                    value={`www.google.com`}
+                                                    value={modalData.task}
                                                     disabled
                                                 />
                                                 <a
@@ -70,11 +90,13 @@ const ScoreModal = ({ isOpen, setIsOpen, modalData }) => {
                                         <br />
                                         {/* Assingment Score */}
                                         <label className="block text-sm">
-                                            <div className="grid md:grid-cols-2 gap-3 mt-3">
+                                            <form onSubmit={handleSubmit} className="grid md:grid-cols-2 gap-3 mt-3">
                                                 <input
                                                     className="blocktext-sm border-purple-400 dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input text-black"
                                                     type="number"
                                                     placeholder="এসাইনমেন্ট এর নম্বর দিন"
+                                                    name="marks"
+                                                    // defaultValue={modalData.marks}
                                                 />
                                                 <input
                                                     className="blocktext-sm border-purple-400 dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input text-black"
@@ -86,13 +108,19 @@ const ScoreModal = ({ isOpen, setIsOpen, modalData }) => {
                                                     type="number"
                                                     placeholder="হোমওয়ার্ক নম্বর দিন"
                                                 />
+                                                 <input
+                                                    className="blocktext-sm border-purple-400 dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input text-black"
+                                                    type="text"
+                                                    name="feedback"
+                                                    placeholder="Feedback"
+                                                />
                                                 <button
                                                     target="_blank"
                                                     className="bg-[#12B76A] text-white px-5 py-2 rounded flex items-center"
                                                     rel="noreferrer">
                                                     সাবমিট করুন
                                                 </button>
-                                            </div>
+                                            </form>
                                         </label>
                                     </div>
                                 </div>

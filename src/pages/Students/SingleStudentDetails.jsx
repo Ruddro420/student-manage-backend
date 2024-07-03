@@ -7,7 +7,7 @@ import useAxiosSecure from "../../hooks/useAxiosSecure";
 const SingleStudentDetails = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [modalData, setModalData] = useState();
-  const [getData, setGetData] = useState({});
+  const [getData, setGetData] = useState(null);
   const { id } = useParams();
   const axiosSecure = useAxiosSecure();
 
@@ -21,12 +21,13 @@ const SingleStudentDetails = () => {
   console.log(getData);
 
   // Modal function
-  const modalHandler = (id) => {
+  const modalHandler = (data) => {
     setIsOpen(true);
-    setModalData(id);
+    setModalData(data);
   };
   return (
-    <div className="container px-6 mx-auto grid">
+    <>
+   {getData && <div className="container px-6 mx-auto grid">
       <h2 className="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
         {getData.email}
       </h2>
@@ -46,27 +47,29 @@ const SingleStudentDetails = () => {
                 </tr>
               </thead>
               <tbody className="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
-                <tr className="text-gray-700 dark:text-gray-400">
-                  <td className="px-4 py-3">
-                    <div className="flex items-center text-sm">
-                      <div>
-                        <p className="font-semibold">Ali</p>
-                      </div>
+               {getData.assignments.map((assingment)=>{
+                return <tr key={assingment.id} className="text-gray-700 dark:text-gray-400">
+                <td className="px-4 py-3">
+                  <div className="flex items-center text-sm">
+                    <div>
+                      <p className="font-semibold">{assingment.assignment.title}</p>
+                    </div>
+                  </div>
+                </td>
+                <td className="px-4 py-3 text-sm">১০</td>
+                <button
+                  onClick={() => modalHandler(assingment)}
+                  className="px-4 py-3 text-sm flex items-center bg-[#F3F4F6] cursor-pointer w-1/3 rounded m-2 hover:bg-slate-400"
+                >
+                  <td>
+                    <div className="flex items-center">
+                      <span className="mr-1">দেখুন</span>
+                      <Eye />
                     </div>
                   </td>
-                  <td className="px-4 py-3 text-sm">১০</td>
-                  <button
-                    onClick={() => modalHandler(1)}
-                    className="px-4 py-3 text-sm flex items-center bg-[#F3F4F6] cursor-pointer w-1/3 rounded m-2 hover:bg-slate-400"
-                  >
-                    <td>
-                      <div className="flex items-center">
-                        <span className="mr-1">দেখুন</span>
-                        <Eye />
-                      </div>
-                    </td>
-                  </button>
-                </tr>
+                </button>
+              </tr>
+               }) }
               </tbody>
             </table>
           </div>
@@ -77,7 +80,8 @@ const SingleStudentDetails = () => {
           modalData={modalData}
         />
       </div>
-    </div>
+    </div>}
+    </>
   );
 };
 
