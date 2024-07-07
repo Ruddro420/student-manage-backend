@@ -58,7 +58,7 @@ const SingleStudentDetails = () => {
                     </div>
                   </div>
                 </td>
-                <td className="px-4 py-3 text-sm">১০</td>
+                <td className="px-4 py-3 text-sm">{assingment.marks}</td>
                 <button
                   onClick={() => modalHandler(assingment)}
                   className="px-2 py-3 text-sm flex items-center justify-center dark:bg-gray-800 dark:text-white border  bg-[#F3F4F6] cursor-pointer w-[100px] rounded m-2 hover:bg-slate-400"
