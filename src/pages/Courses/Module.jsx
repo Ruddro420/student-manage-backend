@@ -5,10 +5,13 @@ import Modal from "../../components/Modal/Modal";
 import AddModule from "../Module/AddModule";
 import { e2b_number, status } from "../../lib/bn";
 import NoDataFound from "../../components/NoDataFound/NoDataFound";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
+import toast from "react-hot-toast";
 
 const Module = ({ data, updateData }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [modalData, setModalData] = useState();
+  const axiosSecure = useAxiosSecure();
   // Loader state
 
   // Modal function
@@ -58,6 +61,27 @@ const Module = ({ data, updateData }) => {
                     >
                       ক্লাস সামারী
                     </Link>
+                    <button
+                      onClick={() => {
+                        alert("Are you sure you want to delete this module?");
+
+                        toast.promise(
+                          axiosSecure
+                            .delete(`/modules/${item.id}`)
+                            .then(() => {
+                              updateData();
+                            }),
+                          {
+                            loading: "Deleting...",
+                            success: "Deleted successfully!",
+                            error: "Error deleting module",
+                          }
+                        );
+                      }}
+                      className="w-full flex items-center justify-center bg-red-500 text-white py-2 rounded-md mt-4 font-semibold"
+                    >
+                      Delete
+                    </button>
                   </div>
                 </div>
               </div>
