@@ -2,8 +2,10 @@ import axios from "axios";
 
 
 const axiosSecure = axios.create({
-    baseURL: "https://student-management-server-soft.vercel.app/",
+    // baseURL: "https://student-management-server-soft.vercel.app/",
     //  baseURL: "http://192.168.0.102:3000/",
+     baseURL: "http://localhost:3000/",
+
     headers: {
         'content-type': 'application/json'
     },
