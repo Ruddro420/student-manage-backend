@@ -11,11 +11,15 @@ const ScoreModal = ({ isOpen, setIsOpen, modalData }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         const marks = e.target.marks.value;
+        const class_performance = e.target.class_performance.value
+        const hw_marks = e.target.hw_marks.value 
         const feedback = e.target.feedback.value;
         const data = {
             marks,
             status: "confirm",
             feedback,
+            class_performance_marks: parseFloat(class_performance),
+            homework_marks: parseFloat(hw_marks)
         }
 
     toast.promise(axiosSecure.patch(`/submissions/${modalData.id}`, data).then(()=>{setIsOpen(false)}), {
@@ -78,8 +82,8 @@ const ScoreModal = ({ isOpen, setIsOpen, modalData }) => {
                                                 />
                                                 <a
                                                     target="_blank"
-                                                    href={modalData.link}
-                                                    className="bg-[#12B76A] text-white px-5 py-2 rounded flex items-center"
+                                                    href={modalData.task}
+                                                    className="bg-[#12B76A] text-white px-5 py-2 rounded flex items-center cursor-pointer"
                                                     rel="noreferrer"
                                                 >
                                                     <MousePointer className="w-5 h-5" />
@@ -96,23 +100,26 @@ const ScoreModal = ({ isOpen, setIsOpen, modalData }) => {
                                                     type="number"
                                                     placeholder="এসাইনমেন্ট এর নম্বর দিন"
                                                     name="marks"
-                                                    // defaultValue={modalData.marks}
+                                                    defaultValue={modalData.status=="confirm" && modalData.marks}
                                                 />
                                                 <input
                                                     className="blocktext-sm border-purple-400 dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input text-black"
                                                     type="number"
                                                     placeholder="ক্লাস পারফরমেন্স নম্বর দিন"
+                                                    name="class_performance"
                                                 />
                                                 <input
                                                     className="blocktext-sm border-purple-400 dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input text-black"
                                                     type="number"
                                                     placeholder="হোমওয়ার্ক নম্বর দিন"
+                                                    name="hw_marks"
                                                 />
                                                  <input
                                                     className="blocktext-sm border-purple-400 dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input text-black"
                                                     type="text"
                                                     name="feedback"
                                                     placeholder="Feedback"
+                                                    defaultValue={modalData.status=="confirm" && modalData.feedback}
                                                 />
                                                 <button
                                                     target="_blank"

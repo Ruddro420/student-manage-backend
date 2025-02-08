@@ -14,18 +14,11 @@ const CourseDetails = () => {
     axiosSecure
       .get(`/courses/${id}`)
       .then((res) => {
-        console.log(res.data);
         setCourese(res.data);
       })
-      .then((res) => {
-        // console.log(res.data)
-        setCourese(res.data);
-      });
   }, [axiosSecure, id]);
-  console.log(course)
   const updateData = () => {
     axiosSecure.get(`/courses/${id}`).then((res) => {
-      console.log(res.data);
       setCourese(res.data);
     });
   };

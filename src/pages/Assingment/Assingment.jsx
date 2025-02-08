@@ -17,7 +17,7 @@ const Assingment = () => {
     });
   }, [axiosSecure, id]);
 
-  console.log(getData);
+  // console.log(getData);
 
   return (
     <div className="container px-6 mx-auto grid">

@@ -1,9 +1,10 @@
-import { ArrowRightFromLine } from "lucide-react";
+import { ArrowRightFromLine, Delete, Trash } from "lucide-react";
 import { Link } from "react-router-dom";
 import AddCourse from "./AddCourse";
 import { useEffect, useState } from "react";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import { e2b_number, status } from "../../lib/bn";
+import toast from "react-hot-toast";
 
 const Courses = () => {
   const [courses, setCoures] = useState([]);
@@ -52,13 +53,27 @@ const Courses = () => {
                     {course.title}
                   </h3>
                 </div>
-                <div>
+                <div className="flex items-center gap-2">
                   <Link
                     to={`/dashboard/course-details/${course.id}`}
-                    className="w-full flex items-center justify-center hover:bg-slate-500 dark:hover:bg-black dark:bg-slate-500  bg-black text-white py-2 rounded-md mt-4"
+                    className="w-full flex items-center justify-center hover:bg-slate-500 dark:hover:bg-black dark:bg-slate-500  bg-black text-white py-2 rounded-md"
                   >
                     এগিয়ে যাই <ArrowRightFromLine className="ml-3" />
                   </Link>
+                  <button onClick={() => {
+                    alert("Are you sure you want to delete this course?")
+                    
+                   toast.promise(
+                     axiosSecure.delete(`/courses/${course.id}`).then((res) => {
+                       updateData();
+                     }),
+                     {
+                       loading: "Deleting...",
+                       success: "Deleted successfully!",
+                       error: "Error deleting course",
+                     }
+                   );
+                  }} className="items-center flex w-full text-center justify-center hover:bg-red-500 dark:hover:bg-black dark:bg-red-500  bg-black text-white py-2 rounded-md"><Trash/></button>
                 </div>
               </div>
             </div>
