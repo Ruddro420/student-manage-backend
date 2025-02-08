@@ -18,9 +18,9 @@ const AddAssingment = ({course}) => {
         toast.promise(axiosSecure.post('/assignments', payload).then((data)=>{
             console.log(data);
         }), {
-            loading: 'Adding assignments...',
-            success: 'Course added successfully',
-            error: 'Failed to add course'
+            loading: 'Adding assignment...',
+            success: 'Assignment added successfully',
+            error: 'Failed to add assignment'
         })
 
     };
