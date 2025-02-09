@@ -41,7 +41,7 @@ const AddAssingment = ({ course, updateData }) => {
         })
             .then(function () {
                 toast.success('Added Successfully')
-                updateData()
+                //updateData()
                 reset()
             })
             .catch(function (error) {

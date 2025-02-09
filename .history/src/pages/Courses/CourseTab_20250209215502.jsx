@@ -25,8 +25,7 @@ const CourseTab = ({course,updateData}) => {
                 console.log(error);
                 setLoading(false); 
             });
-    }, [BASE_URL]);
-    
+    }, []);
 
     return (
         <div>

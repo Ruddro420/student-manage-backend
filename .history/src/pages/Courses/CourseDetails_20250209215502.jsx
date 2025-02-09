@@ -21,7 +21,8 @@ const CourseDetails = () => {
         // handle error
         console.log(error);
       })
-  }, [BASE_URL, id]);
+  }, []);
+
   return (
 
     <>

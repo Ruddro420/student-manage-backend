@@ -24,16 +24,13 @@ const AddAssingment = ({ course, updateData }) => {
         loadData()
     }, [id]);
 
-    console.log(modules[0]);
-    
-
     //submit data
     const onSubmit = (data) => {
         axios.post(`${BASE_URL}/assingment/add`, {
-            course_name: modules[0].course_name,
-            batch_no: modules[0].batch_no,
+            course_name: modules.course_name,
+            batch_no: modules.batch_no,
             module_name: data.module_name,
-            course_id: modules[0].course_id,
+            course_id: modules.course_id,
             assing_name: data.assing_name,
             deadline: data.deadline,
             imLink: data.imLink,

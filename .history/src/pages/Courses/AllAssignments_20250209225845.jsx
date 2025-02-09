@@ -45,7 +45,7 @@ const AllAssignments = ({ data }) => {
               </div>
 
               {/* Assignments Table */}
-              <div className="w-full overflow-hidden rounded-lg shadow-xs mt-3">
+              <div className="w-full overflow-hidden rounded-lg shadow-xs mt-5">
                 <div className="w-full overflow-x-auto">
                   <table className="w-full whitespace-no-wrap table-fixed">
                     <thead>

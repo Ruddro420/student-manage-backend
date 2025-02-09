@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 
 // eslint-disable-next-line react/prop-types
-const AddAssingment = ({ course, updateData }) => {
+const AddAssingment = ({ course, loadData }) => {
     const { id } = course;
     const BASE_URL = import.meta.env.VITE_API_BASE_URL;
     // get module data
@@ -41,7 +41,7 @@ const AddAssingment = ({ course, updateData }) => {
         })
             .then(function () {
                 toast.success('Added Successfully')
-                updateData()
+                //updateData()
                 reset()
             })
             .catch(function (error) {

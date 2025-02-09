@@ -22,6 +22,10 @@ const CourseDetails = () => {
         console.log(error);
       })
   }, [BASE_URL, id]);
+
+  console.log(course);
+  
+
   return (
 
     <>

@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import axios from "axios";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 
@@ -15,25 +15,24 @@ const AddAssingment = ({ course, updateData }) => {
 
     const loadData = () => {
         axios.get(`${BASE_URL}/module/data/${id}`).then((res) => {
-            console.log(res.data.modules);
+            console.log(res);
             setModules(res.data.modules);
             setLoading(false);
         });
     }
     useEffect(() => {
         loadData()
-    }, [id]);
+    }, [course.data.modules.id]);
 
-    console.log(modules[0]);
-    
+    console.log(modules);
 
     //submit data
     const onSubmit = (data) => {
         axios.post(`${BASE_URL}/assingment/add`, {
-            course_name: modules[0].course_name,
-            batch_no: modules[0].batch_no,
+            course_name: modules.course_name,
+            batch_no: modules.batch_no,
             module_name: data.module_name,
-            course_id: modules[0].course_id,
+            course_id: modules.course_id,
             assing_name: data.assing_name,
             deadline: data.deadline,
             imLink: data.imLink,
@@ -66,7 +65,7 @@ const AddAssingment = ({ course, updateData }) => {
                             className="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-select"
                         >
 
-                            {modules.map(module => (
+                            {course?.data?.modules.map(module => (
                                 <option key={module.id} value={module.module_name}>{module.module_name}</option>
                             ))}
                         </select>
