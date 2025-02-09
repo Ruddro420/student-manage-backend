@@ -1,7 +1,6 @@
 /* eslint-disable react/prop-types */
-import axios from 'axios';
 import PropTypes from 'prop-types';
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
 const AddRecording = ({ course, updateData }) => {
@@ -19,7 +18,7 @@ const AddRecording = ({ course, updateData }) => {
             setLoading(false);
         });
     }
-    useMemo(() => {
+    useEffect(() => {
         loadData()
     }, [id]);
 
@@ -34,18 +33,17 @@ const AddRecording = ({ course, updateData }) => {
                         <span className="text-gray-700 dark:text-gray-400">Select Module</span>
                         <select
                             required
-                            name="module_name"
+                            name="moduleId"
                             className="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-select"
                         >
-                            {modules.map((module, index) => (
-                                <option key={index} value={module.module_name}>{module.module_name}</option>
+                            {course?.modules?.map((module, index) => (
+                                <option key={index} value={module.id}>{module.title}</option>
                             ))}
                         </select>
                     </label>
                     <label className="block text-sm">
                         <span className="text-gray-700 dark:text-gray-400">Class Type</span>
-                        <select
-                            name="record_type"
+                        <select name='class_type'
                             required
                             className="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-select"
                         >
@@ -59,7 +57,7 @@ const AddRecording = ({ course, updateData }) => {
                         <span className="text-gray-700 dark:text-gray-400">Name</span>
                         <input
                             required
-                            name='record_name'
+                            name='title'
                             className="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                             placeholder="Topics name"
                             type="text"
@@ -69,7 +67,7 @@ const AddRecording = ({ course, updateData }) => {
                         <span className="text-gray-700 dark:text-gray-400">Video Link</span>
                         <input
                             required
-                            name='vLink'
+                            name='link'
                             className="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                             placeholder="Video Link"
                             type="url"

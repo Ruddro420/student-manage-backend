@@ -34,7 +34,7 @@ const AddRecording = ({ course, updateData }) => {
                         <span className="text-gray-700 dark:text-gray-400">Select Module</span>
                         <select
                             required
-                            name="module_name"
+                            name="moduleId"
                             className="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-select"
                         >
                             {modules.map((module, index) => (
@@ -44,8 +44,7 @@ const AddRecording = ({ course, updateData }) => {
                     </label>
                     <label className="block text-sm">
                         <span className="text-gray-700 dark:text-gray-400">Class Type</span>
-                        <select
-                            name="record_type"
+                        <select name='class_type'
                             required
                             className="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-select"
                         >
@@ -59,7 +58,7 @@ const AddRecording = ({ course, updateData }) => {
                         <span className="text-gray-700 dark:text-gray-400">Name</span>
                         <input
                             required
-                            name='record_name'
+                            name='title'
                             className="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                             placeholder="Topics name"
                             type="text"
@@ -69,7 +68,7 @@ const AddRecording = ({ course, updateData }) => {
                         <span className="text-gray-700 dark:text-gray-400">Video Link</span>
                         <input
                             required
-                            name='vLink'
+                            name='link'
                             className="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                             placeholder="Video Link"
                             type="url"
