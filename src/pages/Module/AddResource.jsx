@@ -1,11 +1,9 @@
 /* eslint-disable react/prop-types */
 import toast from "react-hot-toast";
-import useAxiosSecure from "../../hooks/useAxiosSecure";
 const AddResource = ({ course, updateData }) => {
   const { id } = course;
-  const axiosSecure = useAxiosSecure();
 
-  const handleSubmit = (e) => {
+  /* const handleSubmit = (e) => {
     e.preventDefault();
     const formdata = new FormData(e.target);
     let payload = Object.fromEntries(formdata.entries());
@@ -27,14 +25,14 @@ const AddResource = ({ course, updateData }) => {
         error: "Failed to add resources",
       }
     );
-  };
+  }; */
   return (
     <div className="mb-10 dark:bg-gray-800 bg-white p-5 shadow-sm rounded">
       <h1 className="mb-4 text-xl font-semibold text-gray-700 dark:text-gray-200">
         Add Resource
       </h1>
-      <form onSubmit={handleSubmit}>
-        <div className="grid gap-10 mb-8 md:grid-cols-4">
+      {/* <form onSubmit={handleSubmit}> */}
+        {/* <div className="grid gap-10 mb-8 md:grid-cols-4">
           <label className="block text-sm">
             <span className="text-gray-700 dark:text-gray-400">
               Select Module
@@ -87,7 +85,7 @@ const AddResource = ({ course, updateData }) => {
         <button className="block px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-[black] border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 dark:bg-purple-700 dark:hover:bg-[black] focus:outline-none focus:shadow-outline-purple">
           Add Resource
         </button>
-      </form>
+      </form> */}
     </div>
   );
 };

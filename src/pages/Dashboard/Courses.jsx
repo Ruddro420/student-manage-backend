@@ -5,7 +5,6 @@ import { Delete, Trash } from "lucide-react";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import axios from "axios";
-import { e2b_number } from "../../lib/bn";
 
 const Courses = () => {
   const [courses, setCoures] = useState([]);
@@ -57,7 +56,7 @@ const Courses = () => {
                 <div className="p-4">
                   <div className="flex gap-2">
                     <span className="inline-flex items-center gap-1 rounded-full bg-blue-500 px-2 py-1 text-xs font-bold text-white mr-3">
-                      ব্যাচ - {e2b_number(course.batch_no)}
+                      ব্যাচ - {course.batch_no}
                     </span>
                     <span className="inline-flex items-center gap-1 rounded-full bg-blue-500 px-2 py-1 text-xs font-semibold text-white">
                       {course.batch_status}
@@ -70,7 +69,7 @@ const Courses = () => {
                   </div>
                   <div className="flex items-center gap-2">
                     <Link
-                      /*  to={`/dashboard/course-details/${course.id}`} */
+                      to={`/dashboard/course-details/${course.id}`}
                       className="w-full flex items-center justify-center hover:bg-slate-500 dark:hover:bg-black dark:bg-slate-500  bg-black text-white py-2 rounded-md"
                     >
                       এগিয়ে যাই <ArrowRightFromLine className="ml-3" />

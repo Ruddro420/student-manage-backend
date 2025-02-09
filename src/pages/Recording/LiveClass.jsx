@@ -9,12 +9,12 @@ const LiveClass = ({ data, updateData }) => {
   return (
     <>
       <AddRecording updateData={updateData} course={data} />
-      {data.modules.map((module) => (
+      {data.modules?.map((module) => (
         <div key={module.id}>
           <div className="p-3 border rounded-lg mb-2 dark:bg-gray-800 mt-5 bg-[#1D2939] text-white">
             <h1>{module.title}</h1>
           </div>
-          {module.recordings.length > 0 ? (
+          {module.recordings?.length > 0 ? (
             <div className="w-full overflow-hidden rounded-lg shadow-xs">
               <div className="w-full overflow-x-auto">
                 <table className="w-full whitespace-no-wrap">

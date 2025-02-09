@@ -12,6 +12,7 @@ import Login from "../pages/Login/Login";
 // import PrivateRoute from "./PrivateRoute";
 // import SingleStudentDetails from "../pages/Students/SingleStudentDetails";
 import NotFound from "../components/NotFound/NotFound";
+import CourseDetails from "../pages/Courses/CourseDetails";
 
 export const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ export const router = createBrowserRouter([
       {
         path: "/dashboard",
         element: <Courses />,
+      },
+      {
+        path: "/dashboard/course-details/:id",
+        element: <CourseDetails />,
       },
      /*  {
         path: "/dashboard/recording",
@@ -62,6 +67,7 @@ export const router = createBrowserRouter([
         path: "/dashboard/single-student-details/:id",
         element: <SingleStudentDetails />,
       }, */
+
     ],
   },
   {

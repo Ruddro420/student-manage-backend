@@ -4,11 +4,10 @@
 import { Check, CheckCheckIcon, CheckCircle, Eye, X } from "lucide-react";
 import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
-import useAxiosSecure from "../../hooks/useAxiosSecure";
 
 const Students = ({ data, reloadData }) => {
-  const statusHandler = (id, courseId) => {
-    const axiosSecure = useAxiosSecure();
+  /* const statusHandler = (id, courseId) => {
+    
 
     const updateData = {
       studentId: id,
@@ -30,7 +29,7 @@ const Students = ({ data, reloadData }) => {
         error: "Faild Update",
       }
     );
-  };
+  }; */
   return (
     <>
       <div>
@@ -48,7 +47,7 @@ const Students = ({ data, reloadData }) => {
                 </tr>
               </thead>
               <tbody className="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
-                {data.students.map((item) => (
+                {data.students?.map((item) => (
                   <tr
                     key={item.id}
                     className="text-gray-700 dark:text-gray-400"

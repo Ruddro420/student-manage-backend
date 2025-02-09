@@ -1,11 +1,9 @@
 /* eslint-disable react/prop-types */
 import PropTypes from 'prop-types';
-import useAxiosSecure from '../../hooks/useAxiosSecure';
 import toast from 'react-hot-toast';
 const AddRecording = ({course,updateData}) => {
     const {id} = course
-    const axiosSecure = useAxiosSecure()
-    const handleSubmit = (e) => {
+   /*  const handleSubmit = (e) => {
         e.preventDefault();
         const formdata = new FormData(e.target);
         let payload = Object.fromEntries(formdata.entries());
@@ -22,14 +20,14 @@ const AddRecording = ({course,updateData}) => {
             error: 'Failed to add class'
         })
 
-    };
+    }; */
 
     return (
         <div className="mb-10 bg-white dark:bg-gray-800 p-5 shadow-sm rounded">
             <h1 className="mb-4 text-xl font-semibold text-gray-700 dark:text-gray-200">
                 Add Recordings
             </h1>
-            <form onSubmit={handleSubmit}>
+            <form /* onSubmit={handleSubmit} */>
                 <div className="grid gap-10 mb-8 md:grid-cols-5">
                 <label className="block text-sm">
                     <span className="text-gray-700 dark:text-gray-400">Select Module</span>
@@ -38,7 +36,7 @@ const AddRecording = ({course,updateData}) => {
                      name="moduleId"
                         className="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-select"
                     >
-                       {course?.modules.map((module, index) => (
+                       {course?.modules?.map((module, index) => (
                             <option key={index} value={module.id}>{module.title}</option>
                         ))}
                     </select>
