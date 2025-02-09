@@ -59,7 +59,7 @@ const Header = () => {
           </div>
 
           <ul className="flex items-center flex-shrink-0 space-x-6">
-            <NotificationMenu />
+            {/* <NotificationMenu /> */}
             <ProfileMenu onLogout={handleLogout} />
           </ul>
         </div>

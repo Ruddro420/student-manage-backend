@@ -49,17 +49,17 @@ const Header = () => {
             </svg>
           </button>
 
-          <div className="flex justify-center flex-1 lg:mr-32">
+         {/*  <div className="flex justify-center flex-1 lg:mr-32">
             <input
               className="w-full pl-8 pr-2 text-sm text-gray-700 placeholder-gray-600 bg-gray-100 border-0 rounded-md dark:bg-gray-700 dark:text-gray-200 focus:outline-none focus:shadow-outline-purple form-input"
               type="text"
               placeholder="Search for projects"
               aria-label="Search"
             />
-          </div>
+          </div> */}
 
           <ul className="flex items-center flex-shrink-0 space-x-6">
-            <NotificationMenu />
+            {/* <NotificationMenu /> */}
             <ProfileMenu onLogout={handleLogout} />
           </ul>
         </div>

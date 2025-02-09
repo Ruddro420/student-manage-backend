@@ -9,10 +9,10 @@ import Recording from "../pages/Recording/Recording";
 // import ClassSummary from "../pages/Courses/ClassSummary";
 import Assingment from "../pages/Assingment/Assingment";
 import VideoPlayer from "../pages/Recording/VideoPlayer";
+import PrivateRoute from "./PrivateRoute";
 // import SingleStudentDetails from "../pages/Students/SingleStudentDetails";
 import NotFound from "../components/NotFound/NotFound";
 import CourseDetails from "../pages/Courses/CourseDetails";
-import PrivateRoute from "./PrivateRoute";
 
 export const router = createBrowserRouter([
   {

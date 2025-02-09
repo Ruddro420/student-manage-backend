@@ -1,4 +1,5 @@
 import { Outlet } from "react-router-dom";
+
 import Sidebar from "../components/Sidebar/Sidebar";
 import { Toaster } from "react-hot-toast";
 import Header from "../components/Header/Header";
@@ -6,15 +7,15 @@ import Header from "../components/Header/Header";
 const MainLayout = () => {
     return (
         <>
-            <Toaster />
+      <Toaster/>
             <div className="flex h-screen bg-gray-50 dark:bg-gray-900">
                 {/* Sidebar */}
                 <Sidebar />
                 <div className="flex flex-col flex-1 w-full">
                     {/* Header */}
-                    <Header />
+                    {/* <Header /> */}
                     <main className="h-full overflow-y-auto">
-                        <Outlet /> {/* Render child route here */}
+                        <Outlet />
                     </main>
                 </div>
             </div>

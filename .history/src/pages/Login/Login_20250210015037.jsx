@@ -11,7 +11,7 @@ const Login = () => {
 const loginData = (e) => {
   e.preventDefault();
   
-  if (email == "admin@admin.com" && pass == "admin") {
+  if (email === "admin@admin.com" && pass === "admin") {
     const user = { email };  // Store necessary user data
     localStorage.setItem("user", JSON.stringify(user));  // Save as string
 

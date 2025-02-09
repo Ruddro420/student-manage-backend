@@ -1,14 +1,19 @@
-import { useState, useEffect, useRef } from "react";
-import toast from "react-hot-toast"; // Ensure you have this library installed
 
-const ProfileMenu = ({ onLogout }) => {
-  const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false);
+
+const ProfileMenu = () => {
+ /*  const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false);
+  const { logOut } = useAuth();
   const menuRef = useRef(null);
 
   const handleLogout = () => {
-    onLogout(); // Assuming onLogout is passed as a prop for logout functionality
-    toast.success("Logout Successfully");
-    setIsProfileMenuOpen(false); // Close the menu after logout
+    logOut()
+      .then(() => {
+        toast.success("Logout Successfully");
+        setIsProfileMenuOpen(false); // Close the menu on logout
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   const handleClickOutside = (event) => {
@@ -19,18 +24,18 @@ const ProfileMenu = ({ onLogout }) => {
 
   useEffect(() => {
     if (isProfileMenuOpen) {
-      document.addEventListener("mousedown", handleClickOutside);
+      document.addEventListener('mousedown', handleClickOutside);
     } else {
-      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener('mousedown', handleClickOutside);
     }
 
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [isProfileMenuOpen]);
+  }, [isProfileMenuOpen]); */
 
   return (
-    <li className="relative" ref={menuRef}>
+    {/* <li className="relative" ref={menuRef}>
       <div className="relative">
         <button
           onClick={() => setIsProfileMenuOpen(!isProfileMenuOpen)}
@@ -39,7 +44,7 @@ const ProfileMenu = ({ onLogout }) => {
           <img
             className="object-cover w-8 h-8 rounded-full focus:shadow-outline-purple"
             src="https://img.freepik.com/free-photo/handsome-bearded-guy-posing-against-white-wall_273609-20597.jpg?size=626&ext=jpg&ga=GA1.1.1413502914.1719878400&semt=sph"
-            alt="Profile"
+            alt=""
             aria-hidden="true"
           />
         </button>
@@ -48,8 +53,9 @@ const ProfileMenu = ({ onLogout }) => {
             className="absolute right-0 w-56 p-2 mt-2 space-y-2 text-gray-600 bg-white border border-gray-100 rounded-md shadow-md dark:border-gray-700 dark:text-gray-300 dark:bg-gray-700"
             aria-label="submenu"
           >
+           
             <li className="flex">
-              <div
+              <div 
                 onClick={handleLogout}
                 className="inline-flex items-center w-full px-2 py-1 text-sm font-semibold transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200 cursor-pointer"
               >
@@ -71,7 +77,7 @@ const ProfileMenu = ({ onLogout }) => {
           </ul>
         )}
       </div>
-    </li>
+    </li> */}
   );
 };
 

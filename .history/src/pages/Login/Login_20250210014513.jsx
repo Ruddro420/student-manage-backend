@@ -7,24 +7,22 @@ const Login = () => {
   const [pass, setPass] = useState()
   const navigate = useNavigate()
 
-
-const loginData = (e) => {
-  e.preventDefault();
   
-  if (email == "admin@admin.com" && pass == "admin") {
-    const user = { email };  // Store necessary user data
-    localStorage.setItem("user", JSON.stringify(user));  // Save as string
-
-    toast.success("Login Success");
-    
-    setTimeout(() => {
-      navigate("/dashboard");
-    }, 2000);
-  } else {
-    toast.error("Invalid Credentials!");
-  }
-};
-
+  const loginData = (e) => {
+    e.preventDefault();
+    if (email === 'admin@admin.com' && pass === 'admin') {
+      const user = { email }; // You can store additional user details if needed
+      localStorage.setItem("user", JSON.stringify(user)); // Store user data in localStorage
+  
+      toast.success('Login Success');
+      setTimeout(() => {
+        navigate('/dashboard');
+      }, 2000);
+    } else {
+      toast.error('Something Went Wrong!');
+      navigate('/');
+    }
+  };
   
 
   return (

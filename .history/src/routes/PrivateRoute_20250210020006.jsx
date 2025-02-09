@@ -6,6 +6,10 @@ const PrivateRoute = ({children }) => {
   const location = useLocation();
   const user = JSON.parse(localStorage.getItem("user") || "null"); // Prevent parsing error
   const loading = false; // Modify this if you have a real loading state
+
+  console.log(user);
+  
+
   if (loading) {
     return (
       <ProgressWindow>
