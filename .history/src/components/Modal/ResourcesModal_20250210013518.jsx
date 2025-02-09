@@ -37,7 +37,7 @@ const ResourcesModal = ({ isOpen, setIsOpen, modalData }) => {
                                 <div>
                                     <h2 className="text-2xl"> আপনার <b className="bg-[#12B76A] text-white px-5 py-1 rounded">রিসোর্স</b></h2>
                                     <div className="mt-8">
-                                        <h4 className="text-[#12B76A] mb-3">{modalData.name}</h4>
+                                        <h4 className="text-[#12B76A] mb-3">{modalData.title}</h4>
                                         <p>আপনার রিসোর্স সমূহ আপনি সবুজ রঙয়ের বাটনে ক্লিক করে ডাউনলোড করতে পারবেন !</p>
                                     </div>
                                     <div className="mt-5">

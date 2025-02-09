@@ -80,7 +80,7 @@ const ResourceTable = ({ data, updateData }) => {
                           <td className="px-4 py-3 text-sm">
                             {dateFormat(assignment.date)}
                           </td>
-                          <td>
+                          <td >
                             <button
                               className="px-2 py-3 text-sm flex items-center justify-between dark:bg-gray-800 dark:text-white border  bg-[#F3F4F6] cursor-pointer w-[100px] rounded m-2 hover:bg-slate-400"
                               onClick={() => modalHandler(assignment)}

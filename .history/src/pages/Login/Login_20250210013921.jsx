@@ -8,13 +8,9 @@ const Login = () => {
   const navigate = useNavigate()
   const loginData = (e) => {
     e.preventDefault()
-    if (email == 'admin@admin.com' && pass == 'admin') {
-      toast.success('Loign Success')
-      setTimeout(() => {
-        navigate('/dashboard')
-      }, 2000)
-    } else {
-      toast.error('Something Went Wrong!')
+    if(email == 'admin@admin.com' && pass == 'admin'){
+      navigate('/dashboard')
+    }else{
       navigate('/')
     }
 

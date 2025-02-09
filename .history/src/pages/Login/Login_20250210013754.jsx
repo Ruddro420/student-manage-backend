@@ -5,18 +5,7 @@ import { useState } from "react";
 const Login = () => {
   const [email, setEmail] = useState()
   const [pass, setPass] = useState()
-  const navigate = useNavigate()
-  const loginData = (e) => {
-    e.preventDefault()
-    if (email == 'admin@admin.com' && pass == 'admin') {
-      toast.success('Loign Success')
-      setTimeout(() => {
-        navigate('/dashboard')
-      }, 2000)
-    } else {
-      toast.error('Something Went Wrong!')
-      navigate('/')
-    }
+  const loginData = () => {
 
   }
 
@@ -54,7 +43,6 @@ const Login = () => {
                     type="email"
                     name="email"
                     onChange={(e) => setEmail(e.target.value)}
-                    value={email}
                   />
                 </label>
                 <label className="block mt-4 text-sm">
@@ -66,8 +54,6 @@ const Login = () => {
                     placeholder="***************"
                     type="password"
                     name="password"
-                    onChange={(e) => setPass(e.target.value)}
-                    value={pass}
                   />
                 </label>
 

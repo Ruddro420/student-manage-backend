@@ -1,24 +1,28 @@
 import { useNavigate } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
-import { useState } from "react";
 
 const Login = () => {
-  const [email, setEmail] = useState()
-  const [pass, setPass] = useState()
-  const navigate = useNavigate()
-  const loginData = (e) => {
-    e.preventDefault()
-    if (email == 'admin@admin.com' && pass == 'admin') {
-      toast.success('Loign Success')
-      setTimeout(() => {
-        navigate('/dashboard')
-      }, 2000)
-    } else {
-      toast.error('Something Went Wrong!')
-      navigate('/')
-    }
+  /* const { signIn } = useAuth();
+  const navigate = useNavigate();
+  const onSubmit = (e) => {
+    e.preventDefault();
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    // console.log(email, password)
+    signIn(email, password)
 
-  }
+      // eslint-disable-next-line no-unused-vars
+      .then((result) => {
+        toast.success("Login Successfully");
+        setTimeout(() => {
+          navigate("/dashboard");
+        }, 1000);
+      })
+      .catch((error) => {
+        toast.error("Something Went Wrong");
+        console.log(error.message);
+      });
+  }; */
 
   return (
     <>
@@ -40,7 +44,7 @@ const Login = () => {
               />
             </div>
             <div className="flex items-center justify-center p-6 sm:p-12 md:w-1/2">
-              <form onSubmit={loginData} className="w-full">
+              <form /* onSubmit={onSubmit}  */className="w-full">
                 <h1 className="mb-4 text-xl font-semibold text-gray-700 dark:text-gray-200">
                   Instructor Login
                 </h1>
@@ -53,8 +57,6 @@ const Login = () => {
                     placeholder="Email"
                     type="email"
                     name="email"
-                    onChange={(e) => setEmail(e.target.value)}
-                    value={email}
                   />
                 </label>
                 <label className="block mt-4 text-sm">
@@ -66,8 +68,6 @@ const Login = () => {
                     placeholder="***************"
                     type="password"
                     name="password"
-                    onChange={(e) => setPass(e.target.value)}
-                    value={pass}
                   />
                 </label>
 

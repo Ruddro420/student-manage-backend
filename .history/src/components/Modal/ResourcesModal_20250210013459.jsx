@@ -11,7 +11,7 @@ const ResourcesModal = ({ isOpen, setIsOpen, modalData }) => {
                 <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50">
                     <div className="bg-[#1D2939] rounded-lg overflow-hidden shadow-xl transform transition-all max-w-md w-full p-4">
                         <div className="flex justify-between items-center pb-3">
-                            <h3 className="text-xl font-semibold text-white">{modalData.name}</h3>
+                            <h3 className="text-xl font-semibold">{modalData.name}</h3>
                             <button
                                 onClick={() => setIsOpen(false)}
                                 className="text-gray-400 hover:text-gray-600"
@@ -37,7 +37,7 @@ const ResourcesModal = ({ isOpen, setIsOpen, modalData }) => {
                                 <div>
                                     <h2 className="text-2xl"> আপনার <b className="bg-[#12B76A] text-white px-5 py-1 rounded">রিসোর্স</b></h2>
                                     <div className="mt-8">
-                                        <h4 className="text-[#12B76A] mb-3">{modalData.name}</h4>
+                                        <h4 className="text-[#12B76A] mb-3">{modalData.title}</h4>
                                         <p>আপনার রিসোর্স সমূহ আপনি সবুজ রঙয়ের বাটনে ক্লিক করে ডাউনলোড করতে পারবেন !</p>
                                     </div>
                                     <div className="mt-5">

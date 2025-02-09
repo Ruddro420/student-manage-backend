@@ -14,7 +14,7 @@ const Login = () => {
         navigate('/dashboard')
       }, 2000)
     } else {
-      toast.error('Something Went Wrong!')
+      toast.success('Something Went Wrong!')
       navigate('/')
     }
 

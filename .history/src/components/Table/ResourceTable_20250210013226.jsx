@@ -48,7 +48,7 @@ const ResourceTable = ({ data, updateData }) => {
   };
   return (
     <>
-      <AddResource course={data} updateData={loadData} />
+      <AddResource course={data} updateData={updateData} />
       {loading ? (
         <p className="text-center">Loading...</p>
       ) : Object.keys(groupedAssignments).length > 0 ? (
@@ -75,12 +75,12 @@ const ResourceTable = ({ data, updateData }) => {
                       {moduleAssignments.map((assignment) => (
                         <tr key={assignment.id} className="text-gray-700 dark:text-gray-400">
                           <td className="px-4 py-3 w-1/3">
-                            <p className="font-semibold">{assignment.name}</p>
+                            <p className="font-semibold">{assignment.record_name}</p>
                           </td>
                           <td className="px-4 py-3 text-sm">
                             {dateFormat(assignment.date)}
                           </td>
-                          <td>
+                          <td className="px-4 py-3 text-sm flex items-center justify-center bg-[#F3F4F6] dark:bg-gray-800 dark:text-white border cursor-pointer w-[90px] rounded m-2 hover:bg-slate-400">
                             <button
                               className="px-2 py-3 text-sm flex items-center justify-between dark:bg-gray-800 dark:text-white border  bg-[#F3F4F6] cursor-pointer w-[100px] rounded m-2 hover:bg-slate-400"
                               onClick={() => modalHandler(assignment)}
