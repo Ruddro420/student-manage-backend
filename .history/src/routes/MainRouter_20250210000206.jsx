@@ -8,7 +8,7 @@ import Recording from "../pages/Recording/Recording";
 // import CourseDetails from "../pages/Courses/CourseDetails";
 // import ClassSummary from "../pages/Courses/ClassSummary";
 import Assingment from "../pages/Assingment/Assingment";
-import VideoPlayer from "../pages/Recording/VideoPlayer";
+// import VideoPlayer from "../pages/Recording/VideoPlayer";
 // import PrivateRoute from "./PrivateRoute";
 // import SingleStudentDetails from "../pages/Students/SingleStudentDetails";
 import NotFound from "../components/NotFound/NotFound";
@@ -42,10 +42,6 @@ export const router = createBrowserRouter([
       {
         path: "/dashboard/recording",
         element: <Recording />,
-      },
-      {
-        path: "/dashboard/class-recording/:id",
-        element: <VideoPlayer />,
       },
      /*  {
         path: "/dashboard/recording",

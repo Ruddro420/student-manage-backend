@@ -16,7 +16,7 @@ const LiveClass = ({ data, updateData }) => {
   const loadData = () => {
     axios.get(`${BASE_URL}/recording/data/${data.id}`)
       .then((res) => {
-        setAssignments(res.data?.recordings || []); // Ensure it's always an array
+        setAssignments(res.data?.assignments || []); // Ensure it's always an array
         setLoading(false);
       })
       .catch((error) => {
@@ -43,7 +43,7 @@ const LiveClass = ({ data, updateData }) => {
 
   return (
     <>
-      <AddRecording updateData={loadData} course={data} />
+      <AddRecording updateData={updateData} course={data} />
       {loading ? (
         <p className="text-center">Loading...</p>
       ) : Object.keys(groupedAssignments).length > 0 ? (

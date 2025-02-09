@@ -29,6 +29,7 @@ const LiveClass = ({ data, updateData }) => {
   useEffect(() => {
     if (data?.id) {
       loadData();
+      updateData()
     }
   }, [data?.id]);
 
@@ -43,7 +44,7 @@ const LiveClass = ({ data, updateData }) => {
 
   return (
     <>
-      <AddRecording updateData={loadData} course={data} />
+      <AddRecording updateData={updateData} course={data} />
       {loading ? (
         <p className="text-center">Loading...</p>
       ) : Object.keys(groupedAssignments).length > 0 ? (

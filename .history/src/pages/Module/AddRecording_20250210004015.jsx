@@ -16,7 +16,8 @@ const AddRecording = ({ course, updateData }) => {
         axios.get(`${BASE_URL}/module/data/${id}`).then((res) => {
             console.log(res.data.modules);
             setModules(res.data.modules);
-            setLoading(false); 
+            setLoading(false);
+            updateData()
         });
     }
     useMemo(() => {
@@ -36,7 +37,7 @@ const AddRecording = ({ course, updateData }) => {
         })
             .then(function () {
                 toast.success('Added Successfully')
-                updateData();
+                updateData()
                 reset()
             })
             .catch(function (error) {

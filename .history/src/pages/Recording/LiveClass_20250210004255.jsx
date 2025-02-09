@@ -18,6 +18,7 @@ const LiveClass = ({ data, updateData }) => {
       .then((res) => {
         setAssignments(res.data?.recordings || []); // Ensure it's always an array
         setLoading(false);
+        updateData()
       })
       .catch((error) => {
         console.error("Error fetching assignments:", error);
@@ -43,7 +44,7 @@ const LiveClass = ({ data, updateData }) => {
 
   return (
     <>
-      <AddRecording updateData={loadData} course={data} />
+      <AddRecording updateData={updateData} course={data} />
       {loading ? (
         <p className="text-center">Loading...</p>
       ) : Object.keys(groupedAssignments).length > 0 ? (

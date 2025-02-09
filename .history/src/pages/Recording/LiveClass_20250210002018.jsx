@@ -43,7 +43,7 @@ const LiveClass = ({ data, updateData }) => {
 
   return (
     <>
-      <AddRecording updateData={loadData} course={data} />
+      <AddRecording updateData={updateData} course={data} />
       {loading ? (
         <p className="text-center">Loading...</p>
       ) : Object.keys(groupedAssignments).length > 0 ? (

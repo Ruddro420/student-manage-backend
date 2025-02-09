@@ -1,4 +1,3 @@
-import TabComponent from "./TabComponent";
 
 const Recording = () => {
     return (
@@ -7,7 +6,7 @@ const Recording = () => {
                 ক্লাস রেকর্ডিং সমূহ
             </h2>
             {/* Tab Component */}
-            <TabComponent />
+           {/*  <TabComponent /> */}
         </div>
     );
 };
