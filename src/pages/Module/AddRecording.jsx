@@ -23,20 +23,45 @@ const AddRecording = ({ course, updateData }) => {
         loadData()
     }, [id]);
 
+    const onSubmit = (data) => {
+        axios.post(`${BASE_URL}/recording/add`, {
+            course_name: modules[0].course_name,
+            batch_no: modules[0].batch_no,
+            module_name: data.module_name,
+            record_type: data.record_type,
+            record_name: data.record_name,
+            vLink: data.vLink,
+            course_id: modules[0].course_id,
+            date: data.date,
+        })
+            .then(function () {
+                toast.success('Added Successfully')
+                updateData()
+                reset()
+            })
+            .catch(function (error) {
+                console.log(error);
+                toast.error(error.message)
+            });
+
+    };
+
     return (
         <div className="mb-10 bg-white dark:bg-gray-800 p-5 shadow-sm rounded">
             <h1 className="mb-4 text-xl font-semibold text-gray-700 dark:text-gray-200">
                 Add Recordings
             </h1>
-            <form /* onSubmit={handleSubmit} */>
+            <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="grid gap-10 mb-8 md:grid-cols-5">
                     <label className="block text-sm">
                         <span className="text-gray-700 dark:text-gray-400">Select Module</span>
                         <select
+                        {...register("module_name", { required: true })}
                             required
                             name="module_name"
                             className="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-select"
                         >
+                            <option value="">Select Module</option>
                             {modules.map((module, index) => (
                                 <option key={index} value={module.module_name}>{module.module_name}</option>
                             ))}
@@ -45,6 +70,7 @@ const AddRecording = ({ course, updateData }) => {
                     <label className="block text-sm">
                         <span className="text-gray-700 dark:text-gray-400">Class Type</span>
                         <select
+                        {...register("record_type", { required: true })}
                             name="record_type"
                             required
                             className="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-select"
@@ -58,6 +84,7 @@ const AddRecording = ({ course, updateData }) => {
                     <label className="block text-sm">
                         <span className="text-gray-700 dark:text-gray-400">Name</span>
                         <input
+                        {...register("record_name", { required: true })}
                             required
                             name='record_name'
                             className="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -68,6 +95,7 @@ const AddRecording = ({ course, updateData }) => {
                     <label className="block text-sm">
                         <span className="text-gray-700 dark:text-gray-400">Video Link</span>
                         <input
+                        {...register("vLink", { required: true })}
                             required
                             name='vLink'
                             className="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
@@ -78,6 +106,7 @@ const AddRecording = ({ course, updateData }) => {
                     <label className="block text-sm">
                         <span className="text-gray-700 dark:text-gray-400">Date</span>
                         <input
+                        {...register("date", { required: true })}
                             required
                             name="date"
                             className="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
