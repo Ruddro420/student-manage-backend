@@ -6,6 +6,8 @@ import { dateFormat } from "../../lib/date";
 import NoDataFound from "../../components/NoDataFound/NoDataFound";
 
 const AllAssignments = ({ data }) => {
+  console.log(data);
+  
   const { assignments } = data;
   return (
     <>

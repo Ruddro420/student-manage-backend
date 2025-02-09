@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Modal from "../../components/Modal/Modal";
 import AddModule from "../Module/AddModule";
 import { e2b_number, status } from "../../lib/bn";
@@ -14,7 +14,7 @@ const Module = ({ data, updateData }) => {
   const [loading, setLoading] = useState(true);
   
 
-  console.log(data);
+  // console.log(data);
   
   const loadData = () => {
     axios.get(`${BASE_URL}/module/data/${data.id}`).then((res) => {
@@ -23,15 +23,17 @@ const Module = ({ data, updateData }) => {
       setLoading(false);
     });
   }
-  useEffect(() => {
+  useMemo(() => {
     loadData()
-  }, [data.id]);
+  }, [data]);
   console.log(modules);
   
   return (
     <>
       <AddModule courseId={data} updateData={loadData} />
-      {modules?.length != 0 ? (
+      {loading?(<div>Loading...</div>):<> 
+      
+        {modules?.length != 0 ? (
         <div className="grid gap-10 mb-8 md:grid-cols-3">
           {modules?.map((item, i) => (
             <div key={item.id}>
@@ -100,6 +102,9 @@ const Module = ({ data, updateData }) => {
       ) : (
         <NoDataFound />
       )}
+      
+      </>}
+      
     </>
   );
 };
