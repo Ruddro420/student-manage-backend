@@ -1,13 +1,11 @@
-import { useParams } from "react-router-dom";
-import CourseTab from "./CourseTab";
-import useAxiosSecure from "../../hooks/useAxiosSecure";
-import { useEffect, useState } from "react";
-import Spin from "../../components/Loader/Spin";
+// import { useParams } from "react-router-dom";
+// import CourseTab from "./CourseTab";
+// import { useEffect, useState } from "react";
+// import Spin from "../../components/Loader/Spin";
 
 const CourseDetails = () => {
-  const params = useParams();
+ /*  const params = useParams();
   const { id } = params;
-  const axiosSecure = useAxiosSecure();
   const [course, setCourese] = useState(null);
 
   useEffect(() => {
@@ -21,23 +19,23 @@ const CourseDetails = () => {
     axiosSecure.get(`/courses/${id}`).then((res) => {
       setCourese(res.data);
     });
-  };
+  }; */
   return (
     
     <>
-      {course ? (
+     {/*  {course ? (
         <div className="container px- lg:px-6 mx-auto grid">
           <h2 className="my-6 lg:px-0 px-4 text-2xl font-semibold text-gray-700 dark:text-gray-200">
             {course.title}
           </h2>
-          {/* Course Tab */}
+        
           <CourseTab course={course} updateData={updateData} />
         </div>
       ) : (
         <span>
           <Spin />
         </span>
-      )}
+      )} */}
     </>
   );
 };

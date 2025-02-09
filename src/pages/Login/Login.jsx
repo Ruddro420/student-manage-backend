@@ -1,9 +1,8 @@
 import { useNavigate } from "react-router-dom";
-import useAuth from "../../hooks/useAuth";
 import toast, { Toaster } from "react-hot-toast";
 
 const Login = () => {
-  const { signIn } = useAuth();
+  /* const { signIn } = useAuth();
   const navigate = useNavigate();
   const onSubmit = (e) => {
     e.preventDefault();
@@ -23,7 +22,7 @@ const Login = () => {
         toast.error("Something Went Wrong");
         console.log(error.message);
       });
-  };
+  }; */
 
   return (
     <>
@@ -45,7 +44,7 @@ const Login = () => {
               />
             </div>
             <div className="flex items-center justify-center p-6 sm:p-12 md:w-1/2">
-              <form onSubmit={onSubmit} className="w-full">
+              <form /* onSubmit={onSubmit}  */className="w-full">
                 <h1 className="mb-4 text-xl font-semibold text-gray-700 dark:text-gray-200">
                   Instructor Login
                 </h1>

@@ -1,4 +1,4 @@
-import { GithubAuthProvider, signInWithPopup } from 'firebase/auth';
+/* import { GithubAuthProvider, signInWithPopup } from 'firebase/auth';
 import PropTypes from 'prop-types';
 import { useEffect, useState } from "react";
 import { createContext } from "react";
@@ -94,4 +94,4 @@ AuthProvider.propTypes = {
   children: PropTypes.node
 };
 
-export default AuthProvider;
+export default AuthProvider; */
