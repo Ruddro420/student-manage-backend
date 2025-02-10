@@ -84,7 +84,7 @@ const CourseTab = ({course,updateData}) => {
                     <ResourceTable data={course} updateData={updateData}/>
                 </div>
                 <div className={`${activeTab === 4 ? 'block' : 'hidden'} transition-opacity duration-600`}>
-                    <Students data={course}  reloadData={updateData}/>
+                    {/* <Students data={course}  reloadData={updateData}/> */}
                 </div>
             </div>
         </div>

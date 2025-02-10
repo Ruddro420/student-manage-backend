@@ -22,7 +22,7 @@ const AddCourse = ({ updateData }) => {
             })
             .catch(function (error) {
                 console.log(error);
-                toast.error(error.message)
+                toast.error('Something Went Wrong')
             });
     };
 
