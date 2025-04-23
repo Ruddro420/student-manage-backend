@@ -8,8 +8,6 @@ import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
 
 const Students = ({ data, reloadData }) => {
-  //console.log(data);
-  
   /* const statusHandler = (id, courseId) => {
     
 
@@ -42,9 +40,10 @@ const Students = ({ data, reloadData }) => {
   // Get module data
   useEffect(() => {
     axios
-      .get(`${BASE_URL}/student/data/show/${data.course_name}/${data.batch_no}`)
+      .get(`${BASE_URL}/account/data`)
       .then(function (response) {
         console.log(response);
+
         setStudentData(response.data);
         setLoading(false);
       })
@@ -52,9 +51,9 @@ const Students = ({ data, reloadData }) => {
         console.log(error);
         setLoading(false);
       });
-  }, [BASE_URL, data.batch_no, data.course_name]);
+  }, [BASE_URL]);
 
- console.log(studentData);
+  console.log(studentData);
 
   return (
     <>
@@ -107,9 +106,9 @@ const Students = ({ data, reloadData }) => {
                           </Link>
                           {item.status === "pending" ? (
                             <div
-                            //   onClick={() =>
-                            //   statusHandler(item.id, item.courseId)
-                            // }
+                              /* onClick={() =>
+                              statusHandler(item.id, item.courseId)
+                            } */
                               className="flex items-center bg-[#12b76A] text-white px-5 rounded-md my-3 cursor-pointer hover:bg-[black]"
                             >
                               <span className="mr-1 hidden lg:block text-sm lg:text-current">
@@ -119,9 +118,9 @@ const Students = ({ data, reloadData }) => {
                             </div>
                           ) : (
                             <div
-                            //   onClick={() =>
-                            //   statusHandler(item.id, item.courseId)
-                            // }
+                              /* onClick={() =>
+                              statusHandler(item.id, item.courseId)
+                            } */
                               className="flex items-center bg-[#ff2ded] text-white px-5 rounded-md my-3 cursor-pointer"
                             >
                               <span className="mr-1 text-sm lg:text-current hidden lg:block">

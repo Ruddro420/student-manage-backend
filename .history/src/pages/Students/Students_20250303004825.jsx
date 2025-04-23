@@ -72,7 +72,7 @@ const Students = ({ data, reloadData }) => {
                   <th className="px-4 py-3">দেখুন</th>
                 </tr>
               </thead>
-              {studentData.length != 0 && (
+              {/* {studentData.length != 0 && (
                 <tbody className="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
                   {studentData?.map((item) => (
                     <tr
@@ -107,9 +107,9 @@ const Students = ({ data, reloadData }) => {
                           </Link>
                           {item.status === "pending" ? (
                             <div
-                            //   onClick={() =>
-                            //   statusHandler(item.id, item.courseId)
-                            // }
+                              onClick={() =>
+                              statusHandler(item.id, item.courseId)
+                            }
                               className="flex items-center bg-[#12b76A] text-white px-5 rounded-md my-3 cursor-pointer hover:bg-[black]"
                             >
                               <span className="mr-1 hidden lg:block text-sm lg:text-current">
@@ -119,9 +119,9 @@ const Students = ({ data, reloadData }) => {
                             </div>
                           ) : (
                             <div
-                            //   onClick={() =>
-                            //   statusHandler(item.id, item.courseId)
-                            // }
+                              onClick={() =>
+                              statusHandler(item.id, item.courseId)
+                            }
                               className="flex items-center bg-[#ff2ded] text-white px-5 rounded-md my-3 cursor-pointer"
                             >
                               <span className="mr-1 text-sm lg:text-current hidden lg:block">
@@ -135,7 +135,7 @@ const Students = ({ data, reloadData }) => {
                     </tr>
                   ))}
                 </tbody>
-              )}
+              )} */}
             </table>
           </div>
         </div>
