@@ -8,6 +8,8 @@ import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
 
 const Students = ({ data, reloadData }) => {
+  //console.log(data);
+  
   /* const statusHandler = (id, courseId) => {
     
 
@@ -40,26 +42,19 @@ const Students = ({ data, reloadData }) => {
   // Get module data
   useEffect(() => {
     axios
-      .get(`${BASE_URL}/account/data`)
+      .get(`${BASE_URL}/student/data/show/${data.batch_no}/${data.course_name}`)
       .then(function (response) {
         console.log(response);
-
-        // Filter students based on course_name and batch_no from props
-        const filteredStudents = response.data.student.filter(student => 
-          student.course_name === data.course_name && 
-          student.batch_no === data.batch_no.toString()
-        );
-
-        setStudentData({...response.data, student: filteredStudents});
+        setStudentData(response.data);
         setLoading(false);
       })
       .catch(function (error) {
         console.log(error);
         setLoading(false);
       });
-  }, [BASE_URL, data.course_name, data.batch_no]);
+  }, [BASE_URL, data.batch_no, data.course_name]);
 
-  console.log(studentData);
+ console.log(studentData);
 
   return (
     <>
@@ -77,9 +72,9 @@ const Students = ({ data, reloadData }) => {
                   <th className="px-4 py-3">দেখুন</th>
                 </tr>
               </thead>
-              {studentData?.student?.length != 0 && (
+              {/* {studentData.length != 0 && (
                 <tbody className="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
-                  {studentData?.student?.map((item) => (
+                  {studentData?.map((item) => (
                     <tr
                       key={item.id}
                       className="text-gray-700 dark:text-gray-400"
@@ -112,9 +107,9 @@ const Students = ({ data, reloadData }) => {
                           </Link>
                           {item.status === "pending" ? (
                             <div
-                            //   onClick={() =>
-                            //   statusHandler(item.id, item.courseId)
-                            // }
+                              onClick={() =>
+                              statusHandler(item.id, item.courseId)
+                            }
                               className="flex items-center bg-[#12b76A] text-white px-5 rounded-md my-3 cursor-pointer hover:bg-[black]"
                             >
                               <span className="mr-1 hidden lg:block text-sm lg:text-current">
@@ -124,9 +119,9 @@ const Students = ({ data, reloadData }) => {
                             </div>
                           ) : (
                             <div
-                            //   onClick={() =>
-                            //   statusHandler(item.id, item.courseId)
-                            // }
+                              onClick={() =>
+                              statusHandler(item.id, item.courseId)
+                            }
                               className="flex items-center bg-[#ff2ded] text-white px-5 rounded-md my-3 cursor-pointer"
                             >
                               <span className="mr-1 text-sm lg:text-current hidden lg:block">
@@ -140,7 +135,7 @@ const Students = ({ data, reloadData }) => {
                     </tr>
                   ))}
                 </tbody>
-              )}
+              )} */}
             </table>
           </div>
         </div>
