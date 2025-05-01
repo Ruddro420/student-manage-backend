@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import axios from 'axios';
 import PropTypes from 'prop-types';
@@ -76,8 +78,8 @@ const AddRecording = ({ course, updateData }) => {
                             className="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-select"
                         >
                             <option value="লাইভ ক্লাস">লাইভ ক্লাস</option>
-                            <option value="সাপোর্ট ক্লাস">সাপোর্ট ক্লাস</option>
-                            <option value="বোনাস ক্লাস">বোনাস ক্লাস</option>
+                          {/*   <option value="সাপোর্ট ক্লাস">সাপোর্ট ক্লাস</option>
+                            <option value="বোনাস ক্লাস">বোনাস ক্লাস</option> */}
                         </select>
                     </label>
 

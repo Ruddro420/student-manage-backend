@@ -1,11 +1,14 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-import { Eye } from "lucide-react";
+import { Eye, Trash2 } from "lucide-react";
 import ResourcesModal from "../Modal/ResourcesModal";
 import { useEffect, useState } from "react";
 import AddResource from "../../pages/Module/AddResource";
 import { dateFormat } from "../../lib/date";
 import axios from "axios";
 import NoDataFound from "../NoDataFound/NoDataFound";
+import toast from "react-hot-toast";
 
 const ResourceTable = ({ data, updateData }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -90,8 +93,38 @@ const ResourceTable = ({ data, updateData }) => {
                                   <span className="mr-1">চেক করুন</span>
                                   <Eye />
                                 </div>
+
                               </td>
                             </button>
+                            <button
+                              onClick={() => {
+                                alert("Are you sure you want to delete this module?");
+
+                                toast.promise(
+                                  axios
+                                    .delete(`/api/${assignment.id}`)
+                                    .then(() => {
+                                      updateData();
+                                    }),
+                                  {
+                                    loading: "Deleting...",
+                                    success: "Deleted successfully!",
+                                    error: "Error deleting module",
+                                  }
+                                );
+                              }}
+                              className="px-2 py-3 text-sm flex items-center justify-between dark:bg-gray-800 dark:text-white border  bg-[#F3F4F6] cursor-pointer w-[100px] rounded m-2 hover:bg-slate-400"
+
+                            >
+                              <td>
+                                <div className="flex items-center">
+                                  <span className="mr-1">Delete</span>
+                                  <Trash2 />
+                                </div>
+
+                              </td>
+                            </button>
+
                           </td>
                         </tr>
                       ))}

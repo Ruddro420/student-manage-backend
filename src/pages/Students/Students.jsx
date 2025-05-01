@@ -8,30 +8,7 @@ import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
 
 const Students = ({ data, reloadData }) => {
-  /* const statusHandler = (id, courseId) => {
-    
 
-    const updateData = {
-      studentId: id,
-      courseId: courseId,
-    };
-
-    // console.log(updateData);
-
-    toast.promise(
-      axiosSecure
-        .post("/confirm", updateData)
-        .then(() => reloadData())
-        .then((data) => {
-          console.log(data);
-        }),
-      {
-        loading: "Updating...",
-        success: "Update Successfully",
-        error: "Faild Update",
-      }
-    );
-  }; */
 
   const [studentData, setStudentData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -44,16 +21,23 @@ const Students = ({ data, reloadData }) => {
       .then(function (response) {
         console.log(response);
 
-        setStudentData(response.data);
+        // Filter students based on course_name and batch_no from props
+        const filteredStudents = response.data.student.filter(student => 
+          student.course_name === data.course_name && 
+          student.batch_no === data.batch_no.toString()
+        );
+
+        setStudentData({...response.data, student: filteredStudents});
         setLoading(false);
       })
       .catch(function (error) {
         console.log(error);
         setLoading(false);
       });
-  }, [BASE_URL]);
+  }, [BASE_URL, data.course_name, data.batch_no]);
 
-  console.log(studentData);
+  console.log(data);
+
 
   return (
     <>
@@ -71,9 +55,9 @@ const Students = ({ data, reloadData }) => {
                   <th className="px-4 py-3">দেখুন</th>
                 </tr>
               </thead>
-              {studentData.length != 0 && (
+              {studentData?.student?.length != 0 && (
                 <tbody className="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
-                  {studentData?.map((item) => (
+                  {studentData?.student?.map((item) => (
                     <tr
                       key={item.id}
                       className="text-gray-700 dark:text-gray-400"

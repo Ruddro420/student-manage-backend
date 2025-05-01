@@ -11,7 +11,7 @@ const CourseDetails = () => {
   const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 
-// load data
+  // load data
   useEffect(() => {
     axios.get(`${BASE_URL}/course/show/${id}`)
       .then((res) => {

@@ -1,14 +1,16 @@
+/* eslint-disable no-unused-vars */
 import { useEffect, useState } from 'react';
 import LiveClass from '../Recording/LiveClass';
 import Module from './Module';
 import AllAssignments from './AllAssignments';
-import ResourceTable from "../../components/Table/ResourceTable"; 
+import ResourceTable from "../../components/Table/ResourceTable";
 // import data from '../../../data/module.json'
+// eslint-disable-next-line no-unused-vars
 import Students from '../Students/Students';
 import axios from 'axios';
 
 // eslint-disable-next-line react/prop-types
-const CourseTab = ({course,updateData}) => {
+const CourseTab = ({ course, updateData }) => {
     const [activeTab, setActiveTab] = useState(0);
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -19,18 +21,18 @@ const CourseTab = ({course,updateData}) => {
         axios.get(`${BASE_URL}/module/data`)
             .then(function (response) {
                 setData(response.data);
-                setLoading(false); 
+                setLoading(false);
             })
             .catch(function (error) {
                 console.log(error);
-                setLoading(false); 
+                setLoading(false);
             });
     }, [BASE_URL]);
-    
+
 
     return (
         <div>
-            
+
             <div className="rounded-xl dark:text-white p-1 mb-3 max-w-md overflow-hidden">
                 <ul className="flex py-4 items-center gap-2 text-sm font-medium flex-wrap">
                     <li>
@@ -72,19 +74,19 @@ const CourseTab = ({course,updateData}) => {
             </div>
             <div className="py-3 lg:px-0 px-2">
                 <div className={`${activeTab === 0 ? 'block' : 'hidden'} transition-opacity duration-600`}>
-                    <Module data={course} updateData={updateData}/>
+                    <Module data={course} updateData={updateData} />
                 </div>
                 <div className={`${activeTab === 1 ? 'block' : 'hidden'} transition-opacity duration-600`}>
-                    <AllAssignments data={course} />
+                    <AllAssignments data={course} updateData={updateData} />
                 </div>
                 <div className={`${activeTab === 2 ? 'block' : 'hidden'} transition-opacity duration-600`}>
-                    <LiveClass data={course} updateData={updateData}/>
+                    <LiveClass data={course} updateData={updateData} />
                 </div>
                 <div className={`${activeTab === 3 ? 'block' : 'hidden'} transition-opacity duration-600`}>
-                    <ResourceTable data={course} updateData={updateData}/>
+                    <ResourceTable data={course} updateData={updateData} />
                 </div>
                 <div className={`${activeTab === 4 ? 'block' : 'hidden'} transition-opacity duration-600`}>
-                    {/* <Students data={course}  reloadData={updateData}/> */}
+                    <Students data={course}  reloadData={updateData}/>
                 </div>
             </div>
         </div>

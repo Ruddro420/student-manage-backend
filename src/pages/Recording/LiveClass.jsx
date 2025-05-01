@@ -1,5 +1,7 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-import { Eye } from "lucide-react";
+import { Eye, Trash2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import AddRecording from "../Module/AddRecording";
 import PropTypes from "prop-types";
@@ -7,6 +9,7 @@ import { dateFormat } from "../../lib/date";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import NoDataFound from "../../components/NoDataFound/NoDataFound";
+import toast from "react-hot-toast";
 
 const LiveClass = ({ data, updateData }) => {
   const BASE_URL = import.meta.env.VITE_API_BASE_URL;
@@ -80,6 +83,29 @@ const LiveClass = ({ data, updateData }) => {
                               <span className="mr-1">দেখুন</span>
                               <Eye />
                             </Link>
+                          </td>
+                          <td className=" text-sm flex items-center justify-center bg-[#F3F4F6] dark:bg-gray-800 dark:text-white border cursor-pointer w-[90px] rounded m-2 hover:bg-slate-400">
+                            <button
+                              onClick={() => {
+                                alert("Are you sure you want to delete this module?");
+
+                                toast.promise(
+                                  axios
+                                    .delete(`/api/${assignment.id}`)
+                                    .then(() => {
+                                      updateData();
+                                    }),
+                                  {
+                                    loading: "Deleting...",
+                                    success: "Deleted successfully!",
+                                    error: "Error deleting module",
+                                  }
+                                );
+                              }}
+                              className="flex items-center border-0 px-4 py-3 btn">
+                              <span className="mr-1">Delete</span>
+                              <Trash2 />
+                            </button>
                           </td>
                         </tr>
                       ))}
