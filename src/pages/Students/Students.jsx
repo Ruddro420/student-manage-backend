@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
 /* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable react/prop-types */
@@ -6,6 +7,7 @@ import { Check, CheckCheckIcon, CheckCircle, Eye, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
+import Loader from "../../components/Loader/Loader";
 
 const Students = ({ data, reloadData }) => {
   const [studentData, setStudentData] = useState([]);
@@ -65,7 +67,7 @@ const Students = ({ data, reloadData }) => {
   // Get module data
   useEffect(() => {
     getStudentData();
-  }, [BASE_URL, data.course_name, data.batch_no]);
+  }, [BASE_URL, data.course_name, data.batch_no, getStudentData]);
 
   // delete student
   const deleteModule = (id) => {
@@ -89,86 +91,88 @@ const Students = ({ data, reloadData }) => {
         <div className="p-3 border rounded-lg mb-2 mt-5 bg-[#1D2939] text-white">
           <h1>Students Details</h1>
         </div>
-        <div className="w-full px-1 overflow-hidden rounded-lg shadow-xs">
-          <div className="w-full overflow-x-auto">
-            <table className="w-full whitespace-no-wrap">
-              <thead>
-                <tr className="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
-                  <th className="px-4 py-3">নাম</th>
-                  <th className="px-4 py-3">ফোন</th>
-                  <th className="px-4 py-3">আইডি</th>
-                  <th className="px-4 py-3">দেখুন</th>
-                </tr>
-              </thead>
-              {studentData?.student?.length != 0 && (
-                <tbody className="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
-                  {studentData?.student?.map((item) => (
-                    <tr
-                      key={item.id}
-                      className="text-gray-700 dark:text-gray-400"
-                    >
-                      <td className="px-1 lg:px-4 py-3">
-                        <div className="flex items-center text-sm">
-                          <div className="w-32 lg:w-48">
-                            <div className="font-semibold overflow-hidden overflow-ellipsis whitespace-nowrap">
-                              {item.email}
+        {loading ? <Loader /> :
+          <div className="w-full px-1 overflow-hidden rounded-lg shadow-xs">
+            <div className="w-full overflow-x-auto">
+              <table className="w-full whitespace-no-wrap">
+                <thead>
+                  <tr className="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
+                    <th className="px-4 py-3">নাম</th>
+                    <th className="px-4 py-3">ফোন</th>
+                    <th className="px-4 py-3">আইডি</th>
+                    <th className="px-4 py-3">দেখুন</th>
+                  </tr>
+                </thead>
+                {studentData?.student?.length != 0 && (
+                  <tbody className="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
+                    {studentData?.student?.map((item) => (
+                      <tr
+                        key={item.id}
+                        className="text-gray-700 dark:text-gray-400"
+                      >
+                        <td className="px-1 lg:px-4 py-3">
+                          <div className="flex items-center text-sm">
+                            <div className="w-32 lg:w-48">
+                              <div className="font-semibold overflow-hidden overflow-ellipsis whitespace-nowrap">
+                                {item.email}
+                              </div>
                             </div>
                           </div>
-                        </div>
-                      </td>
-                      <td className="px-1 lg:px-4 py-3 text-sm">
-                        {item.phone}
-                      </td>
-                      <td className="px-1 lg:px-4 py-3 text-sm">
-                        {item.ex_1}
-                      </td>
+                        </td>
+                        <td className="px-1 lg:px-4 py-3 text-sm">
+                          {item.phone}
+                        </td>
+                        <td className="px-1 lg:px-4 py-3 text-sm">
+                          {item.ex_1}
+                        </td>
 
-                      <td className="w-1/3 px-1 lg:px-4 py-3 text-sm">
-                        <div className="flex flex-wrap gap-4 items-center">
-                          {/* View Button */}
-                          <Link
-                            className="px-4 py-3 text-sm flex items-center cursor-pointer rounded hover:text-black hover:bg-slate-400 bg-[black] text-white"
-                            to={`/dashboard/single-student-details/${item.ex_1}`}
-                          >
-                            <span className="mr-1 hidden lg:block">চেক করুন</span>
-                            <Eye />
-                          </Link>
-
-                          {/* Approve or Pending Button */}
-                          {item.status == 0 ? (
-                            <div
-                              onClick={() => statusHandler(item.id, item.courseId)}
-                              className="flex items-center bg-[#12b76A] text-white px-5 py-3 rounded-md cursor-pointer hover:bg-[black]"
+                        <td className="w-1/3 px-1 lg:px-4 py-3 text-sm">
+                          <div className="flex flex-wrap gap-4 items-center">
+                            {/* View Button */}
+                            <Link
+                              className="px-4 py-3 text-sm flex items-center cursor-pointer rounded hover:text-black hover:bg-slate-400 bg-[black] text-white"
+                              to={`/dashboard/single-student-details/${item.ex_1}`}
                             >
-                              <span className="mr-1 hidden lg:block text-sm">এপ্রুভ করুন</span>
-                              <Check />
-                            </div>
-                          ) : (
-                            <div
-                              onClick={() => statusPendingHandler(item.id, item.courseId)}
-                              className="flex items-center bg-[#ff2ded] text-white px-5 py-3 rounded-md cursor-pointer"
-                            >
-                              <span className="mr-1 hidden lg:block text-sm">পেন্ডিং রাখুন</span>
-                              <X />
-                            </div>
-                          )}
+                              <span className="mr-1 hidden lg:block">চেক করুন</span>
+                              <Eye />
+                            </Link>
 
-                          {/* Delete Button */}
-                          <div
-                            onClick={() => { deleteModule(item.id) }}
-                            className="bg-[red] text-white px-5 py-3 rounded-md cursor-pointer">
-                            Delete
+                            {/* Approve or Pending Button */}
+                            {item.status == 0 ? (
+                              <div
+                                onClick={() => statusHandler(item.id, item.courseId)}
+                                className="flex items-center bg-[#12b76A] text-white px-5 py-3 rounded-md cursor-pointer hover:bg-[black]"
+                              >
+                                <span className="mr-1 hidden lg:block text-sm">এপ্রুভ করুন</span>
+                                <Check />
+                              </div>
+                            ) : (
+                              <div
+                                onClick={() => statusPendingHandler(item.id, item.courseId)}
+                                className="flex items-center bg-[#ff2ded] text-white px-5 py-3 rounded-md cursor-pointer"
+                              >
+                                <span className="mr-1 hidden lg:block text-sm">পেন্ডিং রাখুন</span>
+                                <X />
+                              </div>
+                            )}
+
+                            {/* Delete Button */}
+                            <div
+                              onClick={() => { deleteModule(item.id) }}
+                              className="bg-[red] text-white px-5 py-3 rounded-md cursor-pointer">
+                              Delete
+                            </div>
                           </div>
-                        </div>
-                      </td>
+                        </td>
 
-                    </tr>
-                  ))}
-                </tbody>
-              )}
-            </table>
+                      </tr>
+                    ))}
+                  </tbody>
+                )}
+              </table>
+            </div>
           </div>
-        </div>
+        }
       </div>
     </>
   );

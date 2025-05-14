@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState } from "react"; // Import useState hook
+import { PiRankingLight } from "react-icons/pi";
 
 const Sidebar = () => {
     const [activeTab, setActiveTab] = useState(0); // State to manage active tab index
@@ -127,6 +128,16 @@ const Sidebar = () => {
                                 <path d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"></path>
                             </svg>
                             <span className="ml-4">পারফর্মেন্স</span>
+                        </Link>
+                    </li>
+                    <li className="relative px-2 py-3">
+                        <Link
+                            className={`inline-flex items-center w-full text-sm font-semibold transition-colors duration-150  dark:hover:text-gray-200 p-3 ${activeTab === 4 ? 'bg-purple-600 text-white p-3 rounded' : ''}`}
+                            to="/dashboard/ranking"
+                            onClick={() => setActiveTab(4)}>
+                            <PiRankingLight size={25}/>
+
+                            <span className="ml-4">র‍্যাঙ্কিং</span>
                         </Link>
                     </li>
                 </ul>

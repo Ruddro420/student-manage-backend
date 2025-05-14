@@ -9,6 +9,7 @@ import { dateFormat } from "../../lib/date";
 import axios from "axios";
 import NoDataFound from "../NoDataFound/NoDataFound";
 import toast from "react-hot-toast";
+import Loader from "../Loader/Loader";
 
 const ResourceTable = ({ data, updateData }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -70,7 +71,7 @@ const ResourceTable = ({ data, updateData }) => {
     <>
       <AddResource course={data} updateData={loadData} />
       {loading ? (
-        <p className="text-center">Loading...</p>
+        <Loader/>
       ) : Object.keys(groupedAssignments).length > 0 ? (
         <div className="module-container">
           {Object.entries(groupedAssignments).map(([moduleName, moduleAssignments]) => (

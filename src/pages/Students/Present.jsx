@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
 /* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable react/prop-types */
@@ -5,6 +6,7 @@ import axios from "axios";
 import { Check, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
+import Loader from "../../components/Loader/Loader";
 
 const Present = ({ data, reloadData }) => {
     const [studentData, setStudentData] = useState([]);
@@ -33,7 +35,7 @@ const Present = ({ data, reloadData }) => {
 
     useEffect(() => {
         getStudentData();
-    }, [BASE_URL, data.course_name, data.batch_no]);
+    }, [BASE_URL, data.course_name, data.batch_no, getStudentData]);
 
     const presentData = (id, courseId) => {
         if (!date) {
@@ -95,73 +97,74 @@ const Present = ({ data, reloadData }) => {
                     />
                 </div>
             </div>
-
-            <div className="w-full px-1 overflow-hidden rounded-lg shadow-xs">
-                <div className="w-full overflow-x-auto">
-                    <table className="w-full whitespace-no-wrap">
-                        <thead>
-                            <tr className="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
-                                <th className="px-4 py-3">নাম</th>
-                                <th className="px-4 py-3">ফোন</th>
-                                <th className="px-4 py-3">আইডি</th>
-                                <th className="px-4 py-3">অ্যাকশন</th>
-                            </tr>
-                        </thead>
-                        {studentData?.student?.length > 0 && (
-                            <tbody className="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
-                                {studentData.student.map((item) => (
-                                    <tr key={item.id} className="text-gray-700 dark:text-gray-400">
-                                        <td className="px-1 lg:px-4 py-3">
-                                            <div className="flex items-center text-sm">
-                                                <div className="w-32 lg:w-48">
-                                                    <div className="font-semibold overflow-hidden overflow-ellipsis whitespace-nowrap">
-                                                        {item.email}
+            {loading ? <Loader /> :
+                <div className="w-full px-1 overflow-hidden rounded-lg shadow-xs">
+                    <div className="w-full overflow-x-auto">
+                        <table className="w-full whitespace-no-wrap">
+                            <thead>
+                                <tr className="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
+                                    <th className="px-4 py-3">নাম</th>
+                                    <th className="px-4 py-3">ফোন</th>
+                                    <th className="px-4 py-3">আইডি</th>
+                                    <th className="px-4 py-3">অ্যাকশন</th>
+                                </tr>
+                            </thead>
+                            {studentData?.student?.length > 0 && (
+                                <tbody className="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
+                                    {studentData.student.map((item) => (
+                                        <tr key={item.id} className="text-gray-700 dark:text-gray-400">
+                                            <td className="px-1 lg:px-4 py-3">
+                                                <div className="flex items-center text-sm">
+                                                    <div className="w-32 lg:w-48">
+                                                        <div className="font-semibold overflow-hidden overflow-ellipsis whitespace-nowrap">
+                                                            {item.email}
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </td>
-                                        <td className="px-1 lg:px-4 py-3 text-sm">
-                                            {item.phone}
-                                        </td>
-                                        <td className="px-1 lg:px-4 py-3 text-sm">
-                                            {item.ex_1}
-                                        </td>
-                                        <td className="w-1/3">
-                                            <div className="flex gap-5">
-                                                <button
-                                                    onClick={() => presentData(item.ex_1, item.courseId)}
-                                                    disabled={attendanceStatus[item.ex_1]}
-                                                    className={`flex items-center px-5 rounded-md my-3 cursor-pointer p-2 
+                                            </td>
+                                            <td className="px-1 lg:px-4 py-3 text-sm">
+                                                {item.phone}
+                                            </td>
+                                            <td className="px-1 lg:px-4 py-3 text-sm">
+                                                {item.ex_1}
+                                            </td>
+                                            <td className="w-1/3">
+                                                <div className="flex gap-5">
+                                                    <button
+                                                        onClick={() => presentData(item.ex_1, item.courseId)}
+                                                        disabled={attendanceStatus[item.ex_1]}
+                                                        className={`flex items-center px-5 rounded-md my-3 cursor-pointer p-2 
                                                         ${attendanceStatus[item.ex_1] === 'present'
-                                                            ? 'bg-red-600 text-white'
-                                                            : 'bg-[#ff2ded] text-white hover:bg-black'
-                                                        }`}
-                                                >
-                                                    <span className="mr-1 hidden lg:block">Present</span>
-                                                    <Check />
-                                                </button>
+                                                                ? 'bg-red-600 text-white'
+                                                                : 'bg-[#ff2ded] text-white hover:bg-black'
+                                                            }`}
+                                                    >
+                                                        <span className="mr-1 hidden lg:block">Present</span>
+                                                        <Check />
+                                                    </button>
 
-                                                <button
-                                                    onClick={() => absentData(item.ex_1, item.courseId)}
-                                                    disabled={attendanceStatus[item.ex_1]}
-                                                    className={`flex items-center px-5 rounded-md my-3 cursor-pointer p-2 
+                                                    <button
+                                                        onClick={() => absentData(item.ex_1, item.courseId)}
+                                                        disabled={attendanceStatus[item.ex_1]}
+                                                        className={`flex items-center px-5 rounded-md my-3 cursor-pointer p-2 
                                                         ${attendanceStatus[item.ex_1] === 'absent'
-                                                            ? 'bg-red-600 text-white'
-                                                            : 'bg-[#12b76A] text-white hover:bg-black'
-                                                        }`}
-                                                >
-                                                    <span className="mr-1 hidden lg:block text-sm lg:text-current">Absent</span>
-                                                    <X />
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        )}
-                    </table>
+                                                                ? 'bg-red-600 text-white'
+                                                                : 'bg-[#12b76A] text-white hover:bg-black'
+                                                            }`}
+                                                    >
+                                                        <span className="mr-1 hidden lg:block text-sm lg:text-current">Absent</span>
+                                                        <X />
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            )}
+                        </table>
+                    </div>
                 </div>
-            </div>
+            }
         </div>
     );
 };

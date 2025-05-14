@@ -10,6 +10,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import NoDataFound from "../../components/NoDataFound/NoDataFound";
 import toast from "react-hot-toast";
+import Loader from "../../components/Loader/Loader";
 
 const LiveClass = ({ data, updateData }) => {
   const BASE_URL = import.meta.env.VITE_API_BASE_URL;
@@ -64,7 +65,7 @@ const LiveClass = ({ data, updateData }) => {
     <>
       <AddRecording updateData={loadData} course={data} />
       {loading ? (
-        <p className="text-center">Loading...</p>
+        <Loader/>
       ) : Object.keys(groupedAssignments).length > 0 ? (
         <div className="module-container">
           {Object.entries(groupedAssignments).map(([moduleName, moduleAssignments]) => (

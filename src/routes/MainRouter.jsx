@@ -15,6 +15,7 @@ import CourseDetails from "../pages/Courses/CourseDetails";
 import PrivateRoute from "./PrivateRoute";
 import SingleStudentDetails from "../pages/Students/SingleStudentDetails";
 import Performance from "../pages/Performance/Performance";
+import Ranking from "../pages/Performance/Ranking";
 
 export const router = createBrowserRouter([
   {
@@ -48,6 +49,10 @@ export const router = createBrowserRouter([
       {
         path: "/dashboard/class-recording/:id",
         element: <VideoPlayer />,
+      },
+      {
+        path: "/dashboard/ranking",
+        element: <Ranking />,
       },
       /*  {
          path: "/dashboard/recording",

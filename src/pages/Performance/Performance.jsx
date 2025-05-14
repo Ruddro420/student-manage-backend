@@ -6,6 +6,7 @@ import ProgressBar from "./ProgressBar";
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import { Link } from "lucide-react";
+import Loader from "../../components/Loader/Loader";
 
 const convertToBengali = (num) => {
   const bengaliNumerals = ["০", "১", "২", "৩", "৪", "৫", "৬", "৭", "৮", "৯"];
@@ -20,6 +21,7 @@ const Performance = () => {
   const [assinments, setAssinments] = useState([]);
   const [payments, setPayments] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [submitLoading, setSubmitLoading] = useState(null);
   const [sId, setSId] = useState("");
   const [courseName, setCourseName] = useState("");
   const [batch, setBatch] = useState("");
@@ -31,6 +33,7 @@ const Performance = () => {
   useEffect(() => {
     axios.get(`${BASE_URL}/course/data`).then((res) => {
       setCourses(res.data.courses);
+       setLoading(false);
     });
   }, [BASE_URL]);
 
@@ -43,7 +46,7 @@ const Performance = () => {
   useEffect(() => {
     if (!sId || !courseName || !batch) return;
 
-    setLoading(true);
+    setSubmitLoading(true);
 
     const fetchData = async () => {
       try {
@@ -62,10 +65,11 @@ const Performance = () => {
         setTotalPayment(payment.data.total);
         setAssinments(submittedAssignments.data);
         setPayments(paymentHistory.data);
+        // setLoading(false);
       } catch (error) {
         console.error(error);
       } finally {
-        setLoading(false);
+        setSubmitLoading(false);
       }
     };
 
@@ -74,6 +78,7 @@ const Performance = () => {
 
   return (
     <>
+    {loading? <Loader/> :<>
       <div className="container px-6 mx-auto grid">
         <h2 className="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
           Performance
@@ -134,7 +139,7 @@ const Performance = () => {
         </div>
       </div>
 
-      {sId && (
+      { submitLoading==true? <><Loader/></>: sId && (
         <div className="container mx-auto px-4 py-8">
           <h1 className="text-3xl font-bold text-white mb-8">{sId}</h1>
 
@@ -149,6 +154,7 @@ const Performance = () => {
           <DataTable title="Payment History" columns={["Date", "Amount"]} rows={payments.map(p => [p.date, `${p.payment} ৳`])} className="mt-10" />
         </div>
       )}
+      </>}
     </>
   );
 };
