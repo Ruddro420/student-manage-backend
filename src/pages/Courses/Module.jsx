@@ -35,7 +35,9 @@ const Module = ({ data, updateData }) => {
       axios.get(`${BASE_URL}/module/delete/${id}`).then(() => {
         setLoading(false);
         toast.success("Delete Successfully")
-        loadData()
+        loadData();
+        updateData();
+        window.location.reload();
       })
         .catch(function (error) {
           // handle error

@@ -39,7 +39,8 @@ const AddRecording = ({ course, updateData }) => {
             .then(function () {
                 toast.success('Added Successfully')
                 updateData();
-                reset()
+                reset();
+                window.location.reload();
             })
             .catch(function (error) {
                 console.log(error);

@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import axios from "axios";
 import { useEffect, useMemo, useState } from "react";
@@ -22,7 +24,7 @@ const AddAssingment = ({ course, updateData }) => {
     }
     useEffect(() => {
         loadData()
-    }, [id]);
+    }, [id, loadData]);
 
     console.log(modules[0]);
     
@@ -41,8 +43,9 @@ const AddAssingment = ({ course, updateData }) => {
         })
             .then(function () {
                 toast.success('Added Successfully')
-                updateData()
-                reset()
+                updateData();
+                reset();
+                window.location.reload();
             })
             .catch(function (error) {
                 console.log(error);

@@ -20,6 +20,7 @@ const AddModule = ({courseId,updateData}) => {
                 toast.success('Added Successfully')
                 updateData()
                 reset()
+                window.location.reload();
             })
             .catch(function (error) {
                 console.log(error);
