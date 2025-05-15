@@ -5,6 +5,7 @@ import axios from "axios";
 import { useEffect, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
+import Loader from "../../components/Loader/Loader";
 
 // eslint-disable-next-line react/prop-types
 const AddAssingment = ({ course, updateData }) => {
@@ -58,6 +59,7 @@ const AddAssingment = ({ course, updateData }) => {
             <h1 className="mb-4 text-xl font-semibold text-gray-700 dark:text-gray-200">
                 Add Assingment
             </h1>
+            {loading?<Loader/>:
             <form onSubmit={handleSubmit(onSubmit)} >
                 <div className="grid gap-5 mb-8 md:grid-cols-4">
                     <label className="block text-sm">
@@ -126,7 +128,7 @@ const AddAssingment = ({ course, updateData }) => {
                     Add Assingment
                 </button>
             </form>
-
+}
         </div>
     );
 };
