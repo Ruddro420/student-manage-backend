@@ -42,7 +42,7 @@ const AllAssignments = ({ data, updateData }) => {
         setLoading(false);
         toast.success("Delete Successfully")
         loadData()
-        window.location.reload();
+        // window.location.reload();
       })
         .catch(function (error) {
           // handle error

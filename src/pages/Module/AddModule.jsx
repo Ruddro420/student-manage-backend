@@ -4,29 +4,42 @@ import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 
 // eslint-disable-next-line react/prop-types
-const AddModule = ({courseId,updateData}) => {
+const AddModule = ({ courseId, updateData }) => {
     const BASE_URL = import.meta.env.VITE_API_BASE_URL;
     const { register, handleSubmit, reset } = useForm();
     // submit data
-    const onSubmit = (data) => {
-        axios.post(`${BASE_URL}/module/add`, {
-            batch_no:courseId.batch_no,
-            course_id:courseId.id,
-            course_name:courseId.course_name,
-            module_name: data.module_name,
-            study_plan: data.study_plan,
-        })
-            .then(function () {
-                toast.success('Added Successfully')
-                updateData()
-                reset()
+const onSubmit = (data) => {
+    const promise = axios.post(`${BASE_URL}/module/add`, {
+        batch_no: courseId.batch_no,
+        course_id: courseId.id,
+        course_name: courseId.course_name,
+        module_name: data.module_name,
+        study_plan: data.study_plan,
+    });
+
+    toast.promise(
+        promise,
+        {
+            loading: 'Adding module...',
+            success: 'Added Successfully!',
+            error: (err) => err.message || 'Something went wrong',
+        }
+    );
+
+    promise
+        .then(() => {
+            updateData();
+            reset();
+            setTimeout(() => {
                 window.location.reload();
-            })
-            .catch(function (error) {
-                console.log(error);
-                toast.error(error.message)
-            });
-    };
+            }, 1000);
+        })
+        .catch((err) => {
+            console.error(err);
+            // toast.error is not needed here because toast.promise handles error
+        });
+};
+
     // get data
 
 

@@ -37,7 +37,9 @@ const Module = ({ data, updateData }) => {
         toast.success("Delete Successfully")
         loadData();
         updateData();
-        window.location.reload();
+        setTimeout(() => {
+          window.location.reload();
+        }, 1000);
       })
         .catch(function (error) {
           // handle error
@@ -50,7 +52,7 @@ const Module = ({ data, updateData }) => {
   return (
     <>
       {loading ? (<Loader />) : <>
-      <AddModule courseId={data} updateData={loadData} />
+        <AddModule courseId={data} updateData={loadData} />
 
         {modules?.length != 0 ? (
           <div className="grid gap-10 mb-8 md:grid-cols-3">
